@@ -1,0 +1,55 @@
+.panel {
+  display: none;
+}
+
+.panel.active2 {
+  display: block;
+}
+.results-div {
+  padding: 20px 20px;
+  tr {
+    td {
+      font-family: rebondBook;
+      font-size: 14px;
+    }
+    th {
+      font-family: rebondG-Medium;
+    }
+  }
+}
+.select-div {
+  border: 1px solid #e7e7e7 !important;
+  border-radius: 10px !important;
+  padding: 1px 5px;
+}
+
+.active-component {
+  font-weight: bold;
+  background: #e6f7ff;
+  color: #fff;
+  border: solid 1px #0098da;
+  height: 65px;
+  border-radius: 10px;
+}
+.pdf-download-btn {
+  height: 30px;
+  margin-top: 30px;
+}
+.input-div {
+  border: solid 1px #e7e7e7;
+  border-radius: 6px;
+  margin-right: 10px;
+  padding: 4px 10px;
+  input,
+  button {
+    border: none;
+    background: #fff;
+    color: #191919;
+    font-family: rebondBook;
+  }
+  .icon {
+    color: #666464;
+    font-family: rebondBook;
+    margin-top: 5px;
+  }
+}

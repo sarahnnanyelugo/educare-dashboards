@@ -1,0 +1,18 @@
+.side-nav-div {
+  a {
+    color: #191919;
+    font-size: 16px;
+  }
+  .accordion-button {
+    padding: 0 !important;
+    margin-left: 0 !important;
+    font-size: 16px;
+    font-family: rebondG-Medium;
+  }
+  .accordion-button::after {
+    margin-left: 30px;
+  }
+  .accordion-item {
+    border: none !important;
+  }
+}

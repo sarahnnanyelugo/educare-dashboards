@@ -1,0 +1,14 @@
+.news-box {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  .reactions {
+    small {
+      margin-right: 20px;
+    }
+    strong {
+      margin-left: 4px;
+      margin-right: 3px;
+    }
+  }
+}

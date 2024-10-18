@@ -1,0 +1,110 @@
+.my-children-view {
+  padding: 0 10px;
+  .tabs {
+    display: flex;
+    width: 100%;
+    padding: 8px 3px;
+    margin-top: 30px;
+    font-family: rebondG-Bold;
+    @media screen and (max-width: 620px) {
+      width: 40%;
+      margin-top: -30%;
+      margin-left: 0%;
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .tabs {
+      button {
+        margin-left: 10px;
+      }
+    }
+  }
+  .tabs2 {
+    display: flex;
+
+    width: 100%;
+    padding: 5px;
+    font-family: rebondG-Bold;
+    @media screen and (max-width: 620px) {
+      width: 40%;
+      margin-top: 60px;
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .tabs2 {
+    }
+  }
+
+  .tab {
+    width: 90%;
+    background: transparent;
+    padding: 5px 0;
+    border: none;
+    color: grey;
+    // border-radius: 35px !important;
+    font-size: 16px;
+    @media screen and (max-width: 620px) {
+      width: 100%;
+    }
+  }
+  .tab2 {
+    width: 40%;
+    background: #fff;
+    padding: 0px 0;
+    border: none;
+    color: grey;
+    // border-radius: 35px;
+    font-size: 14px;
+    @media screen and (max-width: 620px) {
+      width: 100%;
+    }
+  }
+
+  button.active2 {
+    font-weight: bold;
+    background: #0098da;
+    color: #fff;
+    border-radius: 35px;
+    // border-bottom: solid 3px #0098da;
+  }
+  button.active3 {
+    font-weight: bold;
+    border-bottom: solid 3px #0098da;
+    color: #000;
+  }
+  .panel {
+    display: none;
+    color: #161617;
+    font-family: rebondG;
+    line-height: 40px;
+    padding-top: 65px;
+    background: #fff;
+  }
+
+  .panel.active2 {
+    display: block;
+  }
+}
+
+.children-div {
+  height: 50px;
+  padding: 7px 10px;
+  margin-bottom: 10px;
+  color: #000;
+  border: solid 1px #e7e7e7;
+  border-radius: 10px;
+  &:hover {
+    background: #e7e7e7;
+  }
+  img {
+    border-radius: 100%;
+    margin-right: 10px;
+  }
+  h6 {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  p {
+    font-size: 12px;
+  }
+}

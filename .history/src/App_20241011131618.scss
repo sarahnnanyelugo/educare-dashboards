@@ -1,0 +1,61 @@
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@font-face {
+  font-family: rebondG;
+  src: url(./assets/fonts/Rebond_font/RebondG.otf);
+}
+@font-face {
+  font-family: rebondG-Bold;
+  src: url(./assets/fonts/Rebond_font/RebondG-Bold.otf);
+}
+@font-face {
+  font-family: rebondG-Semi-Bold;
+  src: url(./assets/fonts/Rebond_font/Rebond-semibold.otf);
+}
+@font-face {
+  font-family: rebondG-Medium;
+  src: url(./assets/fonts/Rebond_font/RebondGrotesqueMedium.otf);
+}
+@font-face {
+  font-family: rebondBook;
+  src: url(./assets/fonts/Rebond_font/RebondG-Book.ttf);
+}
+@font-face {
+  font-family: rebondLight;
+  src: url(./assets/fonts/Rebond_font/RebondGLight.otf);
+}
+@font-face {
+  font-family: rebondMI;
+  src: url(./assets/fonts/Rebond_font/RebondGrotesqueMediumitalic.otf);
+}
+p,
+small,
+link {
+  font-family: rebondBook;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: rebondG-Bold;
+}
+a {
+  font-family: rebondG-Medium;
+  text-decoration: none !important;
+}
+.card {
+  border: 1px solid #e7e7e7 !important;
+  border-radius: 10px;
+}

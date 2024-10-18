@@ -1,0 +1,13 @@
+.app-table {
+  tr {
+    cursor: pointer;
+    th {
+      font-family: rebondG-Medium;
+    }
+    td {
+      font-family: rebondBook !important;
+    }
+  }
+
+  --bs-table-striped-bg: red;
+}
