@@ -99,12 +99,7 @@ export const TransactionHistory = () => {
               </button>
             </div>
           </div>
-          <hr />
-          <AppTable
-            headers={headers}
-            rows={transactionHistory}
-            includeImages={true}
-          />
+          <AppTable headers={headers} rows={wallet} includeImages={true} />
         </div>
       </div>
     </>

@@ -5,7 +5,6 @@ import { BsCalendar4Week } from "react-icons/bs";
 import { HiOutlineDownload } from "react-icons/hi";
 import { RiSearch2Line } from "react-icons/ri";
 import { FaAngleDown } from "react-icons/fa6";
-import { generatePocketMoney } from "../../../Utils/DataUtils";
 
 import "./finance.scss";
 import {
@@ -14,8 +13,10 @@ import {
   child3,
   children,
 } from "../../../TestData/childrenData";
+import Icon from "../../../assets/images/wallet.png";
+import { FileUpload } from "../../../components/FIleUpload/FileUpload";
+import { generateTimetableData } from "../../../Utils/DataUtils";
 import { Children } from "../MyChildren/Children";
-import { AppTable } from "../../../components/AppTable/AppTable";
 
 export const PocketMoney = () => {
   const [activeTab, setActiveTab] = useState(1); // Default to first tab
@@ -39,13 +40,8 @@ export const PocketMoney = () => {
   const checkActive = (index, className) => {
     return activeTab === index ? className : "";
   };
-  const [pocketMoney, setPocketMoney] = useState([]);
-  const headers = ["Date", "TransactionID", "Amount", "Reference"];
-  useEffect(() => {
-    const fb = generatePocketMoney(8);
-    setPocketMoney(fb);
-    console.log(fb);
-  }, []);
+
+  const child0 = generateTimetableData(5, ["child0"]);
   return (
     <div className="my-children-view">
       <h6 style={{ fontSize: "18px", marginTop: "20px" }}>My Children</h6>
@@ -108,7 +104,7 @@ export const PocketMoney = () => {
                     </div>
                   </div>
                 </div>
-                <div className="d-md-flex col-md-5 offset-md-1">
+                <div className="d-md-flex col-md-4 offset-md-1">
                   <div>
                     <h6>Search</h6>
                     <div className="input-div d-flex">
@@ -122,15 +118,11 @@ export const PocketMoney = () => {
                     <HiOutlineDownload className="icon2" />
                     Export as CSV <FaAngleDown />
                   </button>{" "}
-                  <button className="app-btn "> Deposit</button>
+                  <button className="pdf-download-btn"> Deposit</button>
                 </div>
               </div>
               <hr />
-              <AppTable
-                headers={headers}
-                rows={pocketMoney}
-                includeImages={true}
-              />
+              <div className="col-md-12 d-md-flex"></div>
             </div>
             <div className={`panel ${checkActive(2, "active2")}`}>2 </div>
             <div className={`panel ${checkActive(3, "active2")}`}> 3</div>

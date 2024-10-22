@@ -21,8 +21,8 @@ export const TransactionHistory = () => {
   ];
 
   useEffect(() => {
-    const fb = generateTransactionHistory(8);
-    setTransactionHistory(fb);
+    const fb = generateWallet(8);
+    setWallet(fb);
     console.log(fb);
   }, []);
   return (
@@ -99,12 +99,7 @@ export const TransactionHistory = () => {
               </button>
             </div>
           </div>
-          <hr />
-          <AppTable
-            headers={headers}
-            rows={transactionHistory}
-            includeImages={true}
-          />
+          <AppTable headers={headers} rows={wallet} includeImages={true} />
         </div>
       </div>
     </>

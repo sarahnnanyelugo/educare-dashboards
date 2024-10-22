@@ -99,7 +99,6 @@ export const TransactionHistory = () => {
               </button>
             </div>
           </div>
-          <hr />
           <AppTable
             headers={headers}
             rows={transactionHistory}

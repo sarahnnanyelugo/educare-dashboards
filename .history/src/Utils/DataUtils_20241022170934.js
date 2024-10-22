@@ -109,37 +109,12 @@ export const generateWallet = (numEntries, avatarList) => {
   }
   return wallet;
 };
-export const generatePocketMoney = (numEntries) => {
-  const pocketMoney = [];
-  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
-  for (let i = 0; i < numEntries; i++) {
-    pocketMoney.push({
-      Date: faker.date.anytime(Date.now()).toLocaleDateString(),
-      Amount: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
-      TransactionID: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
-      Reference: arrayElement([
-        "Fees",
-        "Lesson",
-        "Uniforms",
-        "Others",
-        "Bursary",
-        "Canteen",
-      ]),
-    });
-  }
-  return pocketMoney;
-};
-export const generateInvoices = (numEntries) => {
-  const Invoices = [];
+export const generateWallet = (numEntries, avatarList) => {
+  const wallet = [];
   // Helper function to randomly pick an array element
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
-    Invoices.push({
+    wallet.push({
       Date: faker.date.anytime(Date.now()).toLocaleDateString(),
       Amount: faker.finance.amount({
         min: 100,
@@ -147,33 +122,7 @@ export const generateInvoices = (numEntries) => {
         dec: 2,
         symbol: "₦ ",
       }), // '$5.85'
-      TransactionID: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
-      Reference: arrayElement([
-        "Fees",
-        "Lesson",
-        "Uniforms",
-        "Others",
-        "Bursary",
-        "Canteen",
-      ]),
-    });
-  }
-  return Invoices;
-};
-export const generateTransactionHistory = (numEntries, avatarList) => {
-  const transactionHistory = [];
-  // Helper function to randomly pick an array element
-  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
-  for (let i = 0; i < numEntries; i++) {
-    transactionHistory.push({
-      Date: faker.date.anytime(Date.now()).toLocaleDateString(),
-      Amount: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
-      TransactionID: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
+      Code: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
       Purpose: arrayElement([
         "Fees",
         "Lesson",
@@ -187,5 +136,5 @@ export const generateTransactionHistory = (numEntries, avatarList) => {
       Action: arrayElement(["View", "Proceed to pay"]),
     });
   }
-  return transactionHistory;
+  return wallet;
 };

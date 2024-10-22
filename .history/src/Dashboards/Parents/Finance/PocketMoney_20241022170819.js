@@ -14,6 +14,9 @@ import {
   child3,
   children,
 } from "../../../TestData/childrenData";
+import Icon from "../../../assets/images/wallet.png";
+import { FileUpload } from "../../../components/FIleUpload/FileUpload";
+import { generateTimetableData } from "../../../Utils/DataUtils";
 import { Children } from "../MyChildren/Children";
 import { AppTable } from "../../../components/AppTable/AppTable";
 
@@ -39,11 +42,11 @@ export const PocketMoney = () => {
   const checkActive = (index, className) => {
     return activeTab === index ? className : "";
   };
-  const [pocketMoney, setPocketMoney] = useState([]);
+  const [wallet, setWallet] = useState([]);
   const headers = ["Date", "TransactionID", "Amount", "Reference"];
   useEffect(() => {
-    const fb = generatePocketMoney(8);
-    setPocketMoney(fb);
+    const fb = generateWallet(8);
+    setWallet(fb);
     console.log(fb);
   }, []);
   return (
@@ -126,11 +129,7 @@ export const PocketMoney = () => {
                 </div>
               </div>
               <hr />
-              <AppTable
-                headers={headers}
-                rows={pocketMoney}
-                includeImages={true}
-              />
+              <AppTable headers={headers} rows={wallet} includeImages={true} />
             </div>
             <div className={`panel ${checkActive(2, "active2")}`}>2 </div>
             <div className={`panel ${checkActive(3, "active2")}`}> 3</div>

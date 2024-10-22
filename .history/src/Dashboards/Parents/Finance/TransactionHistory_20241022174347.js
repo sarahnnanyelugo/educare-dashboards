@@ -6,23 +6,16 @@ import { BsCalendar4Week } from "react-icons/bs";
 import { HiOutlineDownload } from "react-icons/hi";
 import { RiSearch2Line } from "react-icons/ri";
 import { AppTable } from "../../../components/AppTable/AppTable";
-import { generateTransactionHistory } from "../../../Utils/DataUtils";
+import { generateWallet } from "../../../Utils/DataUtils";
 import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
 export const TransactionHistory = () => {
-  const [transactionHistory, setTransactionHistory] = useState([]);
-  const headers = [
-    "Date",
-    "TransactionID",
-    "Amount",
-    "Purpose",
-    "Status",
-    "Action",
-  ];
-
+  const [wallet, setWallet] = useState([]);
+  const headers = ["Date", "Code", "Amount", "Purpose", "Status", "Action"];
+  const avatarList = [Student, Peter];
   useEffect(() => {
-    const fb = generateTransactionHistory(8);
-    setTransactionHistory(fb);
+    const fb = generateWallet(8, avatarList);
+    setWallet(fb);
     console.log(fb);
   }, []);
   return (
@@ -99,12 +92,7 @@ export const TransactionHistory = () => {
               </button>
             </div>
           </div>
-          <hr />
-          <AppTable
-            headers={headers}
-            rows={transactionHistory}
-            includeImages={true}
-          />
+          <AppTable headers={headers} rows={wallet} includeImages={true} />
         </div>
       </div>
     </>

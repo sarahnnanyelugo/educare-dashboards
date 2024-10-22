@@ -39,11 +39,11 @@ export const PocketMoney = () => {
   const checkActive = (index, className) => {
     return activeTab === index ? className : "";
   };
-  const [pocketMoney, setPocketMoney] = useState([]);
+  const [wallet, setWallet] = useState([]);
   const headers = ["Date", "TransactionID", "Amount", "Reference"];
   useEffect(() => {
     const fb = generatePocketMoney(8);
-    setPocketMoney(fb);
+    setWallet(fb);
     console.log(fb);
   }, []);
   return (
@@ -126,11 +126,7 @@ export const PocketMoney = () => {
                 </div>
               </div>
               <hr />
-              <AppTable
-                headers={headers}
-                rows={pocketMoney}
-                includeImages={true}
-              />
+              <AppTable headers={headers} rows={wallet} includeImages={true} />
             </div>
             <div className={`panel ${checkActive(2, "active2")}`}>2 </div>
             <div className={`panel ${checkActive(3, "active2")}`}> 3</div>

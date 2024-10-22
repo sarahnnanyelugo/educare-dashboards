@@ -129,7 +129,7 @@ export const PocketMoney = () => {
               <AppTable
                 headers={headers}
                 rows={pocketMoney}
-                includeImages={true}
+                includeImages={False}
               />
             </div>
             <div className={`panel ${checkActive(2, "active2")}`}>2 </div>

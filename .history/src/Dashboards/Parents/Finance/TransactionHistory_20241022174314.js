@@ -6,30 +6,36 @@ import { BsCalendar4Week } from "react-icons/bs";
 import { HiOutlineDownload } from "react-icons/hi";
 import { RiSearch2Line } from "react-icons/ri";
 import { AppTable } from "../../../components/AppTable/AppTable";
-import { generateTransactionHistory } from "../../../Utils/DataUtils";
+import { generateWallet } from "../../../Utils/DataUtils";
 import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
 export const TransactionHistory = () => {
-  const [transactionHistory, setTransactionHistory] = useState([]);
-  const headers = [
-    "Date",
-    "TransactionID",
-    "Amount",
-    "Purpose",
-    "Status",
-    "Action",
-  ];
-
+  const [wallet, setWallet] = useState([]);
+  const headers = ["Date", "Code", "Amount", "Purpose", "Status", "Action"];
+  const avatarList = [Student, Peter];
   useEffect(() => {
-    const fb = generateTransactionHistory(8);
-    setTransactionHistory(fb);
+    const fb = generateWallet(8, avatarList);
+    setWallet(fb);
     console.log(fb);
   }, []);
   return (
     <>
       <div className="finance-div">
-        <h5>Transaction History</h5>
-
+        <h5>Wallet</h5>
+        <div className="wallet-balance d-flex">
+          <div className="d-flex" style={{ flexGrow: 1 }}>
+            <img src={Purse} height="38px" width="38px" />
+            <div>
+              <p>Wallet Balance</p>
+              <h3>₦300,000</h3>
+            </div>
+          </div>
+          <div className="wallet-btns">
+            {" "}
+            <button className="withdraw-btn">Withdraw</button>
+            <button className="deposit-btn">Deposit</button>
+          </div>
+        </div>
         <div className="selections">
           <div className="d-md-flex">
             {" "}
@@ -99,12 +105,7 @@ export const TransactionHistory = () => {
               </button>
             </div>
           </div>
-          <hr />
-          <AppTable
-            headers={headers}
-            rows={transactionHistory}
-            includeImages={true}
-          />
+          <AppTable headers={headers} rows={wallet} includeImages={true} />
         </div>
       </div>
     </>

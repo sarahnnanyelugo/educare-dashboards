@@ -5,7 +5,7 @@ import { BsCalendar4Week } from "react-icons/bs";
 import { HiOutlineDownload } from "react-icons/hi";
 import { RiSearch2Line } from "react-icons/ri";
 import { FaAngleDown } from "react-icons/fa6";
-import { generatePocketMoney } from "../../../Utils/DataUtils";
+import { generateInvoices } from "../../../Utils/DataUtils";
 
 import "./finance.scss";
 import {
@@ -17,7 +17,7 @@ import {
 import { Children } from "../MyChildren/Children";
 import { AppTable } from "../../../components/AppTable/AppTable";
 
-export const PocketMoney = () => {
+export const Invoices = () => {
   const [activeTab, setActiveTab] = useState(1); // Default to first tab
   const location = useLocation(); // Get the location object
 
@@ -39,11 +39,11 @@ export const PocketMoney = () => {
   const checkActive = (index, className) => {
     return activeTab === index ? className : "";
   };
-  const [pocketMoney, setPocketMoney] = useState([]);
+  const [invoices, setInvoices] = useState([]);
   const headers = ["Date", "TransactionID", "Amount", "Reference"];
   useEffect(() => {
-    const fb = generatePocketMoney(8);
-    setPocketMoney(fb);
+    const fb = generateInvoices(8);
+    setInvoices(fb);
     console.log(fb);
   }, []);
   return (
@@ -128,7 +128,7 @@ export const PocketMoney = () => {
               <hr />
               <AppTable
                 headers={headers}
-                rows={pocketMoney}
+                rows={Invoices}
                 includeImages={true}
               />
             </div>

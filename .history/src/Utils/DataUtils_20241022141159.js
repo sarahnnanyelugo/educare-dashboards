@@ -87,12 +87,7 @@ export const generateWallet = (numEntries, avatarList) => {
   for (let i = 0; i < numEntries; i++) {
     wallet.push({
       Date: faker.date.anytime(Date.now()).toLocaleDateString(),
-      Amount: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
+      Amount: faker.finance.amount({ min: 5, max: 10, dec: 2, symbol: "$" }), // '$5.85'
       Code: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
       Purpose: arrayElement([
         "Fees",
@@ -108,84 +103,4 @@ export const generateWallet = (numEntries, avatarList) => {
     });
   }
   return wallet;
-};
-export const generatePocketMoney = (numEntries) => {
-  const pocketMoney = [];
-  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
-  for (let i = 0; i < numEntries; i++) {
-    pocketMoney.push({
-      Date: faker.date.anytime(Date.now()).toLocaleDateString(),
-      Amount: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
-      TransactionID: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
-      Reference: arrayElement([
-        "Fees",
-        "Lesson",
-        "Uniforms",
-        "Others",
-        "Bursary",
-        "Canteen",
-      ]),
-    });
-  }
-  return pocketMoney;
-};
-export const generateInvoices = (numEntries) => {
-  const Invoices = [];
-  // Helper function to randomly pick an array element
-  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
-  for (let i = 0; i < numEntries; i++) {
-    Invoices.push({
-      Date: faker.date.anytime(Date.now()).toLocaleDateString(),
-      Amount: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
-      TransactionID: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
-      Reference: arrayElement([
-        "Fees",
-        "Lesson",
-        "Uniforms",
-        "Others",
-        "Bursary",
-        "Canteen",
-      ]),
-    });
-  }
-  return Invoices;
-};
-export const generateTransactionHistory = (numEntries, avatarList) => {
-  const transactionHistory = [];
-  // Helper function to randomly pick an array element
-  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
-  for (let i = 0; i < numEntries; i++) {
-    transactionHistory.push({
-      Date: faker.date.anytime(Date.now()).toLocaleDateString(),
-      Amount: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
-      TransactionID: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
-      Purpose: arrayElement([
-        "Fees",
-        "Lesson",
-        "Uniforms",
-        "Others",
-        "Bursary",
-        "Canteen",
-      ]),
-      Status: arrayElement(["Pending", "Paid", "Canceled"]),
-      Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
-      Action: arrayElement(["View", "Proceed to pay"]),
-    });
-  }
-  return transactionHistory;
 };

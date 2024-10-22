@@ -17,7 +17,7 @@ import {
 import { Children } from "../MyChildren/Children";
 import { AppTable } from "../../../components/AppTable/AppTable";
 
-export const PocketMoney = () => {
+export const Invoices = () => {
   const [activeTab, setActiveTab] = useState(1); // Default to first tab
   const location = useLocation(); // Get the location object
 
