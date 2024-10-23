@@ -14,7 +14,7 @@ import { PocketMoney } from "../Dashboards/Parents/Finance/PocketMoney";
 import { Invoices } from "../Dashboards/Parents/Finance/Invoices";
 import { TransactionHistory } from "../Dashboards/Parents/Finance/TransactionHistory";
 import { Store } from "../Dashboards/Parents/Store/Store";
-import Event from "../Dashboards/Parents/Calendar/Calendar";
+import { Event } from "../Dashboards/Parents/Calendar/Calendar";
 export const ParentsLayout = () => {
   return (
     <>

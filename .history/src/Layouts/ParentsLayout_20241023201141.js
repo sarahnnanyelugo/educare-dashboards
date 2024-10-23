@@ -14,7 +14,7 @@ import { PocketMoney } from "../Dashboards/Parents/Finance/PocketMoney";
 import { Invoices } from "../Dashboards/Parents/Finance/Invoices";
 import { TransactionHistory } from "../Dashboards/Parents/Finance/TransactionHistory";
 import { Store } from "../Dashboards/Parents/Store/Store";
-import Event from "../Dashboards/Parents/Calendar/Calendar";
+import { Calendar } from "../Dashboards/Parents/Calendar/Calendar";
 export const ParentsLayout = () => {
   return (
     <>
@@ -36,7 +36,7 @@ export const ParentsLayout = () => {
             <Route path="/pocket-money" element={<PocketMoney />} />{" "}
             <Route path="/invoices" element={<Invoices />} />{" "}
             <Route path="/store" element={<Store />} />{" "}
-            <Route path="/calendar" element={<Event />} />{" "}
+            <Route path="/calendar" element={<Calendar />} />{" "}
             <Route
               path="/transaction-history"
               element={<TransactionHistory />}

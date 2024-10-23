@@ -17,10 +17,6 @@
       font-family: rebondG-Medium;
       // color: #fff;
     }
-    .active {
-      background: #0098da;
-      color: #fff;
-    }
   }
   .filter-btn {
     border: 1px solid #e7e7e7;
@@ -52,5 +48,9 @@
       background: #0098da;
       color: #fff;
     }
+  }
+  .active {
+    background: #0098da;
+    color: #fff;
   }
 }

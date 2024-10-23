@@ -138,10 +138,7 @@ export const Store = () => {
               <h6>Categories</h6>
               <ul className="list-unstyled">
                 {cat.map((ct, index) => (
-                  <li
-                    key={index}
-                    className={`${category == ct ? "active" : ""}`}
-                  >
+                  <li key={index} className={`active`}>
                     <span
                       onClick={() => handleFilterChange(ct)}
                       className="d-flex"
