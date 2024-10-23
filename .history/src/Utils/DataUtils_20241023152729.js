@@ -189,15 +189,13 @@ export const generateTransactionHistory = (numEntries, avatarList) => {
   }
   return transactionHistory;
 };
-export const generateStoreItems = (numEntries, avatarList, catList) => {
+export const generateStoreItems = (numEntries, avatarList) => {
   const storeItems = [];
-  console.log(avatarList);
   // Helper function to randomly pick an array element
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
     storeItems.push({
       Photo: arrayElement(avatarList),
-      category: arrayElement(catList),
       amount: faker.finance.amount({
         min: 100,
         max: 10000,

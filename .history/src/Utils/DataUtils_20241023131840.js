@@ -189,24 +189,31 @@ export const generateTransactionHistory = (numEntries, avatarList) => {
   }
   return transactionHistory;
 };
-export const generateStoreItems = (numEntries, avatarList, catList) => {
-  const storeItems = [];
-  console.log(avatarList);
+export const generateStoreItems= (numEntries, avatarList) => {
+  const transactionHistory = [];
   // Helper function to randomly pick an array element
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
     storeItems.push({
-      Photo: arrayElement(avatarList),
-      category: arrayElement(catList),
-      amount: faker.finance.amount({
+      Date: faker.date.anytime(Date.now()).toLocaleDateString(),
+      Amount: faker.finance.amount({
         min: 100,
         max: 10000,
         dec: 2,
         symbol: "₦ ",
       }), // '$5.85'
       TransactionID: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
-      Purpose: arrayElement(["Accessories", "Books", "Uniforms"]),
+      Purpose: arrayElement([
+        "Fees",
+        "Lesson",
+        "Uniforms",
+        "Others",
+        "Bursary",
+        "Canteen",
+      ]),
+      Status: arrayElement(["Pending", "Paid", "Canceled"]),
+      Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
+      Action: arrayElement(["View", "Proceed to pay"]),
     });
   }
-  return storeItems;
-};
+  return  storeItems;
