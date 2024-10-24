@@ -78,12 +78,11 @@ export default function Event({ localizer = mLocalizer, ...props }) {
     return {
       style: {
         backgroundColor,
-        borderRadius: "5px",
+        borderRadius: "10px",
         opacity: 0.8,
         color: "white",
         border: "0px",
         display: "block",
-        fontFamily: " rebondG-Medium",
       },
     };
   };

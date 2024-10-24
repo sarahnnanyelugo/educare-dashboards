@@ -83,7 +83,7 @@ export default function Event({ localizer = mLocalizer, ...props }) {
         color: "white",
         border: "0px",
         display: "block",
-        fontFamily: " rebondG-Medium",
+        // fontFamily: " rebondG-Medium",
       },
     };
   };

@@ -223,15 +223,18 @@ export const generateVoteRecords = (numEntries, avatarList) => {
         dec: 2,
         symbol: "₦ ",
       }), // '$5.85'
-      End: faker.date.anytime(Date.now()).toLocaleDateString(), // '197089478'
-      Position: arrayElement([
-        "Head of School for the Day",
-        "Pricipal for the Day Election",
+      Code: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
+      Purpose: arrayElement([
+        "Fees",
+        "Lesson",
+        "Uniforms",
+        "Others",
+        "Bursary",
+        "Canteen",
       ]),
-      Status: arrayElement(["Not Conducted", "Conducted"]),
-      Results: arrayElement(["Not Published", "Published"]),
+      Status: arrayElement(["Pending", "Paid", "Canceled"]),
       Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
-      Action: arrayElement(["View", "--------"]),
+      Action: arrayElement(["View", "Proceed to pay"]),
     });
   }
   return voteRecords;

@@ -71,7 +71,7 @@ export const SidebarData = [
   {
     name: "Voting System",
     icon: "MdOutlineHowToVote",
-    url: "/voting-system",
+    url: "/voting",
   },
   {
     name: "Photo Journals",

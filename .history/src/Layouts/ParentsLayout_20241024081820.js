@@ -15,7 +15,6 @@ import { Invoices } from "../Dashboards/Parents/Finance/Invoices";
 import { TransactionHistory } from "../Dashboards/Parents/Finance/TransactionHistory";
 import { Store } from "../Dashboards/Parents/Store/Store";
 import Event from "../Dashboards/Parents/Calendar/Calendar";
-import { VotingSystem } from "../Dashboards/Parents/VotingSystem/VotingSystem";
 export const ParentsLayout = () => {
   return (
     <>
@@ -42,7 +41,10 @@ export const ParentsLayout = () => {
               path="/transaction-history"
               element={<TransactionHistory />}
             />{" "}
-            <Route path="/voting-system" element={<VotingSystem />} />{" "}
+            <Route
+              path="/transaction-history"
+              element={<TransactionHistory />}
+            />{" "}
           </Routes>
         </div>
       </div>

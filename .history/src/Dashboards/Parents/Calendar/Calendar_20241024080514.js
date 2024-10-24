@@ -69,21 +69,20 @@ export default function Event({ localizer = mLocalizer, ...props }) {
     },
   ]);
   const eventStyleGetter = (event) => {
-    let backgroundColor = "#3174ad"; // Default blue
+    let borderRight = "#3174ad"; // Default blue
 
-    if (event.title === "Open Day") backgroundColor = "red";
+    if (event.title === "Open Day") borderRight = "solid 1px #0098DA";
     else if (event.title === "Picture Day") backgroundColor = "green";
     else if (event.title === "Heritage Day") backgroundColor = "purple";
 
     return {
       style: {
         backgroundColor,
-        borderRadius: "5px",
+        borderRadius: "0px",
         opacity: 0.8,
         color: "white",
         border: "0px",
         display: "block",
-        fontFamily: " rebondG-Medium",
       },
     };
   };

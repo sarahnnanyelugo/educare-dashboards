@@ -228,10 +228,9 @@ export const generateVoteRecords = (numEntries, avatarList) => {
         "Head of School for the Day",
         "Pricipal for the Day Election",
       ]),
-      Status: arrayElement(["Not Conducted", "Conducted"]),
-      Results: arrayElement(["Not Published", "Published"]),
+      Status: arrayElement(["Pending", "Paid", "Canceled"]),
       Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
-      Action: arrayElement(["View", "--------"]),
+      Action: arrayElement(["View", "Proceed to pay"]),
     });
   }
   return voteRecords;
