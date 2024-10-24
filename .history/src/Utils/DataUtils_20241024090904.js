@@ -242,14 +242,14 @@ export const generateTransportRecords = (numEntries, avatarList) => {
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
     transportRecords.push({
-      Date: faker.date.anytime(Date.now()).toLocaleDateString(),
+      Start: faker.date.anytime(Date.now()).toLocaleDateString(),
       Amount: faker.finance.amount({
         min: 100,
         max: 10000,
         dec: 2,
         symbol: "₦ ",
       }), // '$5.85'
-
+      End: faker.date.anytime(Date.now()).toLocaleDateString(), // '197089478'
       Position: arrayElement([
         "Head of School for the Day",
         "Pricipal for the Day Election",
