@@ -17,7 +17,7 @@ import { Store } from "../Dashboards/Parents/Store/Store";
 import Event from "../Dashboards/Parents/Calendar/Calendar";
 import { VotingSystem } from "../Dashboards/Parents/VotingSystem/VotingSystem";
 import { TransportSystem } from "../Dashboards/Parents/TransportSystem/TransportSystem";
-import PhotoJournal from "../Dashboards/Parents/Media/PhotoJournals";
+import { PhotoJournals } from "../Dashboards/Parents/Media/PhotoJournals";
 export const ParentsLayout = () => {
   return (
     <>
@@ -46,7 +46,7 @@ export const ParentsLayout = () => {
             />{" "}
             <Route path="/voting-system" element={<VotingSystem />} />{" "}
             <Route path="/transport-system" element={<TransportSystem />} />{" "}
-            <Route path="/photo-journals" element={<PhotoJournal />} />{" "}
+            <Route path="/photo-journals" element={<PhotoJournals />} />{" "}
           </Routes>
         </div>
       </div>
