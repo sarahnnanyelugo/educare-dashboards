@@ -78,7 +78,6 @@ const PhotoGallery = () => {
                 className="album-cover"
               />
               <p>{album.title}</p>
-              <p>{album.photos.length} photos</p>
             </div>
           ))}
         </div>
