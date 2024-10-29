@@ -39,7 +39,6 @@ const taggedPhotos = [
     Logo: SchLogo,
     postTime: "12:32PM",
     postDate: "Jun 30, 2024",
-    liked: false,
   },
   {
     src: Kid16,
@@ -52,7 +51,6 @@ const taggedPhotos = [
     Logo: SchLogo,
     postTime: "12:32PM",
     postDate: "Jun 30, 2024",
-    liked: false,
   },
   {
     src: Kid20,
@@ -66,7 +64,6 @@ const taggedPhotos = [
     Logo: SchLogo,
     postTime: "12:32PM",
     postDate: "Jun 30, 2024",
-    liked: false,
   },
   {
     src: Kid13,
@@ -79,7 +76,6 @@ const taggedPhotos = [
     Logo: SchLogo,
     postTime: "12:32PM",
     postDate: "Jun 30, 2024",
-    liked: false,
   },
   {
     src: Kid10,
@@ -92,7 +88,6 @@ const taggedPhotos = [
     comments: 20,
     postTime: "12:32PM",
     postDate: "Jun 30, 2024",
-    liked: false,
   },
   // Add more photos with similar structure
 ];
@@ -132,13 +127,7 @@ const TaggedPhoto = () => {
   const handleLikeClick = (src) => {
     setPhotos((prevPhotos) =>
       prevPhotos.map((photo) =>
-        photo.src === src
-          ? {
-              ...photo,
-              likes: photo.liked ? photo.likes - 1 : photo.likes + 1,
-              liked: !photo.liked,
-            }
-          : photo
+        photo.src === src ? { ...photo, likes: photo.likes + 1 } : photo
       )
     );
   };
@@ -212,7 +201,7 @@ const TaggedPhoto = () => {
                         fontSize: "17px",
                         marginRight: "5px",
                         cursor: "pointer",
-                        color: selectedPhoto?.liked ? "red" : "grey",
+                        color: "red",
                       }}
                       onClick={() => handleLikeClick(selectedPhoto?.src)}
                     />

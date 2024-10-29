@@ -8,24 +8,23 @@ import Kid6 from "../../../assets/images/girl1.png";
 import Kid7 from "../../../assets/images/cul4.png";
 import Kid8 from "../../../assets/images/cultural2.png";
 import Kid9 from "../../../assets/images/cul3.jpg";
+import Kid10 from "../../../assets/images/cul3.png";
 import Kid11 from "../../../assets/images/cul1.png";
 import Kid12 from "../../../assets/images/cultural3.png";
 import Kid13 from "../../../assets/images/gradu.png";
+import Kid14 from "../../../assets/images/gradu2.png";
+import Kid15 from "../../../assets/images/Kid15.jpg";
 import Kid16 from "../../../assets/images/Kid16.png";
-import Kid10 from "../../../assets/images/cul3.png";
+import Kid17 from "../../../assets/images/baloon2.png";
+import Kid18 from "../../../assets/images/grad.png";
 import Kid19 from "../../../assets/images/grad2.png";
 import Kid20 from "../../../assets/images/baloon.png";
 import SchLogo from "../../../assets/images/logo.png";
-import Kid14 from "../../../assets/images/gradu2.png";
-import Kid15 from "../../../assets/images/Kid15.jpg";
-import Kid17 from "../../../assets/images/baloon2.png";
-import Kid18 from "../../../assets/images/grad.png";
-
 import "./photo-journals.scss";
 import Modal from "react-bootstrap/Modal";
 import { TbHeart } from "react-icons/tb";
 import { BiCommentDetail } from "react-icons/bi";
-// import taggedPhotos from "../../TestData/mediaData";
+
 // Sample data
 const taggedPhotos = [
   {
@@ -37,9 +36,6 @@ const taggedPhotos = [
     comments: 34,
     schName: "Green Field School",
     Logo: SchLogo,
-    postTime: "12:32PM",
-    postDate: "Jun 30, 2024",
-    liked: false,
   },
   {
     src: Kid16,
@@ -50,9 +46,6 @@ const taggedPhotos = [
     comments: 20,
     schName: "Green Field School",
     Logo: SchLogo,
-    postTime: "12:32PM",
-    postDate: "Jun 30, 2024",
-    liked: false,
   },
   {
     src: Kid20,
@@ -64,9 +57,6 @@ const taggedPhotos = [
     likes: 85,
     comments: 20,
     Logo: SchLogo,
-    postTime: "12:32PM",
-    postDate: "Jun 30, 2024",
-    liked: false,
   },
   {
     src: Kid13,
@@ -77,9 +67,6 @@ const taggedPhotos = [
     likes: 85,
     comments: 20,
     Logo: SchLogo,
-    postTime: "12:32PM",
-    postDate: "Jun 30, 2024",
-    liked: false,
   },
   {
     src: Kid10,
@@ -90,9 +77,6 @@ const taggedPhotos = [
     likes: 85,
     Logo: SchLogo,
     comments: 20,
-    postTime: "12:32PM",
-    postDate: "Jun 30, 2024",
-    liked: false,
   },
   // Add more photos with similar structure
 ];
@@ -101,7 +85,6 @@ const TaggedPhoto = () => {
   const [showModal, setShowModal] = useState(false);
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]); // Stores comments for the selected photo
-  const [photos, setPhotos] = useState(taggedPhotos); // State to manage photos with likes
 
   const openPhoto = (photo) => {
     setSelectedPhoto(photo);
@@ -129,24 +112,11 @@ const TaggedPhoto = () => {
       alert("Please enter a comment.");
     }
   };
-  const handleLikeClick = (src) => {
-    setPhotos((prevPhotos) =>
-      prevPhotos.map((photo) =>
-        photo.src === src
-          ? {
-              ...photo,
-              likes: photo.liked ? photo.likes - 1 : photo.likes + 1,
-              liked: !photo.liked,
-            }
-          : photo
-      )
-    );
-  };
   return (
     <div className="gallery-page">
       {/* Photo Grid */}
       <div className="photo-grid row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-        {photos.map((photo) => (
+        {taggedPhotos.map((photo) => (
           <div key={photo.src} className="photo-item">
             <img
               src={photo.src}
@@ -159,15 +129,7 @@ const TaggedPhoto = () => {
               <p style={{ marginRight: "30px" }}>
                 <strong>
                   {" "}
-                  <TbHeart
-                    style={{
-                      fontSize: "17px",
-                      marginRight: "5px",
-                      cursor: "pointer",
-                      color: selectedPhoto?.liked ? "red" : "grey",
-                    }}
-                    onClick={() => handleLikeClick(photo.src)}
-                  />
+                  <TbHeart style={{ fontSize: "17px", marginRight: "5px" }} />
                   {photo.likes}
                 </strong>{" "}
                 likes
@@ -207,15 +169,7 @@ const TaggedPhoto = () => {
                 <p style={{ marginRight: "30px" }}>
                   <strong>
                     {" "}
-                    <TbHeart
-                      style={{
-                        fontSize: "17px",
-                        marginRight: "5px",
-                        cursor: "pointer",
-                        color: selectedPhoto?.liked ? "red" : "grey",
-                      }}
-                      onClick={() => handleLikeClick(selectedPhoto?.src)}
-                    />
+                    <TbHeart style={{ fontSize: "17px", marginRight: "5px" }} />
                     {selectedPhoto?.likes}
                   </strong>{" "}
                   likes
@@ -233,13 +187,13 @@ const TaggedPhoto = () => {
               </div>
             </div>
             <div className="col-md-7 comment-section">
-              <div className="d-flex post-track">
-                <img src={selectedPhoto?.Logo} height="30px" width="30px" />
+              <div className="d-flex">
+                <img src={selectedPhoto?.Logo} height="15px" width="15px" />
                 <div>
                   {" "}
                   <h6 className="mt-1"> {selectedPhoto?.schName}</h6>
                   <p>
-                    {selectedPhoto?.postTime}.{selectedPhoto?.postDate}
+                    {selectedPhoto?.postTime},{selectedPhoto?.postDate}
                   </p>
                 </div>
               </div>
