@@ -5,7 +5,6 @@ import Icon1 from "../../../assets/images/clipboard.svg";
 import { BsCalendar4Week } from "react-icons/bs";
 
 import Note from "../../../assets/images/note.svg";
-import { Search } from "../../../components/Search/Search";
 function ExeatRequests() {
   return (
     <div className="feedbacks-div">
@@ -46,10 +45,7 @@ function ExeatRequests() {
           </div>
         </div>
         <div className="d-md-flex col-md-4 offset-md-5">
-          <div className="col-md-9">
-            {" "}
-            <Search />
-          </div>
+          <Search />
           <button className="add-feedback-btn"> Request Exeat</button>
         </div>
       </div>

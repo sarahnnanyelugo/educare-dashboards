@@ -42,11 +42,7 @@ export const generateFeedback = (numEntries, avatarList) => {
     feedbacks.push({
       Date: faker.date.anytime(Date.now()).toLocaleDateString(),
       Photo: arrayElement(avatarList),
-      Child: arrayElement([
-        "Emmanuella Ozike",
-        "Chidera Ozike",
-        "Ogechi Ozike",
-      ]),
+      Child: faker.person.firstName("female", "Male"),
       Category: arrayElement([
         "Fees",
         "Lesson",

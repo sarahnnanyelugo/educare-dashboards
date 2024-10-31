@@ -42,11 +42,7 @@ export const generateFeedback = (numEntries, avatarList) => {
     feedbacks.push({
       Date: faker.date.anytime(Date.now()).toLocaleDateString(),
       Photo: arrayElement(avatarList),
-      Child: arrayElement([
-        "Emmanuella Ozike",
-        "Chidera Ozike",
-        "Ogechi Ozike",
-      ]),
+      Child: faker.person.firstName("female"),
       Category: arrayElement([
         "Fees",
         "Lesson",
@@ -88,11 +84,12 @@ export const generatePastoralReport = (numEntries, avatarList) => {
   }
   return pastoralReport;
 };
-export const generateHostelReport = (numEntries, avatarList) => {
-  const hostelReport = [];
+export const generatePastoralReport = (numEntries, avatarList) => {
+  const pastoralReport = [];
+  // Helper function to randomly pick an array element
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
-    hostelReport.push({
+    pastoralReport.push({
       Date: faker.date.anytime(Date.now()).toLocaleDateString(),
       Photo: arrayElement(avatarList),
       Child: arrayElement([
@@ -112,7 +109,7 @@ export const generateHostelReport = (numEntries, avatarList) => {
       Action: "View",
     });
   }
-  return hostelReport;
+  return pastoralReport;
 };
 export const generateWallet = (numEntries, avatarList) => {
   const wallet = [];

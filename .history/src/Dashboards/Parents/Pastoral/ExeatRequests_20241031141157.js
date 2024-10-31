@@ -46,7 +46,7 @@ function ExeatRequests() {
           </div>
         </div>
         <div className="d-md-flex col-md-4 offset-md-5">
-          <div className="col-md-9">
+          <div className="col-md-8">
             {" "}
             <Search />
           </div>

@@ -42,11 +42,7 @@ export const generateFeedback = (numEntries, avatarList) => {
     feedbacks.push({
       Date: faker.date.anytime(Date.now()).toLocaleDateString(),
       Photo: arrayElement(avatarList),
-      Child: arrayElement([
-        "Emmanuella Ozike",
-        "Chidera Ozike",
-        "Ogechi Ozike",
-      ]),
+      Child: faker.person.firstName("female"),
       Category: arrayElement([
         "Fees",
         "Lesson",
@@ -90,6 +86,7 @@ export const generatePastoralReport = (numEntries, avatarList) => {
 };
 export const generateHostelReport = (numEntries, avatarList) => {
   const hostelReport = [];
+  // Helper function to randomly pick an array element
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
     hostelReport.push({

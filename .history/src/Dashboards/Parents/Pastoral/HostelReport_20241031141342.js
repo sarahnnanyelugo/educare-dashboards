@@ -3,10 +3,19 @@ import "./pastoral.scss";
 import { RiSearch2Line } from "react-icons/ri";
 import Icon1 from "../../../assets/images/clipboard.svg";
 import { BsCalendar4Week } from "react-icons/bs";
-
-import Note from "../../../assets/images/note.svg";
-import { Search } from "../../../components/Search/Search";
-function ExeatRequests() {
+import { AppTable } from "../../../components/AppTable/AppTable";
+import { generateHostelReport } from "../../../Utils/DataUtils";
+import Student from "../../../assets/images/student.png";
+import Peter from "../../../assets/images/peter.png";
+function HostelReport() {
+  const [report, setReport] = useState([]);
+  const headers = ["Date", "Child", "Class", "Action"];
+  const avatarList = [Student, Peter];
+  useEffect(() => {
+    const fb = generateHostelReport(4, avatarList);
+    setReport(fb);
+    console.log(fb);
+  }, []);
   return (
     <div className="feedbacks-div">
       <div className="col-md-12 heading">
@@ -45,31 +54,22 @@ function ExeatRequests() {
             </div>
           </div>
         </div>
-        <div className="d-md-flex col-md-4 offset-md-5">
-          <div className="col-md-9">
-            {" "}
-            <Search />
+        <div style={{ flexGrow: 1 }} />
+        <div className=" col-md-3 ">
+          <h6>Search</h6>
+          <div className="input-div d-flex">
+            <RiSearch2Line className="icon" />
+
+            <input placeholder="search" />
           </div>
-          <button className="add-feedback-btn"> Request Exeat</button>
         </div>
       </div>
       <hr />
-      <div className="">
-        <center>
-          <div className="col-md-2 empty-record">
-            <div className="img-div">
-              <center>
-                {" "}
-                <img src={Note} />
-              </center>
-            </div>
-            <h6>No exeat records</h6>
-            <p>All exit records would show up here</p>
-          </div>
-        </center>
+      <div className="feedbacks-table">
+        <AppTable headers={headers} rows={hostelReport} includeImages={true} />
       </div>
     </div>
   );
 }
 
-export default ExeatRequests;
+export default HostelReport;

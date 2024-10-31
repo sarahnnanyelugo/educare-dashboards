@@ -46,9 +46,10 @@ function ExeatRequests() {
           </div>
         </div>
         <div className="d-md-flex col-md-4 offset-md-5">
-          <div className="col-md-9">
-            {" "}
-            <Search />
+          <div>
+            <h6>Search</h6>
+          <Search />
+            </div>
           </div>
           <button className="add-feedback-btn"> Request Exeat</button>
         </div>
