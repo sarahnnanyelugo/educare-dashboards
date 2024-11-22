@@ -355,38 +355,23 @@ export const generateMedicalRecords = (numEntries, avatarList) => {
   return medicalRecords;
 };
 export const generateTuckShopRecord = (numEntries, avatarList) => {
-  const tuckShopRecord = [];
+  const medicalRecords = [];
   // Helper function to randomly pick an array element
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
-    tuckShopRecord.push({
-      PurchaseDate: faker.date.anytime(Date.now()).toLocaleDateString(),
+    medicalRecords.push({
+      Date: faker.date.anytime(Date.now()).toLocaleDateString(),
 
-      Item: arrayElement([
-        "Soap",
-        "Noodles",
-        "Sweets",
-        "Drawing board",
-        "Soap",
-        "Pad",
-        "Body lotion",
-        "Biro",
-        "Sucks",
+      Incident: arrayElement([
+        "Had a disturbing headache",
+        "Temperature of almost 100 degrees",
+        "Bleeding out of nose",
+        "Malaria & Typhoid",
+        "Slight headache & stomach pain",
+        "Diarrhea",
       ]),
-      Quantity: arrayElement(["1", "2"]),
-      UnitPrice: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
-      TotalPrice: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
+      Severity: arrayElement(["Mild", "Severe"]),
     });
   }
-  return tuckShopRecord;
+  return medicalRecords;
 };

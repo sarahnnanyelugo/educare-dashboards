@@ -10,7 +10,6 @@ import { Col, Row } from "react-bootstrap";
 import {
   generateAssignment,
   generateMedicalRecords,
-  generateTuckShopRecord,
 } from "../../../Utils/DataUtils";
 import { AppTable } from "../../../components/AppTable/AppTable";
 import Student from "../../../assets/images/student.png";
@@ -55,16 +54,9 @@ export const ActivityTab = () => {
   const [timetable, setTimetable] = useState([]);
   const [assignment, setAssignment] = useState([]);
   const [medicalRecord, setMedicalRecord] = useState([]);
-  const [tuckShopRecord, setTuckShopRecord] = useState([]);
   const headers = ["Subject", "Teacher", "Assignment", "Status", "Action"];
   const headers2 = ["Date", "Incident", "Severity"];
-  const headers3 = [
-    "PurchaseDate",
-    "Item",
-    "Quantity",
-    "UnitPrice",
-    "TotalPrice",
-  ];
+  const headers2 = ["Date", "Incident", "Severity"];
 
   const [selectedTerm, setSelectedTerm] = useState("");
   const [selectedSession, setSelectedSession] = useState("");
@@ -77,11 +69,6 @@ export const ActivityTab = () => {
   useEffect(() => {
     const fb = generateMedicalRecords(6, avatarList);
     setMedicalRecord(fb);
-    console.log(fb);
-  }, []);
-  useEffect(() => {
-    const fb = generateTuckShopRecord(10, avatarList);
-    setTuckShopRecord(fb);
     console.log(fb);
   }, []);
   const avatarList = [Student, Peter];
@@ -434,7 +421,7 @@ export const ActivityTab = () => {
           <hr />
           <div className="col-md-12">
             {" "}
-            <AppTable headers={headers3} rows={tuckShopRecord} />
+            <AppTable headers={headers3} rows={medicalRecord} />
           </div>
         </div>
       </div>

@@ -44,11 +44,11 @@ export const examSubjects = {
     { Subject: "Basic Technology", Score: "20" },
   ],
 };
-export const communication = {
-  headers: ["Date", "Report"],
+export const reports = {
+  headers: ["Subject", "Score"],
   rows: [
     {
-      Date: ["Monday", "16/09/2020"],
+      Date: "Monday",
       Report:
         "Ella learnt how to become a good citizen, counted shapes and became a very good lady in training",
     },

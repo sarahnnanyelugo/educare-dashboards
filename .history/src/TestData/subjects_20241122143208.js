@@ -32,7 +32,13 @@ export const subjects = [
     teacher: "Mr. Blessed",
   },
 ];
-
+export const reports = [
+  {
+    Date: "Monday",
+    Report:
+      "Ella learnt how to become a good citizen, counted shapes and became a very good lady in training",
+  },
+];
 export const examSubjects = {
   headers: ["Subject", "Score"],
   rows: [
@@ -42,15 +48,5 @@ export const examSubjects = {
     { Subject: "French", Score: "20" },
     { Subject: "Basic Science", Score: "18" },
     { Subject: "Basic Technology", Score: "20" },
-  ],
-};
-export const communication = {
-  headers: ["Date", "Report"],
-  rows: [
-    {
-      Date: ["Monday", "16/09/2020"],
-      Report:
-        "Ella learnt how to become a good citizen, counted shapes and became a very good lady in training",
-    },
   ],
 };

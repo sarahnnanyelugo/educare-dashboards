@@ -373,19 +373,7 @@ export const generateTuckShopRecord = (numEntries, avatarList) => {
         "Biro",
         "Sucks",
       ]),
-      Quantity: arrayElement(["1", "2"]),
-      UnitPrice: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
-      TotalPrice: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
+      Quantity: faker.number.bigInt({ min: 1n, max: 3n }), // 36n
     });
   }
   return tuckShopRecord;

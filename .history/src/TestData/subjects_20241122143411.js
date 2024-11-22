@@ -48,7 +48,7 @@ export const communication = {
   headers: ["Date", "Report"],
   rows: [
     {
-      Date: ["Monday", "16/09/2020"],
+      Date: "Monday",
       Report:
         "Ella learnt how to become a good citizen, counted shapes and became a very good lady in training",
     },

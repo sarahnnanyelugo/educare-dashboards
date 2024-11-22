@@ -10,7 +10,7 @@ import { Col, Row } from "react-bootstrap";
 import {
   generateAssignment,
   generateMedicalRecords,
-  generateTuckShopRecord,
+  generateTuckShopRecords,
 } from "../../../Utils/DataUtils";
 import { AppTable } from "../../../components/AppTable/AppTable";
 import Student from "../../../assets/images/student.png";
@@ -80,7 +80,7 @@ export const ActivityTab = () => {
     console.log(fb);
   }, []);
   useEffect(() => {
-    const fb = generateTuckShopRecord(10, avatarList);
+    const fb = generateTuckShopRecords(10, avatarList);
     setTuckShopRecord(fb);
     console.log(fb);
   }, []);

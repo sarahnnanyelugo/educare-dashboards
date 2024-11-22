@@ -10,13 +10,12 @@ import { Col, Row } from "react-bootstrap";
 import {
   generateAssignment,
   generateMedicalRecords,
-  generateTuckShopRecord,
 } from "../../../Utils/DataUtils";
 import { AppTable } from "../../../components/AppTable/AppTable";
 import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
 import { ResultChart } from "../../../components/ResultChart/ResultChart";
-import { examSubjects, communication } from "../../../TestData/subjects";
+import { examSubjects } from "../../../TestData/subjects";
 const customData = [100, 80, 50, 100, 90, 70, 40, 90, 100, 80, 70];
 const customLabels = [
   "Math",
@@ -55,16 +54,8 @@ export const ActivityTab = () => {
   const [timetable, setTimetable] = useState([]);
   const [assignment, setAssignment] = useState([]);
   const [medicalRecord, setMedicalRecord] = useState([]);
-  const [tuckShopRecord, setTuckShopRecord] = useState([]);
   const headers = ["Subject", "Teacher", "Assignment", "Status", "Action"];
   const headers2 = ["Date", "Incident", "Severity"];
-  const headers3 = [
-    "PurchaseDate",
-    "Item",
-    "Quantity",
-    "UnitPrice",
-    "TotalPrice",
-  ];
 
   const [selectedTerm, setSelectedTerm] = useState("");
   const [selectedSession, setSelectedSession] = useState("");
@@ -77,11 +68,6 @@ export const ActivityTab = () => {
   useEffect(() => {
     const fb = generateMedicalRecords(6, avatarList);
     setMedicalRecord(fb);
-    console.log(fb);
-  }, []);
-  useEffect(() => {
-    const fb = generateTuckShopRecord(10, avatarList);
-    setTuckShopRecord(fb);
     console.log(fb);
   }, []);
   const avatarList = [Student, Peter];
@@ -339,7 +325,7 @@ export const ActivityTab = () => {
               </div>
             </div>
             <div style={{ flexGrow: 1 }} />
-            <div className="mt-3">
+            <div>
               {" "}
               <button className="pdf-download-btn">
                 {" "}
@@ -365,78 +351,8 @@ export const ActivityTab = () => {
             </div>
           </div>
         </div>
-        <div className={`panel ${checkActive(6, "active2")}`}>
-          <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3 col-md-7 mt-3">
-            <div className=" col">
-              <h6>Session</h6>
-
-              <div className="card col-md-12">
-                <Select
-                  options={sessions}
-                  value={selectedSession}
-                  onChange={setSelectedSession}
-                  placeholder="Select Session"
-                  Icon={Icon3}
-                />
-              </div>
-            </div>
-            <div className=" col">
-              <h6>Term</h6>
-              <div className="card col-md-12">
-                <Select
-                  options={terms}
-                  value={selectedTerm}
-                  onChange={setSelectedTerm}
-                  placeholder="Select Term"
-                  Icon={Icon3}
-                />
-              </div>
-            </div>{" "}
-          </div>
-          <hr />
-          <div className="col-md-12">
-            {" "}
-            <AppTable
-              headers={communication.headers}
-              rows={communication.rows}
-            />
-          </div>
-        </div>
-        <div className={`panel ${checkActive(7, "active2")}`}>
-          {" "}
-          <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3 col-md-7 mt-3">
-            <div className=" col">
-              <h6>Session</h6>
-
-              <div className="card col-md-12">
-                <Select
-                  options={sessions}
-                  value={selectedSession}
-                  onChange={setSelectedSession}
-                  placeholder="Select Session"
-                  Icon={Icon3}
-                />
-              </div>
-            </div>
-            <div className=" col">
-              <h6>Term</h6>
-              <div className="card col-md-12">
-                <Select
-                  options={terms}
-                  value={selectedTerm}
-                  onChange={setSelectedTerm}
-                  placeholder="Select Term"
-                  Icon={Icon3}
-                />
-              </div>
-            </div>{" "}
-          </div>
-          <hr />
-          <div className="col-md-12">
-            {" "}
-            <AppTable headers={headers3} rows={tuckShopRecord} />
-          </div>
-        </div>
+        <div className={`panel ${checkActive(6, "active2")}`}> 6</div>
+        <div className={`panel ${checkActive(7, "active2")}`}> 7</div>
       </div>
     </div>
   );

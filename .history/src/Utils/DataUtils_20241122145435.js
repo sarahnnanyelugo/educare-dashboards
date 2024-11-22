@@ -364,28 +364,13 @@ export const generateTuckShopRecord = (numEntries, avatarList) => {
 
       Item: arrayElement([
         "Soap",
-        "Noodles",
-        "Sweets",
-        "Drawing board",
-        "Soap",
-        "Pad",
-        "Body lotion",
-        "Biro",
-        "Sucks",
+        "Temperature of almost 100 degrees",
+        "Bleeding out of nose",
+        "Malaria & Typhoid",
+        "Slight headache & stomach pain",
+        "Diarrhea",
       ]),
-      Quantity: arrayElement(["1", "2"]),
-      UnitPrice: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
-      TotalPrice: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
+      Severity: arrayElement(["Mild", "Severe"]),
     });
   }
   return tuckShopRecord;
