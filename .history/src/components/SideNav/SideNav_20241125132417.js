@@ -118,104 +118,35 @@ export const SideNav = () => {
                 marginTop: "30px",
               }}
             >
-              {item.accordion ? (
-                <Accordion defaultActiveKey="">
-                  <Accordion.Item eventKey={index.toString()}>
-                    <Accordion.Header
-                      onClick={() => handleAccordionToggle(index.toString())}
-                      style={{
-                        display: "flex", // Enable flexbox
-                      }}
-                    >
-                      <IconComponent
-                        style={{
-                          color:
-                            activeAccordion === index.toString()
-                              ? "#0098DA"
-                              : "#191919",
-                          marginRight: isCollapsed ? "0" : "10px",
-                          transition: "color 0.3s ease",
-                        }}
-                      />
-                      {!isCollapsed && (
-                        <span
-                          style={{
-                            color:
-                              activeAccordion === index.toString()
-                                ? "#0098DA"
-                                : "#191919",
-                            transition: "color 0.3s ease",
-                            flexGrow: 1,
-                          }}
-                        >
-                          {item.name}
-                        </span>
-                      )}
-                      <span
-                        style={{
-                          marginLeft: "",
-                        }}
-                      >
-                        {activeAccordion === index.toString() ? (
-                          <MdKeyboardArrowUp style={{ fontSize: "14px" }} />
-                        ) : (
-                          <IoIosArrowDown style={{ fontSize: "14px" }} />
-                        )}
-                      </span>
-                    </Accordion.Header>
-                    <Accordion.Body>
-                      <ListGroup
-                        style={{ paddingLeft: "0", listStyleType: "none" }}
-                      >
-                        {item.accordionContent.map((contentItem, idx) => (
-                          <ListGroup.Item
-                            key={idx}
-                            style={{ padding: "5px 0" }}
-                          >
-                            <NavLink
-                              to={contentItem.url}
-                              className={({ isActive }) =>
-                                isActive ? "active-link" : ""
-                              }
-                            >
-                              {contentItem.name}
-                            </NavLink>
-                          </ListGroup.Item>
-                        ))}
-                      </ListGroup>
-                    </Accordion.Body>
-                  </Accordion.Item>
-                </Accordion>
-              ) : (
-                <NavLink
-                  to={item.url}
-                  className={({ isActive }) => (isActive ? "active-link" : "")}
+              <NavLink
+                to={item.url}
+                className={({ isActive }) => (isActive ? "active-link" : "")}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                }}
+              >
+                {/* Render the icon with dynamic styling */}
+                <IconComponent
                   style={{
-                    display: "flex",
-                    alignItems: "center",
-                    textDecoration: "none",
+                    color: ({ isActive }) => (isActive ? "blue" : "grey"),
+                    marginRight: isCollapsed ? "0" : "10px",
+                    transition: "color 0.3s ease",
                   }}
-                >
-                  {/* Icon and link for non-accordion items */}
-                  <IconComponent
+                />
+                {/* Show link text only if the sidebar is expanded */}
+                {!isCollapsed && (
+                  <span
                     style={{
                       color: ({ isActive }) => (isActive ? "blue" : "grey"),
-                      marginRight: isCollapsed ? "0" : "10px",
                       transition: "color 0.3s ease",
                     }}
-                  />
-                  {!isCollapsed && (
-                    <span
-                      style={{
-                        color: ({ isActive }) => (isActive ? "blue" : "grey"),
-                        transition: "color 0.3s ease",
-                      }}
-                    >
-                      {item.name}
-                    </span>
-                  )}
-                </NavLink>
-              )}
+                  >
+                    {item.name}
+                  </span>
+                )}
+              </NavLink>
             </ListGroup.Item>
           );
         })}

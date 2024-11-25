@@ -50,9 +50,10 @@
     margin-left: 0 !important;
     font-size: 14px;
     font-family: rebondG-Medium !important;
-
+    font-weight: bold;
+    font-weight: normal !important;
     background: transparent !important;
-    width: 100% !important;
+    width: 100%;
   }
   .accordion-body {
     border-left: 1px solid #e7e7e7;
@@ -66,7 +67,6 @@
   }
   .accordion-button:not(.collapsed) {
     border-bottom: 0 !important;
-    width: 100% !important;
   }
   .accordion-button::after {
     display: none;

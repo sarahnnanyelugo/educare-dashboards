@@ -125,8 +125,10 @@ export const SideNav = () => {
                       onClick={() => handleAccordionToggle(index.toString())}
                       style={{
                         display: "flex", // Enable flexbox
+                        alignItems: "center",
                       }}
                     >
+                      {/* Icon and link for accordion header */}
                       <IconComponent
                         style={{
                           color:
@@ -164,14 +166,9 @@ export const SideNav = () => {
                       </span>
                     </Accordion.Header>
                     <Accordion.Body>
-                      <ListGroup
-                        style={{ paddingLeft: "0", listStyleType: "none" }}
-                      >
+                      <ol style={{ paddingLeft: "0", listStyleType: "none" }}>
                         {item.accordionContent.map((contentItem, idx) => (
-                          <ListGroup.Item
-                            key={idx}
-                            style={{ padding: "5px 0" }}
-                          >
+                          <li key={idx} style={{ padding: "5px 0" }}>
                             <NavLink
                               to={contentItem.url}
                               className={({ isActive }) =>
@@ -180,9 +177,9 @@ export const SideNav = () => {
                             >
                               {contentItem.name}
                             </NavLink>
-                          </ListGroup.Item>
+                          </li>
                         ))}
-                      </ListGroup>
+                      </ol>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>

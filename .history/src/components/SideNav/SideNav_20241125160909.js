@@ -127,16 +127,8 @@ export const SideNav = () => {
                         display: "flex", // Enable flexbox
                       }}
                     >
-                      <IconComponent
-                        style={{
-                          color:
-                            activeAccordion === index.toString()
-                              ? "#0098DA"
-                              : "#191919",
-                          marginRight: isCollapsed ? "0" : "10px",
-                          transition: "color 0.3s ease",
-                        }}
-                      />
+                      {/* Icon and link for accordion header */}
+
                       {!isCollapsed && (
                         <span
                           style={{
@@ -164,14 +156,9 @@ export const SideNav = () => {
                       </span>
                     </Accordion.Header>
                     <Accordion.Body>
-                      <ListGroup
-                        style={{ paddingLeft: "0", listStyleType: "none" }}
-                      >
+                      <ol style={{ paddingLeft: "0", listStyleType: "none" }}>
                         {item.accordionContent.map((contentItem, idx) => (
-                          <ListGroup.Item
-                            key={idx}
-                            style={{ padding: "5px 0" }}
-                          >
+                          <li key={idx} style={{ padding: "5px 0" }}>
                             <NavLink
                               to={contentItem.url}
                               className={({ isActive }) =>
@@ -180,9 +167,9 @@ export const SideNav = () => {
                             >
                               {contentItem.name}
                             </NavLink>
-                          </ListGroup.Item>
+                          </li>
                         ))}
-                      </ListGroup>
+                      </ol>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>

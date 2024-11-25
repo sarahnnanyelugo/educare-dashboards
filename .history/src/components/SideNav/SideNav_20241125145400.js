@@ -124,36 +124,42 @@ export const SideNav = () => {
                     <Accordion.Header
                       onClick={() => handleAccordionToggle(index.toString())}
                       style={{
-                        display: "flex", // Enable flexbox
+                        display: "flex",
+                        alignItems: "center",
+                        width: "100%",
+                        justifyContent: "space-between", // Space items apart
                       }}
                     >
-                      <IconComponent
-                        style={{
-                          color:
-                            activeAccordion === index.toString()
-                              ? "#0098DA"
-                              : "#191919",
-                          marginRight: isCollapsed ? "0" : "10px",
-                          transition: "color 0.3s ease",
-                        }}
-                      />
-                      {!isCollapsed && (
-                        <span
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <IconComponent
                           style={{
                             color:
                               activeAccordion === index.toString()
-                                ? "#0098DA"
-                                : "#191919",
+                                ? "blue"
+                                : "grey",
+                            marginRight: isCollapsed ? "0" : "10px",
                             transition: "color 0.3s ease",
-                            flexGrow: 1,
                           }}
-                        >
-                          {item.name}
-                        </span>
-                      )}
+                        />
+                        {!isCollapsed && (
+                          <span
+                            style={{
+                              color:
+                                activeAccordion === index.toString()
+                                  ? "blue"
+                                  : "grey",
+                              transition: "color 0.3s ease",
+                            }}
+                          >
+                            {item.name}
+                          </span>
+                        )}
+                      </div>
                       <span
                         style={{
                           marginLeft: "",
+                          display: "flex",
+                          alignItems: "center",
                         }}
                       >
                         {activeAccordion === index.toString() ? (
@@ -164,14 +170,9 @@ export const SideNav = () => {
                       </span>
                     </Accordion.Header>
                     <Accordion.Body>
-                      <ListGroup
-                        style={{ paddingLeft: "0", listStyleType: "none" }}
-                      >
+                      <ol style={{ paddingLeft: "0", listStyleType: "none" }}>
                         {item.accordionContent.map((contentItem, idx) => (
-                          <ListGroup.Item
-                            key={idx}
-                            style={{ padding: "5px 0" }}
-                          >
+                          <li key={idx} style={{ padding: "5px 0" }}>
                             <NavLink
                               to={contentItem.url}
                               className={({ isActive }) =>
@@ -180,9 +181,9 @@ export const SideNav = () => {
                             >
                               {contentItem.name}
                             </NavLink>
-                          </ListGroup.Item>
+                          </li>
                         ))}
-                      </ListGroup>
+                      </ol>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>

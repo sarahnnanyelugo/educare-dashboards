@@ -12,7 +12,6 @@ import Icon1 from "../../../assets/images/wallet.png";
 import Icon2 from "../../../assets/images/fees.png";
 import Icon3 from "../../../assets/images/clipboard.svg";
 import { Search } from "../../../components/Search/Search";
-import AddFeedBack from "./AddFeedBack";
 const terms = [
   { value: "first term", label: "First Term" },
   { value: "second term", label: "Second Term" },
@@ -79,8 +78,7 @@ function Feedbacks() {
               {" "}
               <Search />
             </div>
-            <AddFeedBack />
-            {/* <button className="add-feedback-btn"> Add Feedback</button> */}
+            <button className="add-feedback-btn"> Add Feedback</button>
           </div>
         </div>
         <hr />

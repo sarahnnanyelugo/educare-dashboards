@@ -124,15 +124,17 @@ export const SideNav = () => {
                     <Accordion.Header
                       onClick={() => handleAccordionToggle(index.toString())}
                       style={{
-                        display: "flex", // Enable flexbox
+                        display: "flex",
+                        alignItems: "center",
                       }}
                     >
+                      {/* Icon and link for accordion header */}
                       <IconComponent
                         style={{
                           color:
                             activeAccordion === index.toString()
-                              ? "#0098DA"
-                              : "#191919",
+                              ? "blue"
+                              : "grey",
                           marginRight: isCollapsed ? "0" : "10px",
                           transition: "color 0.3s ease",
                         }}
@@ -142,10 +144,9 @@ export const SideNav = () => {
                           style={{
                             color:
                               activeAccordion === index.toString()
-                                ? "#0098DA"
-                                : "#191919",
+                                ? "blue"
+                                : "grey",
                             transition: "color 0.3s ease",
-                            flexGrow: 1,
                           }}
                         >
                           {item.name}
@@ -153,25 +154,22 @@ export const SideNav = () => {
                       )}
                       <span
                         style={{
-                          marginLeft: "",
+                          marginLeft: "auto",
+                          display: "flex",
+                          alignItems: "center",
                         }}
                       >
                         {activeAccordion === index.toString() ? (
-                          <MdKeyboardArrowUp style={{ fontSize: "14px" }} />
+                          <MdKeyboardArrowUp style={{ fontSize: "10px" }} />
                         ) : (
-                          <IoIosArrowDown style={{ fontSize: "14px" }} />
+                          <IoIosArrowDown style={{ fontSize: "10px" }} />
                         )}
                       </span>
                     </Accordion.Header>
                     <Accordion.Body>
-                      <ListGroup
-                        style={{ paddingLeft: "0", listStyleType: "none" }}
-                      >
+                      <ol style={{ paddingLeft: "0", listStyleType: "none" }}>
                         {item.accordionContent.map((contentItem, idx) => (
-                          <ListGroup.Item
-                            key={idx}
-                            style={{ padding: "5px 0" }}
-                          >
+                          <li key={idx} style={{ padding: "5px 0" }}>
                             <NavLink
                               to={contentItem.url}
                               className={({ isActive }) =>
@@ -180,9 +178,9 @@ export const SideNav = () => {
                             >
                               {contentItem.name}
                             </NavLink>
-                          </ListGroup.Item>
+                          </li>
                         ))}
-                      </ListGroup>
+                      </ol>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
