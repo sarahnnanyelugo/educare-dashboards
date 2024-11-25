@@ -22,9 +22,10 @@ function FeedBackForm(props) {
         <div className="feed-back-form col-md-12">
           {" "}
           <h5>Add Feedback</h5>
-          <form className="col-md-12" style={{ width: "450px" }}>
+          <form className="col-md-12">
             <h6>Category</h6>
-            <div className="col-md-8">
+            <div className="col-md-12">
+              {" "}
               <Select
                 options={category}
                 value={selectedCategory}
@@ -34,7 +35,6 @@ function FeedBackForm(props) {
             </div>
             <h6>Child</h6>
             <h6>Details</h6>
-            <textarea />
           </form>
         </div>
       </Modal.Body>

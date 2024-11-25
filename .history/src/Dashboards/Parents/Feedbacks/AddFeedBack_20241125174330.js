@@ -24,7 +24,7 @@ function FeedBackForm(props) {
           <h5>Add Feedback</h5>
           <form className="col-md-12" style={{ width: "450px" }}>
             <h6>Category</h6>
-            <div className="col-md-8">
+            <div className="col-md-6">
               <Select
                 options={category}
                 value={selectedCategory}

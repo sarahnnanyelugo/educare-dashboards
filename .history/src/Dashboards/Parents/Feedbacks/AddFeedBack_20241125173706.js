@@ -14,7 +14,7 @@ function FeedBackForm(props) {
   return (
     <Modal
       {...props}
-      size="md"
+      size=""
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
@@ -22,9 +22,9 @@ function FeedBackForm(props) {
         <div className="feed-back-form col-md-12">
           {" "}
           <h5>Add Feedback</h5>
-          <form className="col-md-12" style={{ width: "450px" }}>
+          <form className="col-md-12">
             <h6>Category</h6>
-            <div className="col-md-8">
+            <div className="col-md-12" style={{ width: "550px" }}>
               <Select
                 options={category}
                 value={selectedCategory}

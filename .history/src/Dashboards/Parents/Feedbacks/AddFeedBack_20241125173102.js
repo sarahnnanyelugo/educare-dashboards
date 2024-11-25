@@ -1,7 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import React, { useState } from "react";
-import Select from "../../../components/Select/Select";
+import React from "react";
 const category = [
   { value: "2020/2022", label: "2020/2022" },
   { value: "2021/2022", label: "2021/2022" },
@@ -19,22 +18,20 @@ function FeedBackForm(props) {
       centered
     >
       <Modal.Body>
-        <div className="feed-back-form col-md-12">
+        <div className="feed-back-form">
           {" "}
           <h5>Add Feedback</h5>
-          <form className="col-md-12" style={{ width: "450px" }}>
+          <form>
             <h6>Category</h6>
-            <div className="col-md-8">
-              <Select
-                options={category}
-                value={selectedCategory}
-                onChange={setSelectedCategory}
-                placeholder="Select Session"
-              />
-            </div>
+            <Select
+              options={category}
+              value={selectedCategory}
+              onChange={setSelectedCategory}
+              placeholder="Select Session"
+              Icon={Icon3}
+            />
             <h6>Child</h6>
             <h6>Details</h6>
-            <textarea />
           </form>
         </div>
       </Modal.Body>
