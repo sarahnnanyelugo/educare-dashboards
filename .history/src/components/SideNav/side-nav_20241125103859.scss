@@ -26,16 +26,6 @@
       }
     }
   }
-  .list-group-item {
-    margin: 5px 15px !important;
-    padding: 8px 10px 8px 5px;
-    border: none;
-    &:hover {
-      border-radius: 6px;
-
-      background: #fafafa;
-    }
-  }
   ol {
     // background: red;
     li {
@@ -79,9 +69,5 @@
     padding: 8px 10px 8px 5px;
     font-size: 14px;
     background-color: #e6f7ff;
-    width: 100% !important;
   }
-}
-.link-span {
-  width: 100% !important;
 }

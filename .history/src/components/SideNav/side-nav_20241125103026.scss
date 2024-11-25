@@ -1,7 +1,6 @@
 .side-nav-div {
   background: rgb(255, 255, 255);
   padding: 0 !important;
-
   .nav-inner {
     padding: 25px 5px 5px 10px;
     display: flex;
@@ -24,16 +23,6 @@
 
         background: #fafafa;
       }
-    }
-  }
-  .list-group-item {
-    margin: 5px 15px !important;
-    padding: 8px 10px 8px 5px;
-    border: none;
-    &:hover {
-      border-radius: 6px;
-
-      background: #fafafa;
     }
   }
   ol {
@@ -76,12 +65,8 @@
   .active-link {
     color: #0098da; /* Change to your desired active link color */
     font-weight: bold;
-    padding: 8px 10px 8px 5px;
+    padding: 8px 60px 8px 5px;
     font-size: 14px;
     background-color: #e6f7ff;
-    width: 100% !important;
   }
-}
-.link-span {
-  width: 100% !important;
 }

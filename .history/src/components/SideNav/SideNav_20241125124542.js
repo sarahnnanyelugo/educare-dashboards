@@ -105,7 +105,7 @@ export const SideNav = () => {
         </button>
       </div>
 
-      <ListGroup style={{ marginTop: "30px" }}>
+      <ListGroup style={{ marginTop: "130px" }}>
         {SidebarData.map((item, index) => {
           const IconComponent = iconMap[item.icon]; // Dynamically select the icon
 
@@ -115,7 +115,6 @@ export const SideNav = () => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                marginTop: "30px",
               }}
             >
               <IconComponent /> {/* Render the icon */}
@@ -175,17 +174,14 @@ export const SideNav = () => {
                       </Accordion.Item>
                     </Accordion>
                   ) : (
-                    <div className="link-span col-md-12">
-                      {" "}
-                      <NavLink
-                        to={item.url}
-                        className={({ isActive }) =>
-                          isActive ? "active-link" : ""
-                        }
-                      >
-                        {item.name}
-                      </NavLink>
-                    </div>
+                    <NavLink
+                      to={item.url}
+                      className={({ isActive }) =>
+                        isActive ? "active-link" : ""
+                      }
+                    >
+                      {item.name}
+                    </NavLink>
                   )}
                 </span>
               )}

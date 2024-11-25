@@ -175,7 +175,7 @@ export const SideNav = () => {
                       </Accordion.Item>
                     </Accordion>
                   ) : (
-                    <div className="link-span col-md-12">
+                    <div className="link-span">
                       {" "}
                       <NavLink
                         to={item.url}

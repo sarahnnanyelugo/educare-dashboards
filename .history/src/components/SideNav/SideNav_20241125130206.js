@@ -175,7 +175,7 @@ export const SideNav = () => {
                       </Accordion.Item>
                     </Accordion>
                   ) : (
-                    <div className="link-span col-md-12">
+                    <li>
                       {" "}
                       <NavLink
                         to={item.url}
@@ -185,7 +185,7 @@ export const SideNav = () => {
                       >
                         {item.name}
                       </NavLink>
-                    </div>
+                    </li>
                   )}
                 </span>
               )}

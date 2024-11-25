@@ -115,10 +115,9 @@ export const SideNav = () => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                marginTop: "30px",
               }}
             >
-              <IconComponent /> {/* Render the icon */}
+              {/* Render the icon */}
               {!isCollapsed && (
                 <span style={{ marginLeft: "10px" }}>
                   {item.accordion ? (
@@ -175,17 +174,14 @@ export const SideNav = () => {
                       </Accordion.Item>
                     </Accordion>
                   ) : (
-                    <div className="link-span col-md-12">
-                      {" "}
-                      <NavLink
-                        to={item.url}
-                        className={({ isActive }) =>
-                          isActive ? "active-link" : ""
-                        }
-                      >
-                        {item.name}
-                      </NavLink>
-                    </div>
+                    <NavLink
+                      to={item.url}
+                      className={({ isActive }) =>
+                        isActive ? "active-link" : ""
+                      }
+                    >
+                      {item.name}
+                    </NavLink>
                   )}
                 </span>
               )}

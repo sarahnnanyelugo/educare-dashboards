@@ -8,7 +8,6 @@ import { SidebarData } from "./SidebarData";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { LuArrowLeftToLine } from "react-icons/lu";
-import ListGroup from "react-bootstrap/ListGroup";
 
 // Import the JSON file
 import "./side-nav.scss";
@@ -105,17 +104,16 @@ export const SideNav = () => {
         </button>
       </div>
 
-      <ListGroup style={{ marginTop: "30px" }}>
+      <ul style={{ listStyleType: "none", padding: "0", marginTop: "30px" }}>
         {SidebarData.map((item, index) => {
           const IconComponent = iconMap[item.icon]; // Dynamically select the icon
 
           return (
-            <ListGroup.Item
+            <li
               key={index}
               style={{
                 display: "flex",
                 alignItems: "center",
-                marginTop: "30px",
               }}
             >
               <IconComponent /> {/* Render the icon */}
@@ -175,24 +173,21 @@ export const SideNav = () => {
                       </Accordion.Item>
                     </Accordion>
                   ) : (
-                    <div className="link-span col-md-12">
-                      {" "}
-                      <NavLink
-                        to={item.url}
-                        className={({ isActive }) =>
-                          isActive ? "active-link" : ""
-                        }
-                      >
-                        {item.name}
-                      </NavLink>
-                    </div>
+                    <NavLink
+                      to={item.url}
+                      className={({ isActive }) =>
+                        isActive ? "active-link" : ""
+                      }
+                    >
+                      {item.name}
+                    </NavLink>
                   )}
                 </span>
               )}
-            </ListGroup.Item>
+            </li>
           );
         })}
-      </ListGroup>
+      </ul>
     </div>
   );
 };

@@ -175,17 +175,15 @@ export const SideNav = () => {
                       </Accordion.Item>
                     </Accordion>
                   ) : (
-                    <div className="link-span col-md-12">
-                      {" "}
-                      <NavLink
-                        to={item.url}
-                        className={({ isActive }) =>
-                          isActive ? "active-link" : ""
-                        }
-                      >
-                        {item.name}
-                      </NavLink>
-                    </div>
+                    <NavLink
+                      style={{ width: "100%" }}
+                      to={item.url}
+                      className={({ isActive }) =>
+                        isActive ? "active-link" : ""
+                      }
+                    >
+                      {item.name}
+                    </NavLink>
                   )}
                 </span>
               )}
