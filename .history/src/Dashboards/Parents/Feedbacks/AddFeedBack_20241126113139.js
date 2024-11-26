@@ -29,7 +29,7 @@ function FeedBackForm(props) {
                 options={category}
                 value={selectedCategory}
                 onChange={setSelectedCategory}
-                placeholder="Select a feedback category"
+                placeholder="Select Session"
               />
             </div>
             <h6>Child</h6>
@@ -45,9 +45,7 @@ function FeedBackForm(props) {
             </div>
             <div className="d-flex mt-3 feed-back-btns">
               <div style={{ flexGrow: 1 }} />
-              <button className="cancel-btn" onClick={props.onHide}>
-                Cancel
-              </button>
+              <button>Cancel</button>
               <button className="submit-btn">Submit</button>
             </div>
           </form>

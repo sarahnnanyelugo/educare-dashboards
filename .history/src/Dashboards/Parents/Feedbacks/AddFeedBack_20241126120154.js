@@ -62,9 +62,7 @@ function AddFeedBack() {
 
   return (
     <>
-      <button className="add-feedback-btn" onClick={() => setModalShow(true)}>
-        Add FeedBack
-      </button>
+      <button className="add-feedback-btn">Add FeedBack</button>
 
       <FeedBackForm show={modalShow} onHide={() => setModalShow(false)} />
     </>

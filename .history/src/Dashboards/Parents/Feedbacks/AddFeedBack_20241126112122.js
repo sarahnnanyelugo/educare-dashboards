@@ -23,33 +23,18 @@ function FeedBackForm(props) {
           {" "}
           <h5>Add Feedback</h5>
           <form className="col-md-12" style={{ width: "450px" }}>
-            <h6>Category</h6>
+            <h6 className="mt-4">Category</h6>
             <div className="col-md-8 card">
               <Select
                 options={category}
                 value={selectedCategory}
                 onChange={setSelectedCategory}
-                placeholder="Select a feedback category"
+                placeholder="Select Session"
               />
             </div>
             <h6>Child</h6>
-            <div className="">
-              {" "}
-              <input placeholder="Add child" />
-            </div>
-
             <h6>Details</h6>
-            <div className="card">
-              {" "}
-              <textarea placeholder="Enter details" />
-            </div>
-            <div className="d-flex mt-3 feed-back-btns">
-              <div style={{ flexGrow: 1 }} />
-              <button className="cancel-btn" onClick={props.onHide}>
-                Cancel
-              </button>
-              <button className="submit-btn">Submit</button>
-            </div>
+            <textarea />
           </form>
         </div>
       </Modal.Body>

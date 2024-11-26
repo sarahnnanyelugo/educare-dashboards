@@ -53,27 +53,14 @@
   .feed-back-btns {
     font-family: rebondBook;
     button {
-      margin: 5px;
+      margin: px;
       border-radius: 100px;
       padding: 4px 15px;
     }
     .cancel-btn {
+      border: 1px solid var(--100-cecfd0);
+      background: #ffffff 0% 0% no-repeat padding-box;
       border: 1px solid #cecfd0;
-      background: #ffffff 0% 0%;
-      &:hover {
-        background: solid 1px #e7e7e7;
-        border: solid 1px #414244;
-        color: #414244;
-      }
-    }
-    .submit-btn {
-      background: #0098da 0% 0% no-repeat padding-box;
-      border: 1px solid #414244;
-      color: #fff;
-      &:hover {
-        background: #005b83 0% 0% no-repeat padding-box;
-        border: 1px solid #414244;
-      }
     }
   }
 }
