@@ -114,7 +114,7 @@ export const Store = () => {
         <p>
           {" "}
           <IoCartOutline />
-          <sup className="cart-count">{cartCount}</sup> Cart
+          Cart
         </p>
       </div>
 

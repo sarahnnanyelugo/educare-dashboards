@@ -39,8 +39,6 @@ import { FaAngleRight } from "react-icons/fa6";
 import { IoCartOutline } from "react-icons/io5";
 
 export const Store = () => {
-  const [cartCount, setCartCount] = useState(0);
-
   const [storeItems, setStoreItems] = useState([]);
   const [filterCategory, setFilterCategory] = useState("All Products"); // Step 1: Create filter state
   const [category, setCategory] = useState("All Products"); // Step 1: Create filter state
@@ -108,16 +106,7 @@ export const Store = () => {
   };
   return (
     <>
-      <div className="d-flex store-head">
-        {" "}
-        <h5 style={{ flexGrow: 1 }}>Store</h5>
-        <p>
-          {" "}
-          <IoCartOutline />
-          <sup className="cart-count">{cartCount}</sup> Cart
-        </p>
-      </div>
-
+      <h5 style={{ paddingLeft: "20px", marginTop: "20px" }}>Store</h5>
       <div className="store-container">
         <div className="store-container-inner">
           {" "}
@@ -167,13 +156,9 @@ export const Store = () => {
             </div>
             <div className="items-div col-md-10">
               {" "}
-              <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 ">
+              <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 ">
                 {storeItems.map((data, index) => (
-                  <StoreItem
-                    data={data}
-                    key={index}
-                    onAddToCart={() => setCartCount(cartCount + 1)}
-                  />
+                  <StoreItem data={data} key={index} />
                 ))}
               </div>
             </div>

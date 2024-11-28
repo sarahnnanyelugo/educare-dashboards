@@ -1,7 +1,7 @@
 import React from "react";
 import { IoCartOutline } from "react-icons/io5";
 
-export const StoreItem = ({ data, onAddToCart }) => {
+export const StoreItem = ({ data }) => {
   const { Photo, amount, productName } = data;
   return (
     <div className="store-item col-md-12">
@@ -11,7 +11,7 @@ export const StoreItem = ({ data, onAddToCart }) => {
         <small style={{ flexGrow: 1 }}>{productName}</small>
         <h6>{amount}</h6>
       </div>
-      <button onClick={onAddToCart}>
+      <button>
         <IoCartOutline />
         Add to cart
       </button>

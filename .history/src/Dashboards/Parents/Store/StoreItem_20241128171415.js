@@ -11,7 +11,7 @@ export const StoreItem = ({ data, onAddToCart }) => {
         <small style={{ flexGrow: 1 }}>{productName}</small>
         <h6>{amount}</h6>
       </div>
-      <button onClick={onAddToCart}>
+      <button>
         <IoCartOutline />
         Add to cart
       </button>

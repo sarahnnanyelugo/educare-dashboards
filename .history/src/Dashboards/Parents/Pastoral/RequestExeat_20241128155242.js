@@ -3,12 +3,12 @@ import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
 import Select from "../../../components/Select/Select";
 const category = [
-  { value: "2020/2022", label: "2020/2022" },
-  { value: "2021/2022", label: "2021/2022" },
-  { value: "2022/2023", label: "2022/2023" },
-  { value: "2023/2024", label: "2023/2024" },
+  { value: "school fees", label: "School fees" },
+  { value: "health reason", label: "Health reason" },
+  { value: "travel", label: "Travel" },
+  { value: "excursion", label: "Excursion" },
 ];
-function FeedBackForm(props) {
+function RequestForm(props) {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   return (
@@ -21,15 +21,15 @@ function FeedBackForm(props) {
       <Modal.Body>
         <div className="feed-back-form col-md-12">
           {" "}
-          <h5>Add Feedback</h5>
-          <form className="col-md-12 feedback-form ">
-            <h6>Category</h6>
-            <div className="col-md-8 card">
+          <h5>Request Exeat</h5>
+          <form className="col-md-12" style={{ width: "450px" }}>
+            <h6>Type</h6>
+            <div className=" card">
               <Select
                 options={category}
                 value={selectedCategory}
                 onChange={setSelectedCategory}
-                placeholder="Select a feedback category"
+                placeholder="Select type"
               />
             </div>
             <h6>Child</h6>
@@ -57,18 +57,18 @@ function FeedBackForm(props) {
   );
 }
 
-function AddFeedBack() {
+function RequestExeat() {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <>
       <button className="add-feedback-btn" onClick={() => setModalShow(true)}>
-        Add FeedBack
+        Request Exeat
       </button>
 
-      <FeedBackForm show={modalShow} onHide={() => setModalShow(false)} />
+      <RequestForm show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 }
 
-export default AddFeedBack;
+export default RequestExeat;

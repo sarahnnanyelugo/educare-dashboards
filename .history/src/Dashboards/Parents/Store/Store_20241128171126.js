@@ -114,7 +114,7 @@ export const Store = () => {
         <p>
           {" "}
           <IoCartOutline />
-          <sup className="cart-count">{cartCount}</sup> Cart
+          Cart
         </p>
       </div>
 
@@ -169,11 +169,7 @@ export const Store = () => {
               {" "}
               <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 ">
                 {storeItems.map((data, index) => (
-                  <StoreItem
-                    data={data}
-                    key={index}
-                    onAddToCart={() => setCartCount(cartCount + 1)}
-                  />
+                  <StoreItem data={data} key={index} />
                 ))}
               </div>
             </div>

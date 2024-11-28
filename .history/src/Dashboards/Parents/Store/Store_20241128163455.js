@@ -39,8 +39,6 @@ import { FaAngleRight } from "react-icons/fa6";
 import { IoCartOutline } from "react-icons/io5";
 
 export const Store = () => {
-  const [cartCount, setCartCount] = useState(0);
-
   const [storeItems, setStoreItems] = useState([]);
   const [filterCategory, setFilterCategory] = useState("All Products"); // Step 1: Create filter state
   const [category, setCategory] = useState("All Products"); // Step 1: Create filter state
@@ -114,7 +112,7 @@ export const Store = () => {
         <p>
           {" "}
           <IoCartOutline />
-          <sup className="cart-count">{cartCount}</sup> Cart
+          Cart
         </p>
       </div>
 
@@ -167,13 +165,9 @@ export const Store = () => {
             </div>
             <div className="items-div col-md-10">
               {" "}
-              <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 ">
+              <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 ">
                 {storeItems.map((data, index) => (
-                  <StoreItem
-                    data={data}
-                    key={index}
-                    onAddToCart={() => setCartCount(cartCount + 1)}
-                  />
+                  <StoreItem data={data} key={index} />
                 ))}
               </div>
             </div>

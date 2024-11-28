@@ -8,7 +8,7 @@ const category = [
   { value: "2022/2023", label: "2022/2023" },
   { value: "2023/2024", label: "2023/2024" },
 ];
-function FeedBackForm(props) {
+function RequestForm(props) {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   return (
@@ -22,7 +22,7 @@ function FeedBackForm(props) {
         <div className="feed-back-form col-md-12">
           {" "}
           <h5>Add Feedback</h5>
-          <form className="col-md-12 feedback-form ">
+          <form className="col-md-12" style={{ width: "450px" }}>
             <h6>Category</h6>
             <div className="col-md-8 card">
               <Select
@@ -57,18 +57,18 @@ function FeedBackForm(props) {
   );
 }
 
-function AddFeedBack() {
+function RequestExeat() {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <>
       <button className="add-feedback-btn" onClick={() => setModalShow(true)}>
-        Add FeedBack
+        Request Exeat
       </button>
 
-      <FeedBackForm show={modalShow} onHide={() => setModalShow(false)} />
+      <RequestForm show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 }
 
-export default AddFeedBack;
+export default RequestExeat;

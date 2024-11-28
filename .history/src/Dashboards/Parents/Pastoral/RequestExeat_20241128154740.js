@@ -22,7 +22,7 @@ function FeedBackForm(props) {
         <div className="feed-back-form col-md-12">
           {" "}
           <h5>Add Feedback</h5>
-          <form className="col-md-12 feedback-form ">
+          <form className="col-md-12" style={{ width: "450px" }}>
             <h6>Category</h6>
             <div className="col-md-8 card">
               <Select
