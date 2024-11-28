@@ -1,0 +1,11 @@
+<svg id="microphone-2" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <g id="Vector" transform="translate(6 1.5)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3,10.125a3,3,0,0,0,3-3V3A3,3,0,0,0,0,3V7.125A3,3,0,0,0,3,10.125Z" stroke="none"/>
+    <path d="M 3 10.125 C 4.65749979019165 10.125 6 8.782500267028809 6 7.125 L 6 3 C 6 1.342499971389771 4.65749979019165 0 3 0 C 1.342499971389771 0 -4.440892098500626e-16 1.342499971389771 -4.440892098500626e-16 3 L -4.440892098500626e-16 7.125 C -4.440892098500626e-16 8.782500267028809 1.342499971389771 10.125 3 10.125 M 3 11.32499980926514 C 0.6841099858283997 11.32499980926514 -1.200000047683716 9.440890312194824 -1.200000047683716 7.125 L -1.200000047683716 3 C -1.200000047683716 0.6841099858283997 0.6841099858283997 -1.200000047683716 3 -1.200000047683716 C 5.315889835357666 -1.200000047683716 7.199999809265137 0.6841099858283997 7.199999809265137 3 L 7.199999809265137 7.125 C 7.199999809265137 9.440890312194824 5.315889835357666 11.32499980926514 3 11.32499980926514 Z" stroke="none" fill="#292d32"/>
+  </g>
+  <path id="Vector-2" data-name="Vector" d="M0,0V1.275a5.738,5.738,0,0,0,11.475,0V0" transform="translate(3.263 7.237)" fill="none" stroke="#292d32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+  <path id="Vector-3" data-name="Vector" d="M0,.186a3.02,3.02,0,0,1,2.085,0" transform="translate(7.958 4.637)" fill="none" stroke="#292d32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+  <path id="Vector-4" data-name="Vector" d="M0,.079a2.354,2.354,0,0,1,1.208,0" transform="translate(8.4 6.334)" fill="none" stroke="#292d32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+  <path id="Vector-5" data-name="Vector" d="M0,0V2.25" transform="translate(9 14.25)" fill="none" stroke="#292d32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+  <path id="Vector-6" data-name="Vector" d="M0,0H18V18H0Z" fill="none" opacity="0"/>
+</svg>
