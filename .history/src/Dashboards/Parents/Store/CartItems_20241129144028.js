@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import { ClearCart } from "./ClearCart";
 import { Header } from "./Header";
 
 export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
@@ -97,19 +95,11 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
         </div>
         <button
           className="clear-cart-btn"
-          onClick={showClearCartModal}
+          onClick={handleClearCart}
           style={{ backgroundColor: "red", color: "white" }}
         >
           Clear Cart
         </button>
-        <Link to={"/payment-gateway"}>
-          <button>Check out</button>
-        </Link>
-        <ClearCart
-          showModal={showModal}
-          onClose={closeModal}
-          onConfirm={handleClearCart}
-        />
       </div>
     </div>
   );

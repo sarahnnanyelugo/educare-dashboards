@@ -1,12 +1,8 @@
 import { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import { ClearCart } from "./ClearCart";
 import { Header } from "./Header";
 
 export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
-  const [showModal, setShowModal] = useState(false); // To control modal visibility
-
   const updateQuantity = (productName, change) => {
     setCartItems(
       (prevItems) =>
@@ -20,18 +16,8 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
     );
   };
   const handleClearCart = () => {
-    setCartItems([]); // Clear the cart
-    setShowModal(false); // Close the modal after clearing
+    setCartItems([]); // Reset the cart items to an empty array
   };
-  const showClearCartModal = () => {
-    setShowModal(true);
-  };
-
-  // Function to close the modal without clearing the cart
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
   const calculateTotal = (items) =>
     items.reduce((total, item) => total + item.amount * item.quantity, 0);
 
@@ -97,19 +83,11 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
         </div>
         <button
           className="clear-cart-btn"
-          onClick={showClearCartModal}
+          onClick={handleClearCart}
           style={{ backgroundColor: "red", color: "white" }}
         >
           Clear Cart
         </button>
-        <Link to={"/payment-gateway"}>
-          <button>Check out</button>
-        </Link>
-        <ClearCart
-          showModal={showModal}
-          onClose={closeModal}
-          onConfirm={handleClearCart}
-        />
       </div>
     </div>
   );
