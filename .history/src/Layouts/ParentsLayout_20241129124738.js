@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { TopNav } from "../components/TopNav/TopNav";
 import Feedbacks from "../Dashboards/Parents/Feedbacks/Feedbacks";
@@ -39,10 +39,6 @@ export const ParentsLayout = () => {
       }
     });
   };
-  const getTotalItemCount = () => {
-    return cartItems.reduce((total, item) => total + item.quantity, 0);
-  };
-
   return (
     <>
       <div className="d-md-flex">
@@ -64,23 +60,7 @@ export const ParentsLayout = () => {
             <Route path="/invoices" element={<Invoices />} />{" "}
             <Route
               path="/store"
-              element={
-                <Store
-                  cartItems={cartItems}
-                  onAddToCart={handleAddToCart}
-                  totalItemCount={getTotalItemCount()}
-                />
-              }
-            />{" "}
-            <Route
-              path="/cart-items"
-              element={
-                <CartItems
-                  cartItems={cartItems}
-                  setCartItems={setCartItems}
-                  totalItemCount={getTotalItemCount()}
-                />
-              }
+              element={<Store onAddToCart={handleAddToCart} />}
             />{" "}
             <Route path="/calendar" element={<Event />} />{" "}
             <Route path="/chat-interface" element={<ChatInterface />} />{" "}
@@ -91,6 +71,7 @@ export const ParentsLayout = () => {
             <Route path="/voting-system" element={<VotingSystem />} />{" "}
             <Route path="/transport-system" element={<TransportSystem />} />{" "}
             <Route path="/photo-journals" element={<PhotoJournal />} />{" "}
+            <Route path="/cart-items" element={<CartItems />} />{" "}
             <Route path="/tagged-posts" element={<TaggedPost />} />{" "}
           </Routes>
         </div>

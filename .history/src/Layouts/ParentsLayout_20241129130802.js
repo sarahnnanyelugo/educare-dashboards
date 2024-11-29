@@ -39,10 +39,6 @@ export const ParentsLayout = () => {
       }
     });
   };
-  const getTotalItemCount = () => {
-    return cartItems.reduce((total, item) => total + item.quantity, 0);
-  };
-
   return (
     <>
       <div className="d-md-flex">
@@ -68,19 +64,13 @@ export const ParentsLayout = () => {
                 <Store
                   cartItems={cartItems}
                   onAddToCart={handleAddToCart}
-                  totalItemCount={getTotalItemCount()}
+                  setCartItems={setCartItems}
                 />
               }
             />{" "}
             <Route
               path="/cart-items"
-              element={
-                <CartItems
-                  cartItems={cartItems}
-                  setCartItems={setCartItems}
-                  totalItemCount={getTotalItemCount()}
-                />
-              }
+              element={<CartItems cartItems={cartItems} />}
             />{" "}
             <Route path="/calendar" element={<Event />} />{" "}
             <Route path="/chat-interface" element={<ChatInterface />} />{" "}

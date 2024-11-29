@@ -39,9 +39,8 @@ import { FaAngleRight } from "react-icons/fa6";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { Header } from "./Header";
 
-export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
+export const Store = ({ cartItems, onAddToCart }) => {
   const [cartCount, setCartCount] = useState(0);
   const navigate = useNavigate();
 
@@ -112,16 +111,16 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
   };
   return (
     <>
-      {/* <div className="d-flex store-head">
+      <div className="d-flex store-head">
         {" "}
         <h5 style={{ flexGrow: 1 }}>Store</h5>
         <p onClick={() => navigate("/cart-items")}>
           {" "}
           <IoCartOutline />
-          <sup className="cart-count">{totalItemCount}</sup> Cart
+          <sup className="cart-count">{cartItems?.length || 0}</sup> Cart
         </p>
-      </div> */}
-      <Header totalItemCount={totalItemCount} />
+      </div>
+
       <div className="store-container">
         <div className="store-container-inner">
           {" "}

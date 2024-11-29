@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { TopNav } from "../components/TopNav/TopNav";
 import Feedbacks from "../Dashboards/Parents/Feedbacks/Feedbacks";
@@ -19,7 +19,30 @@ import { VotingSystem } from "../Dashboards/Parents/VotingSystem/VotingSystem";
 import { TransportSystem } from "../Dashboards/Parents/TransportSystem/TransportSystem";
 import PhotoJournal from "../Dashboards/Parents/Media/PhotoJournals";
 import TaggedPost from "../Dashboards/Parents/Media/TaggedPost";
+import ChatInterface from "../components/TopNav/ChatInterface/ChatInterface";
+import { CartItems } from "../Dashboards/Parents/Store/CartItems";
 export const ParentsLayout = () => {
+  const [cartItems, setCartItems] = useState([]);
+  const handleAddToCart = (item) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(
+        (i) => i.productName === item.productName
+      );
+      if (existingItem) {
+        return prevItems.map((i) =>
+          i.productName === item.productName
+            ? { ...i, quantity: i.quantity + 1 }
+            : i
+        );
+      } else {
+        return [...prevItems, { ...item, quantity: 1 }];
+      }
+    });
+  };
+  const getTotalItemCount = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
+
   return (
     <>
       <div className="d-md-flex">
@@ -39,8 +62,24 @@ export const ParentsLayout = () => {
             <Route path="/wallet" element={<Wallet />} />{" "}
             <Route path="/pocket-money" element={<PocketMoney />} />{" "}
             <Route path="/invoices" element={<Invoices />} />{" "}
-            <Route path="/store" element={<Store />} />{" "}
+            <Route
+              path="/store"
+              element={
+                <Store
+                  cartItems={cartItems}
+                  onAddToCart={handleAddToCart}
+                  totalItemCount={getTotalItemCount()}
+                />
+              }
+            />{" "}
+            <Route
+              path="/cart-items"
+              element={
+                <CartItems cartItems={cartItems} setCartItems={setCartItems} />
+              }
+            />{" "}
             <Route path="/calendar" element={<Event />} />{" "}
+            <Route path="/chat-interface" element={<ChatInterface />} />{" "}
             <Route
               path="/transaction-history"
               element={<TransactionHistory />}
