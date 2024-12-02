@@ -42,7 +42,10 @@ import { useNavigate } from "react-router-dom";
 import { Header } from "./Header";
 
 export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [cartCount, setCartCount] = useState(0);
+  const [selectedItem, setSelectedItem] = useState(null); // State to hold the selected item for the modal
+  const [showItemModal, setShowItemModal] = useState(false); // Control visibility of the item details modal
+
   const [storeItems, setStoreItems] = useState([]);
   const [filterCategory, setFilterCategory] = useState("All Products"); // Step 1: Create filter state
   const [category, setCategory] = useState("All Products"); // Step 1: Create filter state
@@ -108,20 +111,30 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
   const handleFilterChange = (category) => {
     setCategory(category); // Step 3: Update filter state on button click
   };
+  const handleItemClick = (item) => {
+    setSelectedItem({ ...item, quantity: 1 }); // Set the selected item with initial quantity of 1
+    setShowItemModal(true); // Open the modal
+  };
+  const handleIncrement = () => {
+    setSelectedItem((prevItem) => ({
+      ...prevItem,
+      quantity: prevItem.quantity + 1,
+    }));
+  };
 
-  const navigate = useNavigate();
+  const handleDecrement = () => {
+    setSelectedItem((prevItem) => ({
+      ...prevItem,
+      quantity: prevItem.quantity > 1 ? prevItem.quantity - 1 : 1,
+    }));
+  };
 
+  const handleCloseModal = () => {
+    setShowItemModal(false); // Close the modal
+  };
   return (
     <>
-      {/* <Header totalItemCount={totalItemCount} /> */}
-      <div className="d-flex store-head">
-        <h5 style={{ flexGrow: 1 }}>Store</h5>
-        <p onClick={() => navigate("/cart-items")}>
-          <IoCartOutline />
-          <span className="cart-count">{cartItems?.length || 0}</span> Cart
-        </p>
-      </div>
-
+      <Header totalItemCount={totalItemCount} />
       <div className="store-container">
         <div className="store-container-inner">
           {" "}

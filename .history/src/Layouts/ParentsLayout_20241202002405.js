@@ -20,8 +20,8 @@ import { TransportSystem } from "../Dashboards/Parents/TransportSystem/Transport
 import PhotoJournal from "../Dashboards/Parents/Media/PhotoJournals";
 import TaggedPost from "../Dashboards/Parents/Media/TaggedPost";
 import ChatInterface from "../components/TopNav/ChatInterface/ChatInterface";
-import { PaymentGateway } from "../Dashboards/Parents/PaymentGateway/PaymentGateway";
 import { CartItems } from "../Dashboards/Parents/Store/CartItems";
+import { PaymentGateway } from "../Dashboards/Parents/PaymentGateway/PaymentGateway";
 export const ParentsLayout = () => {
   const [cartItems, setCartItems] = useState([]);
   const handleAddToCart = (item) => {
@@ -39,6 +39,9 @@ export const ParentsLayout = () => {
         return [...prevItems, { ...item, quantity: 1 }];
       }
     });
+  };
+  const getTotalItemCount = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
   return (
@@ -67,7 +70,7 @@ export const ParentsLayout = () => {
                 <Store
                   cartItems={cartItems}
                   onAddToCart={handleAddToCart}
-                  // totalItemCount={getTotalItemCount()}
+                  totalItemCount={getTotalItemCount()}
                 />
               }
             />{" "}
@@ -76,7 +79,7 @@ export const ParentsLayout = () => {
               element={
                 <CartItems
                   cartItems={cartItems}
-                  setCartItems={setCartItems}
+                  // setCartItems={setCartItems}
                   // totalItemCount={getTotalItemCount()}
                 />
               }

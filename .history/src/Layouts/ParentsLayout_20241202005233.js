@@ -76,7 +76,7 @@ export const ParentsLayout = () => {
               element={
                 <CartItems
                   cartItems={cartItems}
-                  setCartItems={setCartItems}
+                  // setCartItems={setCartItems}
                   // totalItemCount={getTotalItemCount()}
                 />
               }

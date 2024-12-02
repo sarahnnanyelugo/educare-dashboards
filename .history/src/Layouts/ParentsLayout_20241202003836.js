@@ -40,6 +40,9 @@ export const ParentsLayout = () => {
       }
     });
   };
+  const getTotalItemCount = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
 
   return (
     <>
@@ -65,7 +68,7 @@ export const ParentsLayout = () => {
               path="/store"
               element={
                 <Store
-                  cartItems={cartItems}
+                  // cartItems={cartItems}
                   onAddToCart={handleAddToCart}
                   // totalItemCount={getTotalItemCount()}
                 />
@@ -76,7 +79,7 @@ export const ParentsLayout = () => {
               element={
                 <CartItems
                   cartItems={cartItems}
-                  setCartItems={setCartItems}
+                  // setCartItems={setCartItems}
                   // totalItemCount={getTotalItemCount()}
                 />
               }

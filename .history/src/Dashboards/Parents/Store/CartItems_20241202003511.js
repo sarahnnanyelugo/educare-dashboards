@@ -1,17 +1,6 @@
-export const CartItems = ({ cartItems, setCartItems }) => {
-  const updateQuantity = (productName, change) => {
-    setCartItems(
-      (prevItems) =>
-        prevItems
-          .map((item) =>
-            item.productName === productName
-              ? { ...item, quantity: item.quantity + change }
-              : item
-          )
-          .filter((item) => item.quantity > 0) // Remove item if quantity becomes 0
-    );
-  };
+import React from "react";
 
+export const CartPage = ({ cartItems }) => {
   const calculateTotal = (items) =>
     items.reduce((total, item) => total + item.amount * item.quantity, 0);
 
@@ -27,7 +16,6 @@ export const CartItems = ({ cartItems, setCartItems }) => {
               <th>Quantity</th>
               <th>Price per Unit</th>
               <th>Total Price</th>
-              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -44,14 +32,6 @@ export const CartItems = ({ cartItems, setCartItems }) => {
                 <td>{item.quantity}</td>
                 <td>₦ {Number(item.amount).toFixed(2)}</td>
                 <td>₦ {(item.quantity * item.amount).toFixed(2)}</td>
-                <td>
-                  <button onClick={() => updateQuantity(item.productName, 1)}>
-                    +
-                  </button>
-                  <button onClick={() => updateQuantity(item.productName, -1)}>
-                    -
-                  </button>
-                </td>
               </tr>
             ))}
           </tbody>

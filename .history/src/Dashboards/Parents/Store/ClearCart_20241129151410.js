@@ -10,7 +10,7 @@ export const ClearCart = ({ showModal, onClose, onConfirm }) => {
           <center>
             <h5 style={{ color: "#ED2F59" }}>Clear Cart</h5>
             <p>
-              Are you sure you want clear to your cart? all items would be
+              Are you sure you want clear to your cart?, all items would be
               deleted from your cart.
             </p>
           </center>

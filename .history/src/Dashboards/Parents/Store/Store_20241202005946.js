@@ -40,9 +40,11 @@ import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Header } from "./Header";
+import { ItemDetailModal } from "./ItemDetails";
 
 export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const [showItemModal, setShowItemModal] = useState(false); // Control
   const [storeItems, setStoreItems] = useState([]);
   const [filterCategory, setFilterCategory] = useState("All Products"); // Step 1: Create filter state
   const [category, setCategory] = useState("All Products"); // Step 1: Create filter state
@@ -184,6 +186,17 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
           </div>
         </div>
       </div>
+
+      {/* Item Detail Modal
+      {selectedItem && (
+        <ItemDetailModal
+          showModal={showItemModal}
+          onClose={handleCloseModal}
+          item={selectedItem}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+        />
+      )} */}
     </>
   );
 };

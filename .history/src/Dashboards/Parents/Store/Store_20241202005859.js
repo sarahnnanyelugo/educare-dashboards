@@ -40,9 +40,11 @@ import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Header } from "./Header";
+import { ItemDetailModal } from "./ItemDetails";
 
 export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const [showItemModal, setShowItemModal] = useState(false); // Control
   const [storeItems, setStoreItems] = useState([]);
   const [filterCategory, setFilterCategory] = useState("All Products"); // Step 1: Create filter state
   const [category, setCategory] = useState("All Products"); // Step 1: Create filter state
@@ -109,6 +111,41 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
     setCategory(category); // Step 3: Update filter state on button click
   };
 
+  const handleIncrement = () => {
+    setSelectedItem((prevItem) => ({
+      ...prevItem,
+      quantity: prevItem.quantity + 1,
+    }));
+  };
+
+  const handleDecrement = () => {
+    setSelectedItem((prevItem) => ({
+      ...prevItem,
+      quantity: prevItem.quantity > 1 ? prevItem.quantity - 1 : 1,
+    }));
+  };
+
+  const handleCloseModal = () => {
+    setShowItemModal(false); // Close the modal
+  };
+
+  //   const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
+
+  //   if (existingItem) {
+  //     setCartItems((prevCartItems) =>
+  //       prevCartItems.map((cartItem) =>
+  //         cartItem.id === item.id
+  //           ? { ...cartItem, quantity: cartItem.quantity + 1 }
+  //           : cartItem
+  //       )
+  //     );
+  //   } else {
+  //     setCartItems((prevCartItems) => [
+  //       ...prevCartItems,
+  //       { ...item, quantity: 1 },
+  //     ]);
+  //   }
+  // };
   const navigate = useNavigate();
 
   return (
@@ -184,6 +221,17 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
           </div>
         </div>
       </div>
+
+      {/* Item Detail Modal
+      {selectedItem && (
+        <ItemDetailModal
+          showModal={showItemModal}
+          onClose={handleCloseModal}
+          item={selectedItem}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+        />
+      )} */}
     </>
   );
 };

@@ -8,7 +8,7 @@ export const CartItems = ({ cartItems, setCartItems }) => {
               ? { ...item, quantity: item.quantity + change }
               : item
           )
-          .filter((item) => item.quantity > 0) // Remove item if quantity becomes 0
+          .filter((item) => item.quantity > 0) // Remove item if quantity is 0
     );
   };
 

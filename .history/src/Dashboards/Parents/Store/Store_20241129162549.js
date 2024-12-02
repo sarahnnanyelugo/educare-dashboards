@@ -40,9 +40,14 @@ import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Header } from "./Header";
+import { ItemDetailModal } from "./ItemDetails";
 
-export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
+export const Store = ({ onAddToCart, totalItemCount }) => {
+  const [cartCount, setCartCount] = useState(0);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [showItemModal, setShowItemModal] = useState(false); // Control visibility of the item details modal
+  const [cartItems, setCartItems] = useState([]);
+
   const [storeItems, setStoreItems] = useState([]);
   const [filterCategory, setFilterCategory] = useState("All Products"); // Step 1: Create filter state
   const [category, setCategory] = useState("All Products"); // Step 1: Create filter state
@@ -108,20 +113,50 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
   const handleFilterChange = (category) => {
     setCategory(category); // Step 3: Update filter state on button click
   };
+  const handleItemClick = (item) => {
+    setSelectedItem({ ...item, quantity: 1 }); // Set the selected item with initial quantity of 1
+    setShowItemModal(true); // Open the modal
+  };
 
-  const navigate = useNavigate();
+  const handleIncrement = () => {
+    setSelectedItem((prevItem) => ({
+      ...prevItem,
+      quantity: prevItem.quantity + 1,
+    }));
+  };
+
+  const handleDecrement = () => {
+    setSelectedItem((prevItem) => ({
+      ...prevItem,
+      quantity: prevItem.quantity > 1 ? prevItem.quantity - 1 : 1,
+    }));
+  };
+
+  const handleCloseModal = () => {
+    setShowItemModal(false); // Close the modal
+  };
+  const handleAddToCart = (item) => {
+    const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
+
+    if (existingItem) {
+      setCartItems((prevCartItems) =>
+        prevCartItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        )
+      );
+    } else {
+      setCartItems((prevCartItems) => [
+        ...prevCartItems,
+        { ...item, quantity: 1 },
+      ]);
+    }
+  };
 
   return (
     <>
-      {/* <Header totalItemCount={totalItemCount} /> */}
-      <div className="d-flex store-head">
-        <h5 style={{ flexGrow: 1 }}>Store</h5>
-        <p onClick={() => navigate("/cart-items")}>
-          <IoCartOutline />
-          <span className="cart-count">{cartItems?.length || 0}</span> Cart
-        </p>
-      </div>
-
+      <Header totalItemCount={totalItemCount} />
       <div className="store-container">
         <div className="store-container-inner">
           {" "}
@@ -174,9 +209,10 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
               <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 ">
                 {storeItems.map((data, index) => (
                   <StoreItem
-                    data={data}
                     key={index}
-                    onAddToCart={() => onAddToCart(data)}
+                    data={data}
+                    onAddToCart={handleAddToCart}
+                    // onItemClick={handleItemClick}
                   />
                 ))}
               </div>
@@ -184,6 +220,17 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
           </div>
         </div>
       </div>
+
+      {/* Item Detail Modal */}
+      {selectedItem && (
+        <ItemDetailModal
+          showModal={showItemModal}
+          onClose={handleCloseModal}
+          item={selectedItem}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+        />
+      )}
     </>
   );
 };

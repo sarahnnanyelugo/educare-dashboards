@@ -40,12 +40,14 @@ import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Header } from "./Header";
+import { ItemDetailModal } from "./ItemDetails";
 
-export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
-  const [selectedItem, setSelectedItem] = useState(null);
+export const Store = ({ onAddToCart, totalItemCount }) => {
   const [storeItems, setStoreItems] = useState([]);
-  const [filterCategory, setFilterCategory] = useState("All Products"); // Step 1: Create filter state
-  const [category, setCategory] = useState("All Products"); // Step 1: Create filter state
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [showItemModal, setShowItemModal] = useState(false);
+  const [category, setCategory] = useState("All Products");
+  const [cartItems, setCartItems] = useState([]);
   const cat = ["All Products", "Uniforms", "Books", "Accessories"];
   const catList = ["Uniforms", "Books", "Accessories"];
   const avatarList = {
@@ -73,55 +75,48 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
       Wears19,
     ],
   };
-  function mergeImages() {
-    let imgSources = [];
-    for (let category in avatarList) {
-      imgSources = imgSources.concat(avatarList[category]);
-    }
-    return imgSources;
-  }
-  useEffect(() => {
-    const fb = generateStoreItems(30, avatarList.Accessories, catList);
-    setStoreItems(fb);
-    console.log(fb);
-  }, []);
-
-  useEffect(() => {
-    console.log(category);
-    let avt;
-    if (category == "All Products") {
-      avt = mergeImages();
-    } else {
-      try {
-        avt = avatarList[category];
-        if (avt == undefined) avt = avt = [];
-        console.log(avt);
-      } catch (e) {
-        avt = [];
-      }
-    }
-    console.log(avt);
-    const fb = generateStoreItems(30, avt, [...[], category]);
-    setStoreItems(fb);
-    console.log(fb);
-  }, [category]);
-  const handleFilterChange = (category) => {
-    setCategory(category); // Step 3: Update filter state on button click
+  const mergeImages = () => {
+    return Object.values(images).flat();
   };
 
-  const navigate = useNavigate();
+  const handleFilterChange = (newCategory) => {
+    setCategory(newCategory);
+  };
+
+  const handleItemClick = (item) => {
+    setSelectedItem({ ...item, quantity: 1 });
+    setShowItemModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowItemModal(false);
+  };
+
+  const handleAddToCart = (item) => {
+    const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
+    if (existingItem) {
+      setCartItems((prev) =>
+        prev.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        )
+      );
+    } else {
+      setCartItems((prev) => [...prev, { ...item, quantity: 1 }]);
+    }
+  };
+
+  useEffect(() => {
+    const currentImages =
+      category === "All Products" ? mergeImages() : images[category] || [];
+    const generatedItems = generateStoreItems(30, currentImages, categories);
+    setStoreItems(generatedItems);
+  }, [category]);
 
   return (
     <>
-      {/* <Header totalItemCount={totalItemCount} /> */}
-      <div className="d-flex store-head">
-        <h5 style={{ flexGrow: 1 }}>Store</h5>
-        <p onClick={() => navigate("/cart-items")}>
-          <IoCartOutline />
-          <span className="cart-count">{cartItems?.length || 0}</span> Cart
-        </p>
-      </div>
-
+      <Header totalItemCount={totalItemCount} />
       <div className="store-container">
         <div className="store-container-inner">
           {" "}
@@ -174,9 +169,10 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
               <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 ">
                 {storeItems.map((data, index) => (
                   <StoreItem
-                    data={data}
                     key={index}
-                    onAddToCart={() => onAddToCart(data)}
+                    data={data}
+                    onAddToCart={handleAddToCart}
+                    onItemClick={handleItemClick}
                   />
                 ))}
               </div>
@@ -184,6 +180,17 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
           </div>
         </div>
       </div>
+
+      {/* Item Detail Modal */}
+      {selectedItem && (
+        <ItemDetailModal
+          showModal={showItemModal}
+          onClose={handleCloseModal}
+          item={selectedItem}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+        />
+      )}
     </>
   );
 };

@@ -24,22 +24,22 @@ import { PaymentGateway } from "../Dashboards/Parents/PaymentGateway/PaymentGate
 import { CartItems } from "../Dashboards/Parents/Store/CartItems";
 export const ParentsLayout = () => {
   const [cartItems, setCartItems] = useState([]);
-  const handleAddToCart = (item) => {
-    setCartItems((prevItems) => {
-      const existingItem = prevItems.find(
-        (i) => i.productName === item.productName
-      );
-      if (existingItem) {
-        return prevItems.map((i) =>
-          i.productName === item.productName
-            ? { ...i, quantity: i.quantity + 1 }
-            : i
-        );
-      } else {
-        return [...prevItems, { ...item, quantity: 1 }];
-      }
-    });
-  };
+ const handleAddToCart = (item) => {
+   setCartItems((prevItems) => {
+     const existingItem = prevItems.find(
+       (i) => i.productName === item.productName
+     );
+     if (existingItem) {
+       return prevItems.map((i) =>
+         i.productName === item.productName
+           ? { ...i, quantity: i.quantity + 1 }
+           : i
+       );
+     } else {
+       return [...prevItems, { ...item, quantity: 1 }];
+     }
+   });
+ };
 
   return (
     <>
@@ -65,7 +65,7 @@ export const ParentsLayout = () => {
               path="/store"
               element={
                 <Store
-                  cartItems={cartItems}
+                  // cartItems={cartItems}
                   onAddToCart={handleAddToCart}
                   // totalItemCount={getTotalItemCount()}
                 />
@@ -76,7 +76,7 @@ export const ParentsLayout = () => {
               element={
                 <CartItems
                   cartItems={cartItems}
-                  setCartItems={setCartItems}
+                  // setCartItems={setCartItems}
                   // totalItemCount={getTotalItemCount()}
                 />
               }

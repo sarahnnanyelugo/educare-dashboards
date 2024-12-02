@@ -11,7 +11,7 @@ export const StoreItem = ({ data, onAddToCart }) => {
   return (
     <div
       className="store-item col-md-12"
-      // onClick={() => onItemClick(data)}
+      onClick={() => onItemClick(data)}
       style={{ cursor: "pointer" }}
     >
       <img src={Photo} width="100%" height="70%" />
