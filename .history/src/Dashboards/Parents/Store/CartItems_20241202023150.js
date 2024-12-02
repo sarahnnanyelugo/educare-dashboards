@@ -38,9 +38,8 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
 
   // Function to close the modal without clearing the cart
   const closeModal = () => {
-    setSelectedItem(null); // Close modal by clearing selected item
+    setShowModal(false);
   };
-
   return (
     <>
       {" "}
@@ -85,8 +84,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
                   <td>₦ {Number(item.amount).toFixed(2)}</td>
                   <td>₦ {(item.quantity * item.amount).toFixed(2)}</td>
                   <td>
-                    <span onClick={() => handleViewItem(item)}>View</span>{" "}
-                    Remove
+                    <span>View</span> Remove
                   </td>
                 </tr>
               ))}

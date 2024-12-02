@@ -38,9 +38,8 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
 
   // Function to close the modal without clearing the cart
   const closeModal = () => {
-    setSelectedItem(null); // Close modal by clearing selected item
+    setShowModal(false);
   };
-
   return (
     <>
       {" "}

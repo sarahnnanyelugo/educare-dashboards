@@ -2,11 +2,9 @@ import { useState } from "react";
 import { ClearCart } from "./ClearCart";
 import { Header } from "./Header";
 import { Table } from "react-bootstrap";
-import { ItemDetailsModal } from "./ItemDetails";
 
 export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
   const [showModal, setShowModal] = useState(false); // To control modal visibility
-  const [selectedItem, setSelectedItem] = useState(null); // To control item details modal
 
   const updateQuantity = (productName, change) => {
     setCartItems(
@@ -28,9 +26,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
     setCartItems([]); // Clear the cart
     setShowModal(false); // Close the modal after clearing
   };
-  const handleViewItem = (item) => {
-    setSelectedItem(item); // Set the item to trigger modal
-  };
+
   // Function to show modal when clear button is clicked
   const showClearCartModal = () => {
     setShowModal(true);
@@ -38,9 +34,8 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
 
   // Function to close the modal without clearing the cart
   const closeModal = () => {
-    setSelectedItem(null); // Close modal by clearing selected item
+    setShowModal(false);
   };
-
   return (
     <>
       {" "}
@@ -48,14 +43,14 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
       <div className="cart-page">
         <h2>Your Cart</h2>
         {cartItems.length > 0 ? (
-          <table responsive striped hover className="cart-table">
+          <Table responsive striped hover className="cart-table">
             <thead>
               <tr>
-                <th>Item</th>
-                <th>No of items</th>
-                <th>Price per unit</th>
-                <th>total</th>
-
+                <th>Image</th>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price per Unit</th>
+                <th>Total Price</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -68,30 +63,25 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
                       alt={item.productName}
                       className="item-image"
                     />
-                    {item.productName}
                   </td>
+                  <td>{item.productName}</td>
+                  <td>{item.quantity}</td>
+                  <td>₦ {Number(item.amount).toFixed(2)}</td>
+                  <td>₦ {(item.quantity * item.amount).toFixed(2)}</td>
                   <td>
                     <button onClick={() => updateQuantity(item.productName, 1)}>
                       +
                     </button>
-                    {item.quantity}
                     <button
                       onClick={() => updateQuantity(item.productName, -1)}
                     >
                       -
                     </button>
                   </td>
-
-                  <td>₦ {Number(item.amount).toFixed(2)}</td>
-                  <td>₦ {(item.quantity * item.amount).toFixed(2)}</td>
-                  <td>
-                    <span onClick={() => handleViewItem(item)}>View</span>{" "}
-                    Remove
-                  </td>
                 </tr>
               ))}
             </tbody>
-          </table>
+          </Table>
         ) : (
           <p>Your cart is empty.</p>
         )}
@@ -111,16 +101,6 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
         onClose={closeModal}
         onConfirm={handleClearCart}
       />
-      {selectedItem && (
-        <ItemDetailsModal
-          item={selectedItem}
-          onClose={closeModal}
-          onAddToCart={(item) => {
-            setCartItems((prevItems) => [...prevItems, item]);
-            closeModal();
-          }}
-        />
-      )}
     </>
   );
 };

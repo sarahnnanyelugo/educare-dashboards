@@ -2,11 +2,9 @@ import { useState } from "react";
 import { ClearCart } from "./ClearCart";
 import { Header } from "./Header";
 import { Table } from "react-bootstrap";
-import { ItemDetailsModal } from "./ItemDetails";
 
 export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
   const [showModal, setShowModal] = useState(false); // To control modal visibility
-  const [selectedItem, setSelectedItem] = useState(null); // To control item details modal
 
   const updateQuantity = (productName, change) => {
     setCartItems(
@@ -28,9 +26,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
     setCartItems([]); // Clear the cart
     setShowModal(false); // Close the modal after clearing
   };
-  const handleViewItem = (item) => {
-    setSelectedItem(item); // Set the item to trigger modal
-  };
+
   // Function to show modal when clear button is clicked
   const showClearCartModal = () => {
     setShowModal(true);
@@ -38,9 +34,8 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
 
   // Function to close the modal without clearing the cart
   const closeModal = () => {
-    setSelectedItem(null); // Close modal by clearing selected item
+    setShowModal(false);
   };
-
   return (
     <>
       {" "}
@@ -84,10 +79,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
 
                   <td>₦ {Number(item.amount).toFixed(2)}</td>
                   <td>₦ {(item.quantity * item.amount).toFixed(2)}</td>
-                  <td>
-                    <span onClick={() => handleViewItem(item)}>View</span>{" "}
-                    Remove
-                  </td>
+                  <td>View Remove</td>
                 </tr>
               ))}
             </tbody>
@@ -111,16 +103,6 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
         onClose={closeModal}
         onConfirm={handleClearCart}
       />
-      {selectedItem && (
-        <ItemDetailsModal
-          item={selectedItem}
-          onClose={closeModal}
-          onAddToCart={(item) => {
-            setCartItems((prevItems) => [...prevItems, item]);
-            closeModal();
-          }}
-        />
-      )}
     </>
   );
 };
