@@ -8,6 +8,7 @@ export const StoreItem = ({ data, onAddToCart, onItemClick }) => {
     onAddToCart(data); // Add item to cart
     console.log("item added");
   };
+  console.log(data); // Inspect the data object
 
   return (
     <div

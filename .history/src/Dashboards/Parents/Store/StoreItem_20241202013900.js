@@ -1,14 +1,13 @@
 import React from "react";
 import { IoCartOutline } from "react-icons/io5";
 
-export const StoreItem = ({ data, onAddToCart, onItemClick }) => {
+export const StoreItem = ({ data, onAddToCart }) => {
   const { Photo, amount, productName } = data;
   const handleAddToCart = (e) => {
     e.stopPropagation(); // Prevent the click from triggering the modal
     onAddToCart(data); // Add item to cart
     console.log("item added");
   };
-
   return (
     <div
       className="store-item col-md-12"

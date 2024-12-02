@@ -178,7 +178,6 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
                     data={data}
                     key={index}
                     onAddToCart={() => onAddToCart(data)}
-                    onItemClick={() => handleItemClick(data)} // Pass click handler
                   />
                 ))}
               </div>

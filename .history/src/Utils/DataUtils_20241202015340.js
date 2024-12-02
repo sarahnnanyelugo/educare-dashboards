@@ -1,39 +1,38 @@
 import { faker } from "@faker-js/faker";
 
-export const generateTimetableData = (numEntries, studentIds) => {
-  const timetable = [];
+// export const generateTimetableData = (numEntries, studentIds) => {
+//   const timetable = [];
 
-  // Helper function to randomly pick an array element
-  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
+//   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-  for (let i = 0; i < numEntries; i++) {
-    timetable.push({
-      id: i + 1,
-      student_id: arrayElement(studentIds), // Use arrayElement helper function
-      subject: arrayElement([
-        "English",
-        "Mathematics",
-        "Geography",
-        "Chemistry",
-        "Physics",
-        "Biology",
-      ]), // Use arrayElement helper function,
-      day: arrayElement([
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-      ]),
-      time: `${faker.number.int({ min: 1, max: 12 })}:${faker.number.int({
-        min: 0,
-        max: 59,
-      })} ${arrayElement(["AM", "PM"])}`, // Updated for faker v7+
-    });
-  }
+//   for (let i = 0; i < numEntries; i++) {
+//     timetable.push({
+//       id: i + 1,
+//       student_id: arrayElement(studentIds), // Use arrayElement helper function
+//       subjects: arrayElement([
+//         "English",
+//         "Mathematics",
+//         "Geography",
+//         "Chemistry",
+//         "Physics",
+//         "Biology",
+//       ]), // Use arrayElement helper function,
+//       day: arrayElement([
+//         "Monday",
+//         "Tuesday",
+//         "Wednesday",
+//         "Thursday",
+//         "Friday",
+//       ]),
+//       time: `${faker.number.int({ min: 1, max: 12 })}:${faker.number.int({
+//         min: 0,
+//         max: 59,
+//       })} ${arrayElement(["AM", "PM"])}`, // Updated for faker v7+
+//     });
+//   }
 
-  return timetable;
-};
+//   return timetable;
+// };
 export const generateFeedback = (numEntries, avatarList) => {
   const feedbacks = [];
   // Helper function to randomly pick an array element
@@ -42,7 +41,11 @@ export const generateFeedback = (numEntries, avatarList) => {
     feedbacks.push({
       Date: faker.date.anytime(Date.now()).toLocaleDateString(),
       Photo: arrayElement(avatarList),
-      Child: faker.person.firstName("female"),
+      Child: arrayElement([
+        "Emmanuella Ozike",
+        "Chidera Ozike",
+        "Ogechi Ozike",
+      ]),
       Category: arrayElement([
         "Fees",
         "Lesson",
@@ -84,12 +87,11 @@ export const generatePastoralReport = (numEntries, avatarList) => {
   }
   return pastoralReport;
 };
-export const generatePastoralReport = (numEntries, avatarList) => {
-  const pastoralReport = [];
-  // Helper function to randomly pick an array element
+export const generateHostelReport = (numEntries, avatarList) => {
+  const hostelReport = [];
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
-    pastoralReport.push({
+    hostelReport.push({
       Date: faker.date.anytime(Date.now()).toLocaleDateString(),
       Photo: arrayElement(avatarList),
       Child: arrayElement([
@@ -109,7 +111,7 @@ export const generatePastoralReport = (numEntries, avatarList) => {
       Action: "View",
     });
   }
-  return pastoralReport;
+  return hostelReport;
 };
 export const generateWallet = (numEntries, avatarList) => {
   const wallet = [];
@@ -124,7 +126,9 @@ export const generateWallet = (numEntries, avatarList) => {
         dec: 2,
         symbol: "₦ ",
       }), // '$5.85'
-      Code: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
+      Code: faker.string.numeric({
+        length: { min: 15, max: 15, symbol: "₦ " },
+      }), // '197089478'
       Purpose: arrayElement([
         "Fees",
         "Lesson",
@@ -227,15 +231,32 @@ export const generateStoreItems = (numEntries, avatarList, catList) => {
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
     storeItems.push({
+      id: faker.string.uuid(),
       Photo: arrayElement(avatarList),
       category: arrayElement(catList),
+      // amount: parseFloat("123.45"),
+
       amount: faker.finance.amount({
         min: 100,
         max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }), // '$5.85'
-      TransactionID: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
+        dc: 2,
+      }),
+      productName: arrayElement([
+        "sports wear",
+        "Uniform",
+        "Shirt",
+        "Shorts",
+        "Sucks",
+        "Barret",
+        "Books",
+        "BackPack",
+        "Pen",
+        "Pencil",
+        "Ruler",
+        "Cardigan",
+        "Trousers",
+      ]),
+      // TransactionID: faker.string.numeric({ length: { min: 10, max: 15 } }), // '197089478'
       Purpose: arrayElement(["Accessories", "Books", "Uniforms"]),
     });
   }
@@ -292,4 +313,97 @@ export const generateTransportRecords = (numEntries, avatarList) => {
     });
   }
   return transportRecords;
+};
+
+export const generateAssignment = (numEntries, avatarList) => {
+  const assignment = [];
+  // Helper function to randomly pick an array element
+  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  for (let i = 0; i < numEntries; i++) {
+    assignment.push({
+      Photo: arrayElement(avatarList),
+      Teacher: arrayElement([
+        "Mr Patrick",
+        "Mr Ifeanyi",
+        "Mrs Uju",
+        "Mrs Ogo",
+        "Mrs David",
+        "Mrs Botty",
+        "Mrs Chidera",
+        "Mr Blessed",
+      ]),
+      Subject: arrayElement([
+        "Home Econs",
+        "Mathematics",
+        "English",
+        "Basic Science",
+        "Social Science",
+        "French",
+        "Basic Technology",
+        "PHE",
+      ]),
+
+      Status: arrayElement(["Pending", "Submitted", "Inactive"]),
+      Assignment: faker.lorem.sentence(3),
+      Action: "View",
+    });
+  }
+  return assignment;
+};
+export const generateMedicalRecords = (numEntries, avatarList) => {
+  const medicalRecords = [];
+  // Helper function to randomly pick an array element
+  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  for (let i = 0; i < numEntries; i++) {
+    medicalRecords.push({
+      Date: faker.date.anytime(Date.now()).toLocaleDateString(),
+
+      Incident: arrayElement([
+        "Had a disturbing headache",
+        "Temperature of almost 100 degrees",
+        "Bleeding out of nose",
+        "Malaria & Typhoid",
+        "Slight headache & stomach pain",
+        "Diarrhea",
+      ]),
+      Severity: arrayElement(["Mild", "Severe"]),
+    });
+  }
+  return medicalRecords;
+};
+export const generateTuckShopRecord = (numEntries, avatarList) => {
+  const tuckShopRecord = [];
+  // Helper function to randomly pick an array element
+  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  for (let i = 0; i < numEntries; i++) {
+    tuckShopRecord.push({
+      PurchaseDate: faker.date.anytime(Date.now()).toLocaleDateString(),
+
+      Item: arrayElement([
+        "Soap",
+        "Noodles",
+        "Sweets",
+        "Drawing board",
+        "Soap",
+        "Pad",
+        "Body lotion",
+        "Biro",
+        "Sucks",
+      ]),
+      Quantity: arrayElement(["1", "2"]),
+      UnitPrice: faker.finance.amount({
+        min: 100,
+        max: 10000,
+        dec: 2,
+        symbol: "₦ ",
+      }), // '$5.85'
+      TotalPrice: faker.finance.amount({
+        min: 100,
+        max: 10000,
+        dec: 2,
+        symbol: "₦ ",
+      }), // '$5.85'
+    });
+  }
+  return tuckShopRecord;
 };

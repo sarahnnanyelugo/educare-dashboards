@@ -8,7 +8,6 @@ export const StoreItem = ({ data, onAddToCart, onItemClick }) => {
     onAddToCart(data); // Add item to cart
     console.log("item added");
   };
-
   return (
     <div
       className="store-item col-md-12"

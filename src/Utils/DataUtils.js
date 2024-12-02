@@ -234,11 +234,13 @@ export const generateStoreItems = (numEntries, avatarList, catList) => {
       id: faker.string.uuid(),
       Photo: arrayElement(avatarList),
       category: arrayElement(catList),
-      amount: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-      }), // '$5.85'
+      amount: parseFloat("123.45"),
+
+      // amount: faker.finance.amount({
+      //   min: 100,
+      //   max: 10000,
+      //   dc: 2,
+      // }),
       productName: arrayElement([
         "sports wear",
         "Uniform",

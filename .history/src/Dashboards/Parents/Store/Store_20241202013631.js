@@ -40,7 +40,6 @@ import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Header } from "./Header";
-import { ItemDetailsModal } from "./ItemDetails";
 
 export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
   const [showModal, setShowModal] = useState(false); // State to control modal visibility
@@ -178,7 +177,6 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
                     data={data}
                     key={index}
                     onAddToCart={() => onAddToCart(data)}
-                    onItemClick={() => handleItemClick(data)} // Pass click handler
                   />
                 ))}
               </div>
@@ -186,13 +184,6 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
           </div>
         </div>
       </div>
-      {showModal && selectedItem && (
-        <ItemDetailsModal
-          item={selectedItem}
-          onClose={closeModal}
-          onAddToCart={onAddToCart}
-        />
-      )}
     </>
   );
 };

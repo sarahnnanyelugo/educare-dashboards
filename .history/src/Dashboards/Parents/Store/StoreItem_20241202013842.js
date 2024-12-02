@@ -1,14 +1,13 @@
 import React from "react";
 import { IoCartOutline } from "react-icons/io5";
 
-export const StoreItem = ({ data, onAddToCart, onItemClick }) => {
+export const StoreItem = ({ data, onAddToCart }) => {
   const { Photo, amount, productName } = data;
   const handleAddToCart = (e) => {
     e.stopPropagation(); // Prevent the click from triggering the modal
     onAddToCart(data); // Add item to cart
     console.log("item added");
   };
-
   return (
     <div
       className="store-item col-md-12"
@@ -21,12 +20,7 @@ export const StoreItem = ({ data, onAddToCart, onItemClick }) => {
         <small style={{ flexGrow: 1 }}>{productName}</small>
         <h6>₦{amount}</h6>
       </div>
-      <button
-        onClick={(e) => {
-          e.stopPropagation(); // Prevent modal trigger
-          onAddToCart(data); // Add item to cart
-        }}
-      >
+      <button onClick={onAddToCart}>
         <IoCartOutline />
         Add to cart
       </button>
