@@ -121,10 +121,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
                 </tbody>
               </table>
             ) : (
-              <center>
-                {" "}
-                <h5>Your cart is empty.</h5>
-              </center>
+              <p>Your cart is empty.</p>
             )}
             <div className="empty-div" />
             <hr />

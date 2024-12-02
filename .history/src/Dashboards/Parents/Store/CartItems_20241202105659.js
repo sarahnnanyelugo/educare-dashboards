@@ -4,7 +4,6 @@ import { Header } from "./Header";
 import { Table } from "react-bootstrap";
 import { ItemDetailsModal } from "./ItemDetails";
 import { Link, useNavigate } from "react-router-dom";
-import { FaLongArrowAltLeft } from "react-icons/fa";
 
 export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
   const [showModal, setShowModal] = useState(false); // To control modal visibility
@@ -51,7 +50,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
   return (
     <>
       <div className="d-flex">
-        <Link to={"/store"} className="back-link">
+        <Link to={"/store"}>
           <FaLongArrowAltLeft />
           Back
         </Link>
@@ -121,10 +120,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
                 </tbody>
               </table>
             ) : (
-              <center>
-                {" "}
-                <h5>Your cart is empty.</h5>
-              </center>
+              <p>Your cart is empty.</p>
             )}
             <div className="empty-div" />
             <hr />

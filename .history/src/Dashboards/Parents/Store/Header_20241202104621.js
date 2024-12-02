@@ -1,10 +1,11 @@
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-export const Header = ({ totalItemCount }) => {
+export const Header = ({ totalItemCount, data }) => {
+  const { title } = data;
   return (
     <div className="store-head d-flex">
-      <h5 style={{ flexGrow: 1 }}>Store</h5>
+      <h5 style={{ flexGrow: 1 }}>{data.title}</h5>
       <Link to={"/cart-items"} className="cart-icon">
         <IoCartOutline />
         Cart

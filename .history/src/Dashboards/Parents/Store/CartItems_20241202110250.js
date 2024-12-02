@@ -123,7 +123,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
             ) : (
               <center>
                 {" "}
-                <h5>Your cart is empty.</h5>
+                <p>Your cart is empty.</p>
               </center>
             )}
             <div className="empty-div" />

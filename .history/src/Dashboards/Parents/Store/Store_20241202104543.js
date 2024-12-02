@@ -122,7 +122,7 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
   };
   return (
     <>
-      <Header totalItemCount={totalItemCount} title="Store" />
+      <Header totalItemCount={totalItemCount} />
       <div className="store-container">
         <div className="store-container-inner">
           {" "}

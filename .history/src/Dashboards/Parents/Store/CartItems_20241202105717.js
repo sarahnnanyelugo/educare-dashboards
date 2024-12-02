@@ -51,7 +51,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
   return (
     <>
       <div className="d-flex">
-        <Link to={"/store"} className="back-link">
+        <Link to={"/store"}>
           <FaLongArrowAltLeft />
           Back
         </Link>
@@ -121,10 +121,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
                 </tbody>
               </table>
             ) : (
-              <center>
-                {" "}
-                <h5>Your cart is empty.</h5>
-              </center>
+              <p>Your cart is empty.</p>
             )}
             <div className="empty-div" />
             <hr />
