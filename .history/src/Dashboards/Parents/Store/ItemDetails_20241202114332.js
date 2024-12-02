@@ -46,7 +46,7 @@ export const ItemDetailsModal = ({ item, onClose, onAddToCart }) => {
                 +
               </button>
             </div>
-            <div className="d-flex">
+            <div className="d-md-flex">
               {" "}
               <button>Cancel</button>
               <button className="add-to-cart-btn" onClick={handleAddToCart}>

@@ -186,13 +186,6 @@
     img {
       border-radius: 15px;
     }
-    p {
-      font-size: 14px;
-      margin-bottom: 0;
-    }
-    .details {
-      padding-left: 10px;
-    }
   }
 
   .close-button {
@@ -206,6 +199,9 @@
   }
 
   .quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
     margin: 20px 0;
   }

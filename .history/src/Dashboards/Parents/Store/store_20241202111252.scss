@@ -177,22 +177,11 @@
 
   .modal-content {
     background: #fff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     max-width: 400px;
     width: 100%;
     display: flex !important;
-    flex-direction: row !important;
-    img {
-      border-radius: 15px;
-    }
-    p {
-      font-size: 14px;
-      margin-bottom: 0;
-    }
-    .details {
-      padding-left: 10px;
-    }
   }
 
   .close-button {
@@ -206,6 +195,9 @@
   }
 
   .quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
     margin: 20px 0;
   }
@@ -304,13 +296,4 @@
   height: 35px;
   margin-top: 20px;
   margin-left: 20px;
-}
-.selection-btns {
-  border: solid 1px #e7e7e7;
-  padding: 0px 12px;
-  border-radius: 13px;
-  margin-right: 3px;
-  background: #fff;
-  font-family: rebondBook;
-  font-size: 12px;
 }

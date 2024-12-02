@@ -24,7 +24,7 @@ export const ItemDetailsModal = ({ item, onClose, onAddToCart }) => {
             </button>
             <img src={item.Photo} alt={item.productName} width="100%" />
           </div>
-          <div className="col-md-6 details">
+          <div className="col-md-6">
             {" "}
             <h6>{item.productName}</h6>
             <h6>₦{item.amount.toFixed(2)}</h6>
@@ -46,13 +46,9 @@ export const ItemDetailsModal = ({ item, onClose, onAddToCart }) => {
                 +
               </button>
             </div>
-            <div className="d-flex">
-              {" "}
-              <button>Cancel</button>
-              <button className="add-to-cart-btn" onClick={handleAddToCart}>
-                Add to Cart
-              </button>
-            </div>
+            <button className="add-to-cart-btn" onClick={handleAddToCart}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
