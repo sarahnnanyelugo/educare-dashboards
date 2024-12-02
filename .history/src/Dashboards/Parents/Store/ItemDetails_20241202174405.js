@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./store.scss";
 export const ItemDetailsModal = ({ item, onClose, onAddToCart }) => {
   const [quantity, setQuantity] = useState(1);
@@ -17,7 +16,7 @@ export const ItemDetailsModal = ({ item, onClose, onAddToCart }) => {
     <div className="details-modal">
       {" "}
       <div className="modal-overlay ">
-        <div className="modal-content2 ">
+        <div className="modal-content ">
           <div className="d-md-flex">
             {" "}
             <div className="col-m-6">
@@ -51,7 +50,7 @@ export const ItemDetailsModal = ({ item, onClose, onAddToCart }) => {
                 <button className="cancel-cart-btn" onClick={onClose}>
                   Cancel
                 </button>
-                <button className="add-to-cart-btn2" onClick={handleAddToCart}>
+                <button className="add-to-cart-btn" onClick={handleAddToCart}>
                   Add to Cart
                 </button>
               </div>
@@ -59,11 +58,9 @@ export const ItemDetailsModal = ({ item, onClose, onAddToCart }) => {
           </div>
           <div className="purchase-info">
             <p>
-              Please ensure you select the right size.
-              <br /> If you are unsure, kindly schedule a sizing appointment{" "}
-              <Link to={"/contact-us"}>Here</Link>
-              <br /> Items bought in good condition cannot be returned or
-              changed due to wrong size.
+              Please ensure you select the right size. If you are unsure, kindly
+              schedule a sizing appointment Here Items bought in good condition
+              cannot be returned or changed due to wrong size.
             </p>
           </div>
         </div>

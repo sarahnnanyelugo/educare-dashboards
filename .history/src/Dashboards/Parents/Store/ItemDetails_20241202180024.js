@@ -51,7 +51,7 @@ export const ItemDetailsModal = ({ item, onClose, onAddToCart }) => {
                 <button className="cancel-cart-btn" onClick={onClose}>
                   Cancel
                 </button>
-                <button className="add-to-cart-btn2" onClick={handleAddToCart}>
+                <button className="add-to-cart-btn" onClick={handleAddToCart}>
                   Add to Cart
                 </button>
               </div>
