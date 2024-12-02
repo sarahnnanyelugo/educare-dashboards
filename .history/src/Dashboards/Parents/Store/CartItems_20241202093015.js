@@ -3,12 +3,10 @@ import { ClearCart } from "./ClearCart";
 import { Header } from "./Header";
 import { Table } from "react-bootstrap";
 import { ItemDetailsModal } from "./ItemDetails";
-import { useNavigate } from "react-router-dom";
 
 export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
   const [showModal, setShowModal] = useState(false); // To control modal visibility
   const [selectedItem, setSelectedItem] = useState(null); // To control item details modal
-  const navigate = useNavigate();
 
   const updateQuantity = (productName, change) => {
     setCartItems(
@@ -60,7 +58,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
                 <th>Item</th>
                 <th>No of items</th>
                 <th>Price per unit</th>
-                <th>Total</th>
+                <th>total</th>
 
                 <th>Actions</th>
               </tr>
@@ -76,11 +74,11 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
                     />
                     <span className="product-name"> {item.productName}</span>
                   </td>
-                  <td className="item-btns">
+                  <td>
                     <button onClick={() => updateQuantity(item.productName, 1)}>
                       +
                     </button>
-                    <button> {item.quantity}</button>
+                    {item.quantity}
                     <button
                       onClick={() => updateQuantity(item.productName, -1)}
                     >
@@ -90,11 +88,9 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
 
                   <td>₦ {Number(item.amount).toFixed(2)}</td>
                   <td>₦ {(item.quantity * item.amount).toFixed(2)}</td>
-                  <td className="store-actions">
+                  <td>
                     <span onClick={() => handleViewItem(item)}>View</span>{" "}
-                    <span onClick={() => removeItem(item)} className="remove">
-                      Remove
-                    </span>
+                    <span onClick={() => removeItem(item)}>Remove</span>
                   </td>
                 </tr>
               ))}
@@ -103,25 +99,16 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
         ) : (
           <p>Your cart is empty.</p>
         )}
-        <div className="empty-div" />
-        <hr />
         <div className="cart-total">
-          <h5>Total: ₦ {calculateTotal(cartItems).toFixed(2)}</h5>
-          <button
-            className="clear-cart-btn"
-            onClick={showClearCartModal}
-            style={{ backgroundColor: "red", color: "white" }}
-          >
-            Clear Cart
-          </button>{" "}
-          <button
-            className="checkout-btn"
-            onClick={() => navigate("/payment-gateway")}
-            style={{ backgroundColor: "red", color: "white" }}
-          >
-            Checkout
-          </button>
+          <h3>Total Amount: ₦ {calculateTotal(cartItems).toFixed(2)}</h3>
         </div>
+        <button
+          className="clear-cart-btn"
+          onClick={showClearCartModal}
+          style={{ backgroundColor: "red", color: "white" }}
+        >
+          Clear Cart
+        </button>
       </div>
       <ClearCart
         showModal={showModal}

@@ -3,12 +3,10 @@ import { ClearCart } from "./ClearCart";
 import { Header } from "./Header";
 import { Table } from "react-bootstrap";
 import { ItemDetailsModal } from "./ItemDetails";
-import { useNavigate } from "react-router-dom";
 
 export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
   const [showModal, setShowModal] = useState(false); // To control modal visibility
   const [selectedItem, setSelectedItem] = useState(null); // To control item details modal
-  const navigate = useNavigate();
 
   const updateQuantity = (productName, change) => {
     setCartItems(
@@ -115,8 +113,8 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
             Clear Cart
           </button>{" "}
           <button
-            className="checkout-btn"
-            onClick={() => navigate("/payment-gateway")}
+            className="clear-cart-btn"
+            onClick={showClearCartModal}
             style={{ backgroundColor: "red", color: "white" }}
           >
             Checkout
