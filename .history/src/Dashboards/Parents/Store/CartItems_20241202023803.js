@@ -90,7 +90,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
                   <td>₦ {(item.quantity * item.amount).toFixed(2)}</td>
                   <td>
                     <span onClick={() => handleViewItem(item)}>View</span>{" "}
-                    <span onClick={() => removeItem(item)}>Remove</span>
+                    <span onClick={() => removeItem(item)}>Remove</span> Remove
                   </td>
                 </tr>
               ))}
