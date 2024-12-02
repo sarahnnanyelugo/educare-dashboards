@@ -1,10 +1,6 @@
-import { useState } from "react";
-import { ClearCart } from "./ClearCart";
 import { Header } from "./Header";
 
-export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
-  const [showModal, setShowModal] = useState(false); // To control modal visibility
-
+export const CartItems = ({ cartItems, setCartItems }) => {
   const updateQuantity = (productName, change) => {
     setCartItems(
       (prevItems) =>
@@ -21,20 +17,6 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
   const calculateTotal = (items) =>
     items.reduce((total, item) => total + item.amount * item.quantity, 0);
 
-  const handleClearCart = () => {
-    setCartItems([]); // Clear the cart
-    setShowModal(false); // Close the modal after clearing
-  };
-
-  // Function to show modal when clear button is clicked
-  const showClearCartModal = () => {
-    setShowModal(true);
-  };
-
-  // Function to close the modal without clearing the cart
-  const closeModal = () => {
-    setShowModal(false);
-  };
   return (
     <>
       {" "}
@@ -87,19 +69,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
         <div className="cart-total">
           <h3>Total Amount: ₦ {calculateTotal(cartItems).toFixed(2)}</h3>
         </div>
-        <button
-          className="clear-cart-btn"
-          onClick={showClearCartModal}
-          style={{ backgroundColor: "red", color: "white" }}
-        >
-          Clear Cart
-        </button>
       </div>
-      <ClearCart
-        showModal={showModal}
-        onClose={closeModal}
-        onConfirm={handleClearCart}
-      />
     </>
   );
 };

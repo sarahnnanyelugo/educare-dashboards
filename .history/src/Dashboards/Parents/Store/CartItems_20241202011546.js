@@ -1,10 +1,6 @@
-import { useState } from "react";
-import { ClearCart } from "./ClearCart";
 import { Header } from "./Header";
 
 export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
-  const [showModal, setShowModal] = useState(false); // To control modal visibility
-
   const updateQuantity = (productName, change) => {
     setCartItems(
       (prevItems) =>
@@ -89,17 +85,12 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
         </div>
         <button
           className="clear-cart-btn"
-          onClick={showClearCartModal}
+          onClick={handleClearCart}
           style={{ backgroundColor: "red", color: "white" }}
         >
           Clear Cart
         </button>
       </div>
-      <ClearCart
-        showModal={showModal}
-        onClose={closeModal}
-        onConfirm={handleClearCart}
-      />
     </>
   );
 };

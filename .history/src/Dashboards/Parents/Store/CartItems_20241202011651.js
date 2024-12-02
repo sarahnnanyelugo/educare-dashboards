@@ -89,7 +89,7 @@ export const CartItems = ({ cartItems, setCartItems, totalItemCount }) => {
         </div>
         <button
           className="clear-cart-btn"
-          onClick={showClearCartModal}
+          onClick={handleClearCart}
           style={{ backgroundColor: "red", color: "white" }}
         >
           Clear Cart

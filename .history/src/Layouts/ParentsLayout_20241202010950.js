@@ -40,9 +40,7 @@ export const ParentsLayout = () => {
       }
     });
   };
-  const getTotalItemCount = () => {
-    return cartItems.reduce((total, item) => total + item.quantity, 0);
-  };
+
   return (
     <>
       <div className="d-md-flex">
