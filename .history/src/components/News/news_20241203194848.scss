@@ -85,15 +85,15 @@
     content: "";
     position: absolute;
     top: 100%; /* Start the line from the bottom of the input field */
-    left: 7%; /* Center it horizontally */
-    width: 1px; /* Line thickness */
+    left: 5%; /* Center it horizontally */
+    width: 2px; /* Line thickness */
     height: 35px; /* Height of the line */
     background-color: #ccc; /* Line color */
     transform: translateX(-50%); /* Center the line horizontally */
   }
   .comment-avatar {
-    height: 34px;
-    width: 34px;
+    height: 24px;
+    width: 24px;
     border-radius: 50%;
     object-fit: cover;
   }

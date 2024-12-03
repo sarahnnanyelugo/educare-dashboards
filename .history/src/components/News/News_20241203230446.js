@@ -4,6 +4,7 @@ import { BiCommentDetail } from "react-icons/bi";
 import { IoIosHeart } from "react-icons/io";
 
 import "./news.scss";
+
 function News({ data }) {
   const [blogId, setBlogId] = useState(0);
   const [showCommentInput, setShowCommentInput] = useState(false);
@@ -29,14 +30,15 @@ function News({ data }) {
     if (comment.trim() !== "") {
       const newComment = {
         id: comments.length + 1, // Unique ID for the comment
-        user: "User", // Placeholder for the username
+        user: "Mary Simi", // Placeholder for the username
         avatar: `https://api.dicebear.com/6.x/personas/svg?seed=${
           comments.length + 1
-        }`, // Random avatar URL
+        }`,
+
         text: comment,
         timestamp: new Date(), // Current timestamp
-        likes: 0, // Initialize likes as a number
-        liked: false, // Track if the comment is liked
+        likes: 20, // Initialize likes as a number
+        liked: false,
       };
       setComments((prevComments) => [...prevComments, newComment]); // Add new comment to the array
       setComment(""); // Clear the input field
@@ -47,11 +49,7 @@ function News({ data }) {
     setComments((prevComments) =>
       prevComments.map((comment) =>
         comment.id === id
-          ? {
-              ...comment,
-              likes: (comment.likes || 0) + 1,
-              liked: !comment.liked,
-            }
+          ? { ...comment, likes: (comment.likes || 0) + 1 } // Increment likes, ensure it's numeric
           : comment
       )
     );
@@ -105,7 +103,7 @@ function News({ data }) {
             {comments.map((c) => (
               <div key={c.id} className="comment">
                 <div className="comment-header">
-                  <img src={c.avatar} alt="Avatar" className="comment-avatar" />
+                  <img src={c.avatar} alt="avatar" className="comment-avatar" />
                   <strong>{c.user}</strong>
                 </div>
                 <small>{c.timestamp.toLocaleString()}</small>

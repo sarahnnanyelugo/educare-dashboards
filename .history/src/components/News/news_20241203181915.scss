@@ -76,24 +76,11 @@
     align-items: center;
     gap: 8px;
     margin-bottom: 4px;
-    position: relative;
-    img {
-      border: solid 2px #e7e7e7;
-    }
   }
-  .comment-input::after {
-    content: "";
-    position: absolute;
-    top: 100%; /* Start the line from the bottom of the input field */
-    left: 7%; /* Center it horizontally */
-    width: 1px; /* Line thickness */
-    height: 35px; /* Height of the line */
-    background-color: #ccc; /* Line color */
-    transform: translateX(-50%); /* Center the line horizontally */
-  }
+
   .comment-avatar {
-    height: 34px;
-    width: 34px;
+    height: 24px;
+    width: 24px;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -101,8 +88,7 @@
 .comment-input {
   display: flex;
   margin-top: 10px;
-  position: relative; /* To position the line correctly */
-  margin-bottom: 20px;
+
   input {
     flex: 1;
     padding: 8px;
