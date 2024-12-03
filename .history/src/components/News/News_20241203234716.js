@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { BiCommentDetail } from "react-icons/bi";
 import { IoIosHeart } from "react-icons/io";
-import { formatDistanceToNow } from "date-fns"; // Import date-fns for relative time formatting
 
 import "./news.scss";
 function News({ data }) {
@@ -110,18 +109,10 @@ function News({ data }) {
               <div key={c.id} className="comment">
                 <div className="comment-header">
                   <img src={c.avatar} alt="Avatar" className="comment-avatar" />
-                  <div>
-                    <h6>{c.user}</h6>
-                    <small>
-                      {formatDistanceToNow(new Date(c.timestamp), {
-                        addSuffix: true,
-                      })}
-                    </small>
-
-                    <p>{c.text}</p>
-                  </div>
+                  <h6>{c.user}</h6>
                 </div>
-
+                <small>{c.timestamp.toLocaleString()}</small>
+                <p>{c.text}</p>
                 <div className="comment-reactions">
                   <button
                     onClick={() => handleCommentLike(c.id)}

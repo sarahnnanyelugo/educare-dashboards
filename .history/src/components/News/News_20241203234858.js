@@ -110,18 +110,10 @@ function News({ data }) {
               <div key={c.id} className="comment">
                 <div className="comment-header">
                   <img src={c.avatar} alt="Avatar" className="comment-avatar" />
-                  <div>
-                    <h6>{c.user}</h6>
-                    <small>
-                      {formatDistanceToNow(new Date(c.timestamp), {
-                        addSuffix: true,
-                      })}
-                    </small>
-
-                    <p>{c.text}</p>
-                  </div>
+                  <h6>{c.user}</h6>
                 </div>
-
+                <small>{c.timestamp.toLocaleString()}</small>
+                <p>{c.text}</p>
                 <div className="comment-reactions">
                   <button
                     onClick={() => handleCommentLike(c.id)}

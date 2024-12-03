@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { IoIosHeartEmpty } from "react-icons/io";
+import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import { BiCommentDetail } from "react-icons/bi";
-import { IoIosHeart } from "react-icons/io";
 import { formatDistanceToNow } from "date-fns"; // Import date-fns for relative time formatting
-
 import "./news.scss";
+
 function News({ data }) {
   const [blogId, setBlogId] = useState(0);
   const [showCommentInput, setShowCommentInput] = useState(false);
@@ -31,9 +30,7 @@ function News({ data }) {
       const newComment = {
         id: comments.length + 1, // Unique ID for the comment
         user: "Mary Simi", // Placeholder for the username
-        avatar: `https://api.dicebear.com/6.x/personas/svg?seed=${
-          comments.length + 1
-        }`, // Random avatar URL
+        avatar: `https://api.dicebear.com/6.x/personas/svg?seed=${comments.length + 1}`, // Random avatar URL
         text: comment,
         timestamp: new Date(), // Current timestamp
         likes: 0, // Initialize likes as a number
@@ -48,19 +45,15 @@ function News({ data }) {
     setComments((prevComments) =>
       prevComments.map((comment) =>
         comment.id === id
-          ? {
-              ...comment,
-              likes: (comment.likes || 0) + 1,
-              liked: !comment.liked,
-            }
+          ? { ...comment, likes: (comment.likes || 0) + 1, liked: !comment.liked }
           : comment
       )
     );
   };
 
   const handlePostLike = () => {
-    setPostLikes((prevLikes) => Number(prevLikes) + 1); // Convert prevLikes to a number
-    setPostLiked(!postLiked); // Toggle the liked state
+    setPostLikes((prevLikes) => Number(prevLikes) + 1); // Convert to number for accurate increment
+    setPostLiked(!postLiked); // Toggle liked state
   };
 
   return (
@@ -86,7 +79,7 @@ function News({ data }) {
           <strong>{postLikes}</strong>
           <span>Likes</span>
         </button>
-        <button onClick={handleCommentToggle} className="post-like-button">
+        <button onClick={handleCommentToggle}>
           <BiCommentDetail /> <strong>{comments.length}</strong>
           <span>Comments</span>
         </button>
@@ -94,34 +87,28 @@ function News({ data }) {
       {showCommentInput && (
         <>
           <form onSubmit={handleCommentSubmit} className="comment-input">
-            <div className="input-holder d-flex col-md-12">
-              {" "}
-              <input
-                type="text"
-                placeholder="Write a comment..."
-                value={comment}
-                onChange={handleCommentChange}
-              />
-              <button type="submit">Send</button>
-            </div>
+            <input
+              type="text"
+              placeholder="Write a comment..."
+              value={comment}
+              onChange={handleCommentChange}
+            />
+            <button type="submit">Post</button>
           </form>
-          <div className="comments-section2">
+          <div className="comments-section">
             {comments.map((c) => (
               <div key={c.id} className="comment">
                 <div className="comment-header">
-                  <img src={c.avatar} alt="Avatar" className="comment-avatar" />
-                  <div>
-                    <h6>{c.user}</h6>
-                    <small>
-                      {formatDistanceToNow(new Date(c.timestamp), {
-                        addSuffix: true,
-                      })}
-                    </small>
-
-                    <p>{c.text}</p>
-                  </div>
+                  <img
+                    src={c.avatar}
+                    alt="Avatar"
+                    className="comment-avatar"
+                  />
+                  <strong>{c.user}</strong>
                 </div>
-
+                {/* Relative time display */}
+                <small>{formatDistanceToNow(new Date(c.timestamp), { addSuffix: true })}</small>
+                <p>{c.text}</p>
                 <div className="comment-reactions">
                   <button
                     onClick={() => handleCommentLike(c.id)}
@@ -132,7 +119,7 @@ function News({ data }) {
                     ) : (
                       <IoIosHeartEmpty />
                     )}
-                    {c.likes}
+                    {c.likes} Likes
                   </button>
                 </div>
               </div>
