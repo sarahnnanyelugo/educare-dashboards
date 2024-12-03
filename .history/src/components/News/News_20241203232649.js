@@ -109,7 +109,7 @@ function News({ data }) {
               <div key={c.id} className="comment">
                 <div className="comment-header">
                   <img src={c.avatar} alt="Avatar" className="comment-avatar" />
-                  <h6>{c.user}</h6>
+                  <strong>{c.user}</strong>
                 </div>
                 <small>{c.timestamp.toLocaleString()}</small>
                 <p>{c.text}</p>
@@ -123,7 +123,7 @@ function News({ data }) {
                     ) : (
                       <IoIosHeartEmpty />
                     )}
-                    {c.likes}
+                    {c.likes} Likes
                   </button>
                 </div>
               </div>

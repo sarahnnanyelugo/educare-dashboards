@@ -37,6 +37,10 @@
     h6 {
       font-size: 12px;
     }
+    strong {
+      display: block;
+      color: #007bff;
+    }
 
     small {
       display: block;
@@ -56,13 +60,15 @@
     .like-button {
       background: none;
       border: none;
-      color: rgb(58, 57, 57);
+      color: #007bff;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 5px;
-      float: right;
-      font-size: 12px;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   .comment-header {

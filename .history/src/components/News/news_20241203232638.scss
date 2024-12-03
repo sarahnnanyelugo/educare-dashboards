@@ -31,11 +31,15 @@
   }
 
   .comment {
-    margin-bottom: 0px;
+    margin-bottom: 15px;
     padding: 10px;
-    background-color: #fff;
-    h6 {
-      font-size: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    strong {
+      display: block;
+      color: #007bff;
     }
 
     small {
@@ -56,19 +60,22 @@
     .like-button {
       background: none;
       border: none;
-      color: rgb(58, 57, 57);
+      color: #007bff;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 5px;
-      float: right;
-      font-size: 12px;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   .comment-header {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-bottom: 4px;
     position: relative;
     img {
       border: solid 2px #e7e7e7;
@@ -78,9 +85,9 @@
     content: "";
     position: absolute;
     top: 100%; /* Start the line from the bottom of the input field */
-    left: 5%; /* Center it horizontally */
+    left: 7%; /* Center it horizontally */
     width: 1px; /* Line thickness */
-    height: 17px; /* Height of the line */
+    height: 35px; /* Height of the line */
     background-color: #ccc; /* Line color */
     transform: translateX(-50%); /* Center the line horizontally */
   }
@@ -95,18 +102,16 @@
   display: flex;
   margin-top: 10px;
   position: relative; /* To position the line correctly */
+  margin-bottom: 20px;
 
   .input-holder {
     border: solid 1px #e7e7e7;
-    padding: 0px 10px;
+    padding: 5px 10px;
     border-radius: 20px;
     input {
       flex: 1;
       padding: 8px;
-      font-family: rebondBook !important;
-      height: 30px;
       border: none;
-      border-radius: 20px;
     }
     button {
       color: #0098da;

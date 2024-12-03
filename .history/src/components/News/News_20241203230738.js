@@ -29,7 +29,7 @@ function News({ data }) {
     if (comment.trim() !== "") {
       const newComment = {
         id: comments.length + 1, // Unique ID for the comment
-        user: "Mary Simi", // Placeholder for the username
+        user: "User", // Placeholder for the username
         avatar: `https://api.dicebear.com/6.x/personas/svg?seed=${
           comments.length + 1
         }`, // Random avatar URL
@@ -58,8 +58,8 @@ function News({ data }) {
   };
 
   const handlePostLike = () => {
-    setPostLikes((prevLikes) => Number(prevLikes) + 1); // Convert prevLikes to a number
-    setPostLiked(!postLiked); // Toggle the liked state
+    setPostLikes((prevLikes) => prevLikes + 1); // Increment post likes
+    setPostLiked(!postLiked); // Toggle post liked state
   };
 
   return (
@@ -93,23 +93,20 @@ function News({ data }) {
       {showCommentInput && (
         <>
           <form onSubmit={handleCommentSubmit} className="comment-input">
-            <div className="input-holder d-flex col-md-12">
-              {" "}
-              <input
-                type="text"
-                placeholder="Write a comment..."
-                value={comment}
-                onChange={handleCommentChange}
-              />
-              <button type="submit">Send</button>
-            </div>
+            <input
+              type="text"
+              placeholder="Write a comment..."
+              value={comment}
+              onChange={handleCommentChange}
+            />
+            <button type="submit">Post</button>
           </form>
-          <div className="comments-section2">
+          <div className="comments-section">
             {comments.map((c) => (
               <div key={c.id} className="comment">
                 <div className="comment-header">
                   <img src={c.avatar} alt="Avatar" className="comment-avatar" />
-                  <h6>{c.user}</h6>
+                  <strong>{c.user}</strong>
                 </div>
                 <small>{c.timestamp.toLocaleString()}</small>
                 <p>{c.text}</p>
@@ -123,7 +120,7 @@ function News({ data }) {
                     ) : (
                       <IoIosHeartEmpty />
                     )}
-                    {c.likes}
+                    {c.likes} Likes
                   </button>
                 </div>
               </div>

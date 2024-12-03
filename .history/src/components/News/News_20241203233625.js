@@ -123,7 +123,7 @@ function News({ data }) {
                     ) : (
                       <IoIosHeartEmpty />
                     )}
-                    {c.likes}
+                    {c.likes} Likes
                   </button>
                 </div>
               </div>
