@@ -14,7 +14,6 @@ import { FaRegUser } from "react-icons/fa";
 import Dropdown from "react-bootstrap/Dropdown";
 import { IoIosLogOut } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { Notification } from "./Notification";
 
 export const TopNav = () => {
   return (
@@ -47,33 +46,12 @@ export const TopNav = () => {
                 <Dropdown.Item>
                   <h6>Notifications</h6>
                 </Dropdown.Item>{" "}
-                <hr />
                 <Dropdown.Item>
-                  <Notification
-                    Icon={Icon6}
-                    text="₦100,000 has been added to your wallet"
-                    textDate="Oct 22, 2024"
-                    textTime="12:30 PM"
-                  />
+                  <h6>Notifications</h6>
                 </Dropdown.Item>{" "}
-                <hr />
                 <Dropdown.Item>
-                  <Notification
-                    Icon={Icon7}
-                    text="New document added"
-                    textDate="Oct 22, 2024"
-                    textTime="12:30 PM"
-                  />
-                </Dropdown.Item>{" "}
-                <hr />
-                <Dropdown.Item>
-                  <Notification
-                    Icon={Icon6}
-                    text="₦2000 sent to Emmanuella’s pocket money"
-                    textDate="Oct 22, 2024"
-                    textTime="12:30 PM"
-                  />
-                </Dropdown.Item>{" "}
+                  <h6>Notifications</h6>
+                </Dropdown.Item>
                 <hr />
               </Dropdown.Menu>
             </Dropdown>

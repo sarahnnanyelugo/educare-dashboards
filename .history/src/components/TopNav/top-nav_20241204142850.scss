@@ -63,6 +63,7 @@
     font-size: 14px;
   }
   img {
+    border: solid 1px #e7e7e7;
     border-radius: 50%;
     width: 23px;
     height: 23px;
@@ -70,5 +71,6 @@
   }
   small {
     font-size: 12px !important;
+    text-align: right;
   }
 }

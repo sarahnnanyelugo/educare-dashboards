@@ -29,7 +29,7 @@
       border: 1px solid #e4e7ec;
       border-radius: 10px;
       min-height: 150px;
-      width: 355px !important;
+      width: 325px !important;
       padding: 5px 10px;
       font-size: 14px;
       a {
@@ -48,7 +48,7 @@
         margin-bottom: 0;
       }
       .dropdown-item {
-        white-space: normal;
+        white-space: wrap;
       }
     }
   }
@@ -59,16 +59,10 @@
   }
 }
 .notification-div {
-  h6 {
-    font-size: 14px;
-  }
   img {
+    border: solid 1px #e7e7e7;
     border-radius: 50%;
-    width: 23px;
-    height: 23px;
-    margin-right: 8px;
-  }
-  small {
-    font-size: 12px !important;
+    width: 33px;
+    height: 33px;
   }
 }

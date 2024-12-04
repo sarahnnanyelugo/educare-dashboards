@@ -56,20 +56,10 @@ export const TopNav = () => {
                     textTime="12:30 PM"
                   />
                 </Dropdown.Item>{" "}
-                <hr />
-                <Dropdown.Item>
-                  <Notification
-                    Icon={Icon7}
-                    text="New document added"
-                    textDate="Oct 22, 2024"
-                    textTime="12:30 PM"
-                  />
-                </Dropdown.Item>{" "}
-                <hr />
                 <Dropdown.Item>
                   <Notification
                     Icon={Icon6}
-                    text="₦2000 sent to Emmanuella’s pocket money"
+                    text="₦100,000 has been added to your wallet"
                     textDate="Oct 22, 2024"
                     textTime="12:30 PM"
                   />
