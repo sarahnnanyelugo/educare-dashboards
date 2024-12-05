@@ -11,12 +11,13 @@ import Icon6 from "../../assets/images/wallet.png";
 import Icon7 from "../../assets/images/doc.svg";
 import { FaRegUser } from "react-icons/fa";
 import { useState } from "react";
+import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Dropdown from "react-bootstrap/Dropdown";
 import { IoIosLogOut } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { Notification } from "./Notification";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { HiOutlineMenu } from "react-icons/hi";
 import { SideNav } from "../SideNav/SideNav";
 import { Desktop, TabletAndBelow } from "../../Utils/mediaQueries";
 import Logo from "../../assets/images/new-logo.png";
@@ -131,7 +132,7 @@ export const TopNav = () => {
         {" "}
         <div className="d-flex top-nav-container">
           <p className="canvas-toggle">
-            <RxHamburgerMenu onClick={handleShow} />
+            <HiOutlineMenu onClick={handleShow} />
           </p>
           <Offcanvas show={show} onHide={handleClose}>
             <Offcanvas.Header closeButton></Offcanvas.Header>

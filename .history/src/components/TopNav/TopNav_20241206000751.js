@@ -10,19 +10,31 @@ import Icon5 from "../../assets/images/peter.png";
 import Icon6 from "../../assets/images/wallet.png";
 import Icon7 from "../../assets/images/doc.svg";
 import { FaRegUser } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
+import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Dropdown from "react-bootstrap/Dropdown";
 import { IoIosLogOut } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { Notification } from "./Notification";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { SideNav } from "../SideNav/SideNav";
-import { Desktop, TabletAndBelow } from "../../Utils/mediaQueries";
-import Logo from "../../assets/images/new-logo.png";
-import { LuCalendarDays } from "react-icons/lu";
 
 export const TopNav = () => {
+  const useDesktopMediaQuery = () =>
+    useMediaQuery({ query: "(min-width: 769px)" });
+
+  const useTabletAndBelowMediaQuery = () =>
+    useMediaQuery({ query: "(max-width: 768px)" });
+
+  const Desktop = ({ children }) => {
+    const isDesktop = useDesktopMediaQuery();
+    return isDesktop ? children : null;
+  };
+
+  const TabletAndBelow = ({ children }) => {
+    const isTabletAndBelow = useTabletAndBelowMediaQuery();
+    return isTabletAndBelow ? children : null;
+  };
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -129,66 +141,18 @@ export const TopNav = () => {
       </Desktop>
       <TabletAndBelow>
         {" "}
-        <div className="d-flex top-nav-container">
-          <p className="canvas-toggle">
-            <RxHamburgerMenu onClick={handleShow} />
-          </p>
-          <Offcanvas show={show} onHide={handleClose}>
-            <Offcanvas.Header closeButton></Offcanvas.Header>
-            <Offcanvas.Body>
-              <SideNav />
-            </Offcanvas.Body>
-          </Offcanvas>
-          <div className="col-3 " style={{ flexGrow: 1 }}>
-            <img src={Logo} alt="logo" width="30%" />
-          </div>
-
-          <Link to={"/calendar"}>
-            <LuCalendarDays />
-          </Link>
-          <div className="profile-drop profile-drop2">
-            {" "}
-            <Dropdown>
-              <Dropdown.Toggle>
-                <CgBell style={{ fontSize: "24px" }} />
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Dropdown.Item>
-                  <h6>Notifications</h6>
-                </Dropdown.Item>{" "}
-                <hr />
-                <Dropdown.Item>
-                  <Notification
-                    Icon={Icon6}
-                    text="₦100,000 has been added to your wallet"
-                    textDate="Oct 22, 2024"
-                    textTime="12:30 PM"
-                  />
-                </Dropdown.Item>{" "}
-                <hr />
-                <Dropdown.Item>
-                  <Notification
-                    Icon={Icon7}
-                    text="New document added"
-                    textDate="Oct 22, 2024"
-                    textTime="12:30 PM"
-                  />
-                </Dropdown.Item>{" "}
-                <hr />
-                <Dropdown.Item>
-                  <Notification
-                    Icon={Icon6}
-                    text="₦2000 sent to Emmanuella’s pocket money"
-                    textDate="Oct 22, 2024"
-                    textTime="12:30 PM"
-                  />
-                </Dropdown.Item>{" "}
-                <hr />
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
-        </div>
+        <Button variant="primary" onClick={handleShow}>
+          Launch
+        </Button>
+        <Offcanvas show={show} onHide={handleClose}>
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            Some text as placeholder. In real life you can have the elements you
+            have chosen. Like, text, images, lists, etc.
+          </Offcanvas.Body>
+        </Offcanvas>
       </TabletAndBelow>
     </>
   );

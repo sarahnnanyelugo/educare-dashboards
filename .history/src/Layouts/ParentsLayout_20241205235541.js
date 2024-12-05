@@ -22,7 +22,7 @@ import TaggedPost from "../Dashboards/Parents/Media/TaggedPost";
 import ChatInterface from "../components/TopNav/ChatInterface/ChatInterface";
 import { PaymentGateway } from "../Dashboards/Parents/PaymentGateway/PaymentGateway";
 import { CartItems } from "../Dashboards/Parents/Store/CartItems";
-import { Desktop, TabletAndBelow } from "../Utils/mediaQueries";
+import { useMediaQuery } from "react-responsive";
 
 export const ParentsLayout = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -46,6 +46,21 @@ export const ParentsLayout = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
+  const useDesktopMediaQuery = () =>
+    useMediaQuery({ query: "(min-width: 769px)" });
+
+  const useTabletAndBelowMediaQuery = () =>
+    useMediaQuery({ query: "(max-width: 768px)" });
+
+  const Desktop = ({ children }) => {
+    const isDesktop = useDesktopMediaQuery();
+    return isDesktop ? children : null;
+  };
+
+  const TabletAndBelow = ({ children }) => {
+    const isTabletAndBelow = useTabletAndBelowMediaQuery();
+    return isTabletAndBelow ? children : null;
+  };
   return (
     <>
       <Desktop>
@@ -102,10 +117,6 @@ export const ParentsLayout = () => {
           </div>
         </div>
       </Desktop>
-      <TabletAndBelow>
-        <TopNav />
-        <h1>Mobile view</h1>
-      </TabletAndBelow>
     </>
   );
 };

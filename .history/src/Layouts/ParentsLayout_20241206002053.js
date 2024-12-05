@@ -22,7 +22,7 @@ import TaggedPost from "../Dashboards/Parents/Media/TaggedPost";
 import ChatInterface from "../components/TopNav/ChatInterface/ChatInterface";
 import { PaymentGateway } from "../Dashboards/Parents/PaymentGateway/PaymentGateway";
 import { CartItems } from "../Dashboards/Parents/Store/CartItems";
-import { Desktop, TabletAndBelow } from "../Utils/mediaQueries";
+import { Desktop, TabletAndBelow } from "../../../Utils/mediaQueries";
 
 export const ParentsLayout = () => {
   const [cartItems, setCartItems] = useState([]);
