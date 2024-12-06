@@ -6,9 +6,11 @@
     }
     td {
       font-family: rebondBook !important;
+      @media screen and (max-width: 820px) {
+        font-size: 12px;
+      }
     }
   }
-  --bs-table-striped-bg {
-    background: red !important;
-  }
+
+  --bs-table-striped-bg: #f9fafb;
 }
