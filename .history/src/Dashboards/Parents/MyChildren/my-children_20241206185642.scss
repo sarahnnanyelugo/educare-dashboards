@@ -105,7 +105,9 @@
       }
     }
   }
-
+  .subject-lesson-cover {
+    background: #fcfcfc;
+  }
   .edge {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -154,8 +156,4 @@
     width: 250px !important;
     margin-right: 10px;
   }
-}
-.subject-lesson-cover {
-  background: #fcfcfc;
-  padding: 10px;
 }

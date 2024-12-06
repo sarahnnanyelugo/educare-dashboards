@@ -196,8 +196,8 @@ export const ActivityTab = () => {
           <hr />
           <div className="d-flex over-scroll subject-lesson-cover">
             <div
-              className="col-md-5 teacher-subjects col-10"
-              style={{ marginRight: "20px", background: "#fff" }}
+              className="col-md-5 teacher-subjects col-11"
+              style={{ marginLeft: "10px", background: "#fff" }}
             >
               <Row>
                 <Col>
