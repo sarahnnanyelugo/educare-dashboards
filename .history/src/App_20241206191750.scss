@@ -93,18 +93,13 @@ button {
 .over-scroll {
   overflow: scroll;
 }
-.children-array-cover {
-  overflow: scroll;
-  display: flex !important;
-}
 #children-outlay {
   @media screen and (max-width: 820px) {
     width: 250px !important;
     margin-right: 10px;
   }
 }
-.mobile-hide {
-  @media screen and (max-width: 820px) {
-    display: none;
-  }
+.subject-lesson-cover {
+  background: #fcfcfc;
+  padding: 10px;
 }

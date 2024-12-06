@@ -103,7 +103,7 @@ export const Result = () => {
         <div className={`panel ${checkActive(1, "active2")}`}>
           <div className="d-md-flex">
             {" "}
-            <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 col-md-6 select-headings">
+            <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 col-md-6">
               <div className=" col">
                 <h6>Session</h6>
                 <div className="card col-md-12">
@@ -158,21 +158,11 @@ export const Result = () => {
                 {" "}
                 <Search />
               </div>
-              <Desktop>
-                <button className="pdf-download-btn">
-                  {" "}
-                  <HiOutlineDownload className="icon2" />
-                  Export as csv
-                </button>
-              </Desktop>
-              <TabletAndBelow>
+              <button className="pdf-download-btn">
                 {" "}
-                <button className="pdf-download-btn col-12">
-                  {" "}
-                  <HiOutlineDownload className="icon2" />
-                  Download as pdf
-                </button>
-              </TabletAndBelow>
+                <HiOutlineDownload className="icon2" />
+                Export as csv
+              </button>
             </div>
           </div>
           <hr />

@@ -82,9 +82,9 @@ export const Result = () => {
         </div>{" "}
       </Desktop>
       <TabletAndBelow>
-        <div className="children-array-cover col-12">
+        <div className="children-array-cover">
           {" "}
-          <div className="tabs  col-12 d-flex  ">
+          <div className="tabs col-md-8 row col-12 d-flex  ">
             {children.map((data, index) => (
               <Children
                 data={data}
@@ -103,7 +103,7 @@ export const Result = () => {
         <div className={`panel ${checkActive(1, "active2")}`}>
           <div className="d-md-flex">
             {" "}
-            <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 col-md-6 select-headings">
+            <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 col-md-6">
               <div className=" col">
                 <h6>Session</h6>
                 <div className="card col-md-12">
@@ -154,25 +154,15 @@ export const Result = () => {
               </div>
             </div>
             <div className="d-md-flex col-md-4 offset-md-2">
-              <div className="col-md-8 mt-2 mobile-hide">
+              <div className="col-md-8 mt-2">
                 {" "}
                 <Search />
               </div>
-              <Desktop>
-                <button className="pdf-download-btn">
-                  {" "}
-                  <HiOutlineDownload className="icon2" />
-                  Export as csv
-                </button>
-              </Desktop>
-              <TabletAndBelow>
+              <button className="pdf-download-btn">
                 {" "}
-                <button className="pdf-download-btn col-12">
-                  {" "}
-                  <HiOutlineDownload className="icon2" />
-                  Download as pdf
-                </button>
-              </TabletAndBelow>
+                <HiOutlineDownload className="icon2" />
+                Export as csv
+              </button>
             </div>
           </div>
           <hr />

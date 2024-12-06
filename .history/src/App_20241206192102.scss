@@ -95,16 +95,11 @@ button {
 }
 .children-array-cover {
   overflow: scroll;
-  display: flex !important;
+  display: flex;
 }
 #children-outlay {
   @media screen and (max-width: 820px) {
     width: 250px !important;
     margin-right: 10px;
-  }
-}
-.mobile-hide {
-  @media screen and (max-width: 820px) {
-    display: none;
   }
 }

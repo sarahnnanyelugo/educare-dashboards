@@ -109,7 +109,7 @@ export const ParentsLayout = () => {
           {" "}
           <Route path="/" element={<MainView />} />{" "}
           <Route path="/my-children" element={<MyChildren />} />{" "}
-          <Route path="/result" element={<Result />} />{" "}
+          <Route path="/results" element={<Result />} />{" "}
         </Routes>
 
         <BottomNav />
