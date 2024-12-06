@@ -153,7 +153,7 @@ export const TopNav = () => {
             {" "}
             <Dropdown>
               <Dropdown.Toggle>
-                <CgBell style={{ fontSize: "24px", marginTop: "5px" }} />
+                <CgBell style={{ fontSize: "24px" }} />
               </Dropdown.Toggle>
 
               <Dropdown.Menu>

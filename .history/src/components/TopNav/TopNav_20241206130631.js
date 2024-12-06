@@ -143,17 +143,14 @@ export const TopNav = () => {
             <img src={Logo} alt="logo" width="30%" />
           </div>
 
-          <div className="mobile-calender-link">
-            {" "}
-            <Link to={"/calendar"}>
-              <LuCalendarDays />
-            </Link>
-          </div>
+          <Link to={"/calendar"} className="mobile-calender-link">
+            <LuCalendarDays />
+          </Link>
           <div className="profile-drop profile-drop2">
             {" "}
             <Dropdown>
               <Dropdown.Toggle>
-                <CgBell style={{ fontSize: "24px", marginTop: "5px" }} />
+                <CgBell style={{ fontSize: "24px" }} />
               </Dropdown.Toggle>
 
               <Dropdown.Menu>

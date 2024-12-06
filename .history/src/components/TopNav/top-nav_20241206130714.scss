@@ -10,7 +10,7 @@
   }
   .canvas-toggle {
     font-size: 18px;
-    margin-right: 18px;
+    margin-right: 10px;
   }
   ul {
     float: right;
@@ -62,11 +62,8 @@
     }
   }
   .mobile-calender-link {
-    a {
-      color: #000;
-    }
-
-    margin-right: 25px;
+    color: #000;
+    margin: right 10px;
     font-size: 18px;
   }
 }
