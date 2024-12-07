@@ -293,14 +293,22 @@ export const generateMobileVoteRecords = (numEntries, avatarList) => {
   // Helper function to randomly pick an array element
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
-    mobileVoteRecords.push({
+    voteRecords.push({
       Candidate: arrayElement([
         "Ogechi Ozike",
         "Emmanuel Ozike",
         "Chidera Ozike",
       ]),
-      Class: arrayElement(["Basic 7", "Basic 10", "Basic 12"]),
-      Vote: arrayElement(["2", "3", "4"]),
+      Candidate: arrayElement([
+        "Ogechi Ozike",
+        "Emmanuel Ozike",
+        "Chidera Ozike",
+      ]),
+      Candidate: arrayElement([
+        "Ogechi Ozike",
+        "Emmanuel Ozike",
+        "Chidera Ozike",
+      ]),
     });
   }
   return mobileVoteRecords;

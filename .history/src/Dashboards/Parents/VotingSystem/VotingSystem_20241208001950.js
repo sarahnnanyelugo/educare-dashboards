@@ -6,10 +6,7 @@ import { BsCalendar4Week } from "react-icons/bs";
 import { HiOutlineDownload } from "react-icons/hi";
 import { RiSearch2Line } from "react-icons/ri";
 import { AppTable } from "../../../components/AppTable/AppTable";
-import {
-  generateVoteRecords,
-  generateMobileVoteRecords,
-} from "../../../Utils/DataUtils";
+import { generateVoteRecords } from "../../../Utils/DataUtils";
 import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
 import { IoIosArrowDown } from "react-icons/io";
@@ -18,18 +15,11 @@ import ResponsiveBar from "./ResponsiveBar";
 
 export const VotingSystem = () => {
   const [voteRecords, setVoteRecords] = useState([]);
-  const [mobileVoteRecords, setMobileVoteRecords] = useState([]);
   const headers = ["Start", "End", "Position", "Status", "Results", "Action"];
-  const headers2 = ["Candidate", "Class", "Vote"];
   const avatarList = [Student, Peter];
   useEffect(() => {
     const fb = generateVoteRecords(8, avatarList);
     setVoteRecords(fb);
-    console.log(fb);
-  }, []);
-  useEffect(() => {
-    const fb = generateMobileVoteRecords(15, avatarList);
-    setMobileVoteRecords(fb);
     console.log(fb);
   }, []);
   return (
@@ -106,11 +96,6 @@ export const VotingSystem = () => {
           </div>
           <div className="mt-5 card">
             <h6>Other Candidates</h6>
-            <AppTable
-              headers={headers2}
-              rows={mobileVoteRecords}
-              includeImages={true}
-            />
           </div>
         </div>
       </TabletAndBelow>

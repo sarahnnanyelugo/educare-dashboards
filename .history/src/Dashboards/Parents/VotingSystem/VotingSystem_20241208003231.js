@@ -28,7 +28,7 @@ export const VotingSystem = () => {
     console.log(fb);
   }, []);
   useEffect(() => {
-    const fb = generateMobileVoteRecords(15, avatarList);
+    const fb = generateMobileVoteRecords(8, avatarList);
     setMobileVoteRecords(fb);
     console.log(fb);
   }, []);

@@ -18,7 +18,7 @@ import ResponsiveBar from "./ResponsiveBar";
 
 export const VotingSystem = () => {
   const [voteRecords, setVoteRecords] = useState([]);
-  const [mobileVoteRecords, setMobileVoteRecords] = useState([]);
+  const [mobileVoteRecords, setMobleVoteRecords] = useState([]);
   const headers = ["Start", "End", "Position", "Status", "Results", "Action"];
   const headers2 = ["Candidate", "Class", "Vote"];
   const avatarList = [Student, Peter];
@@ -28,7 +28,7 @@ export const VotingSystem = () => {
     console.log(fb);
   }, []);
   useEffect(() => {
-    const fb = generateMobileVoteRecords(15, avatarList);
+    const fb = generateMobileVoteRecords(8, avatarList);
     setMobileVoteRecords(fb);
     console.log(fb);
   }, []);
@@ -107,8 +107,8 @@ export const VotingSystem = () => {
           <div className="mt-5 card">
             <h6>Other Candidates</h6>
             <AppTable
-              headers={headers2}
-              rows={mobileVoteRecords}
+              headers={headers}
+              rows={voteRecords}
               includeImages={true}
             />
           </div>

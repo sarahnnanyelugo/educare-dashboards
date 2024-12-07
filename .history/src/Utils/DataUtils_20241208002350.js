@@ -289,23 +289,57 @@ export const generateVoteRecords = (numEntries, avatarList) => {
   return voteRecords;
 };
 export const generateMobileVoteRecords = (numEntries, avatarList) => {
-  const mobileVoteRecords = [];
+  const voteRecords = [];
   // Helper function to randomly pick an array element
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
-    mobileVoteRecords.push({
-      Candidate: arrayElement([
-        "Ogechi Ozike",
-        "Emmanuel Ozike",
-        "Chidera Ozike",
+    voteRecords.push({
+      Start: faker.date.anytime(Date.now()).toLocaleDateString(),
+      Amount: faker.finance.amount({
+        min: 100,
+        max: 10000,
+        dec: 2,
+        symbol: "₦ ",
+      }), // '$5.85'
+      End: faker.date.anytime(Date.now()).toLocaleDateString(), // '197089478'
+      Position: arrayElement([
+        "Head of School for the Day",
+        "Pricipal for the Day Election",
       ]),
-      Class: arrayElement(["Basic 7", "Basic 10", "Basic 12"]),
-      Vote: arrayElement(["2", "3", "4"]),
+      Status: arrayElement(["Not Conducted", "Conducted"]),
+      Results: arrayElement(["Not Published", "Published"]),
+      Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
+      Action: arrayElement(["View", "--------"]),
     });
   }
-  return mobileVoteRecords;
+  return voteRecords;
 };
-
+export const generateVoteRecords = (numEntries, avatarList) => {
+  const voteRecords = [];
+  // Helper function to randomly pick an array element
+  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  for (let i = 0; i < numEntries; i++) {
+    voteRecords.push({
+      Start: faker.date.anytime(Date.now()).toLocaleDateString(),
+      Amount: faker.finance.amount({
+        min: 100,
+        max: 10000,
+        dec: 2,
+        symbol: "₦ ",
+      }), // '$5.85'
+      End: faker.date.anytime(Date.now()).toLocaleDateString(), // '197089478'
+      Position: arrayElement([
+        "Head of School for the Day",
+        "Pricipal for the Day Election",
+      ]),
+      Status: arrayElement(["Not Conducted", "Conducted"]),
+      Results: arrayElement(["Not Published", "Published"]),
+      Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
+      Action: arrayElement(["View", "--------"]),
+    });
+  }
+  return voteRecords;
+};
 export const generateTransportRecords = (numEntries, avatarList) => {
   const transportRecords = [];
   // Helper function to randomly pick an array element

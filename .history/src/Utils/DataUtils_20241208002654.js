@@ -293,7 +293,7 @@ export const generateMobileVoteRecords = (numEntries, avatarList) => {
   // Helper function to randomly pick an array element
   const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   for (let i = 0; i < numEntries; i++) {
-    mobileVoteRecords.push({
+    voteRecords.push({
       Candidate: arrayElement([
         "Ogechi Ozike",
         "Emmanuel Ozike",

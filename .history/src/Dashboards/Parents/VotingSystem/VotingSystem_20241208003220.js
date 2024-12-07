@@ -28,7 +28,7 @@ export const VotingSystem = () => {
     console.log(fb);
   }, []);
   useEffect(() => {
-    const fb = generateMobileVoteRecords(15, avatarList);
+    const fb = generateMobileVoteRecords(8, avatarList);
     setMobileVoteRecords(fb);
     console.log(fb);
   }, []);
@@ -104,7 +104,7 @@ export const VotingSystem = () => {
             <h6>Top 5 Candidates</h6>
             <ResponsiveBar />
           </div>
-          <div className="mt-5 card">
+          <div className="mt-5 card" style=>
             <h6>Other Candidates</h6>
             <AppTable
               headers={headers2}
