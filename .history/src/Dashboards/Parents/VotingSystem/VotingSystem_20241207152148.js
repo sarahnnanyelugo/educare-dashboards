@@ -11,7 +11,6 @@ import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
 import { IoIosArrowDown } from "react-icons/io";
 import { TabletAndBelow, Desktop } from "../../../Utils/mediaQueries";
-import ResponsiveBar from "./ResponsiveBar";
 
 export const VotingSystem = () => {
   const [voteRecords, setVoteRecords] = useState([]);
@@ -88,8 +87,29 @@ export const VotingSystem = () => {
         </div>
       </Desktop>
       <TabletAndBelow>
-        <div className="chart-container">
-          <ResponsiveBar />
+        <div style={{ padding: "10px" }}>
+          {" "}
+          <div className="card">
+            {" "}
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={sortedData}
+                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />{" "}
+                {/* Optional grid lines */}
+                <XAxis dataKey="label" />
+                <YAxis />
+                <Tooltip />
+                <Bar
+                  dataKey="value"
+                  fill="#4CAF50"
+                  radius={[10, 10, 0, 0]} // Rounded top corners
+                  label={<CustomBarLabel />}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </TabletAndBelow>
     </>

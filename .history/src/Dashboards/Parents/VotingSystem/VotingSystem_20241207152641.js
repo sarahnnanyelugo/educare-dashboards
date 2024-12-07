@@ -11,7 +11,7 @@ import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
 import { IoIosArrowDown } from "react-icons/io";
 import { TabletAndBelow, Desktop } from "../../../Utils/mediaQueries";
-import ResponsiveBar from "./ResponsiveBar";
+import ResponsiveBarChart from "./ResponsiveBar";
 
 export const VotingSystem = () => {
   const [voteRecords, setVoteRecords] = useState([]);
@@ -89,7 +89,7 @@ export const VotingSystem = () => {
       </Desktop>
       <TabletAndBelow>
         <div className="chart-container">
-          <ResponsiveBar />
+          <ResponsiveBarChart />
         </div>
       </TabletAndBelow>
     </>

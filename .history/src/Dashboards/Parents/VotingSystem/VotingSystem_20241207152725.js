@@ -89,7 +89,7 @@ export const VotingSystem = () => {
       </Desktop>
       <TabletAndBelow>
         <div className="chart-container">
-          <ResponsiveBar />
+          <ResponsiveBarChart />
         </div>
       </TabletAndBelow>
     </>

@@ -11,8 +11,70 @@ import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
 import { IoIosArrowDown } from "react-icons/io";
 import { TabletAndBelow, Desktop } from "../../../Utils/mediaQueries";
-import ResponsiveBar from "./ResponsiveBar";
 
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  CartesianGrid,
+} from "recharts";
+
+const sortedData = [
+  { label: "Item A", value: 300, image: Peter },
+  { label: "Item B", value: 250, image: Student },
+  { label: "Item C", value: 200, image: Peter },
+  { label: "Item D", value: 150, image: Student },
+];
+// const data = rawData.sort((a, b) => b.sales - a.sales);
+
+const CustomBarLabel = (props) => {
+  const { x, y, width, value, image } = props;
+  const imageWidth = 46; // Image width
+  const imageHeight = 46; // Image height
+  const imageX = x + width / 2 - imageWidth / 2;
+  const imageY = y - imageHeight - 10; // Position above the bar
+  const textMargin = 10; // Add top and bottom margin
+
+  return (
+    <>
+      <foreignObject
+        x={imageX}
+        y={imageY}
+        width={imageWidth}
+        height={imageHeight}
+      >
+        <div
+          style={{
+            width: `${imageWidth}px`,
+            height: `${imageHeight}px`,
+            borderRadius: "100%",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src={image}
+            alt="label"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </div>
+      </foreignObject>
+
+      {/* Text between the bar and the image */}
+      <text
+        x={x + width / 2}
+        y={imageY + imageHeight + textMargin} // Adjusted for margin
+        fill="#000"
+        textAnchor="middle"
+        fontSize="12px"
+      >
+        {value} Votes
+      </text>
+    </>
+  );
+};
 export const VotingSystem = () => {
   const [voteRecords, setVoteRecords] = useState([]);
   const headers = ["Start", "End", "Position", "Status", "Results", "Action"];
@@ -88,8 +150,29 @@ export const VotingSystem = () => {
         </div>
       </Desktop>
       <TabletAndBelow>
-        <div className="chart-container">
-          <ResponsiveBar />
+        <div style={{ padding: "10px" }}>
+          {" "}
+          <div className="card">
+            {" "}
+            <BarChart
+              height={550}
+              width="100%"
+              data={sortedData}
+              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />{" "}
+              {/* Optional grid lines */}
+              <XAxis dataKey="label" />
+              <YAxis />
+              <Tooltip />
+              <Bar
+                dataKey="value"
+                fill="#4CAF50"
+                radius={[10, 10, 0, 0]} // Rounded top corners
+                label={<CustomBarLabel />}
+              />
+            </BarChart>
+          </div>
         </div>
       </TabletAndBelow>
     </>

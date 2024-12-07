@@ -11,8 +11,40 @@ import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
 import { IoIosArrowDown } from "react-icons/io";
 import { TabletAndBelow, Desktop } from "../../../Utils/mediaQueries";
-import ResponsiveBar from "./ResponsiveBar";
 
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+
+const rawData = [
+  { name: "January", sales: 30, image: Peter },
+  { name: "February", sales: 50, image: Peter },
+  { name: "March", sales: 40, image: Student },
+];
+const data = rawData.sort((a, b) => b.sales - a.sales);
+
+const CustomBarLabel = (props) => {
+  const { x, y, width, value, image } = props;
+  return (
+    <>
+      <image
+        x={x + width / 2 - 15}
+        y={y - 40}
+        href={image}
+        height={46}
+        width={46}
+      />
+      <text x={x + width / 2} y={y - 10} fill="#000" textAnchor="middle">
+        {value}Votes
+      </text>
+    </>
+  );
+};
 export const VotingSystem = () => {
   const [voteRecords, setVoteRecords] = useState([]);
   const headers = ["Start", "End", "Position", "Status", "Results", "Action"];
@@ -88,8 +120,28 @@ export const VotingSystem = () => {
         </div>
       </Desktop>
       <TabletAndBelow>
-        <div className="chart-container">
-          <ResponsiveBar />
+        <div style={{ padding: "10px" }}>
+          {" "}
+          <div className="card">
+            {" "}
+            <ResponsiveContainer width="100%" height={500}>
+              <BarChart data={data}>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Bar
+                  dataKey="sales"
+                  fill="#8884d8"
+                  label={(props) => (
+                    <CustomBarLabel
+                      {...props}
+                      image={data[props.index].image}
+                    />
+                  )}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </TabletAndBelow>
     </>
