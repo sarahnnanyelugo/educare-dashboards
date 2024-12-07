@@ -163,7 +163,7 @@ function PastoralReport() {
                     </div>
                   </div>
                   <div style={{ flexGrow: 1 }} />
-                  <div className=" col-md-3 mt-4">
+                  <div className=" col-md-3 ">
                     <Search />
                   </div>
                 </div>

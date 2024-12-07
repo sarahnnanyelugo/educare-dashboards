@@ -111,7 +111,6 @@ export const ParentsLayout = () => {
           <Route path="/my-children" element={<MyChildren />} />{" "}
           <Route path="/result" element={<Result />} />{" "}
           <Route path="/calendar" element={<Event />} />{" "}
-          <Route path="/pastoral-report" element={<PastoralReport />} />{" "}
         </Routes>
 
         <BottomNav />

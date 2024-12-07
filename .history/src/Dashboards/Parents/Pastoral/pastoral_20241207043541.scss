@@ -1,8 +1,5 @@
 .empty-record {
   padding-top: 130px;
-  @media screen and (max-width: 820px) {
-    padding-top: 50px;
-  }
   h6 {
     font-size: 12px;
     margin-top: 10px;
@@ -26,7 +23,6 @@
 }
 .pastoral-div {
   padding: 20px;
-
   .tabs2 {
     border: solid 1px #e7e7e7;
     border-radius: 10px;
@@ -47,33 +43,6 @@
         padding: 10px 15px;
         font-size: 14px;
       }
-    }
-  }
-  .tabs {
-    display: flex;
-    width: 100%;
-    padding: 8px 13px;
-    font-family: rebondG-Bold;
-  }
-
-  .panel {
-    display: none;
-  }
-
-  .panel.active2 {
-    display: block;
-  }
-  .add-feedback-btn {
-    border: solid 1px #414244;
-    border-radius: 6px;
-    background: #0098da;
-    color: #fff;
-    font-family: rebondBook;
-    padding: 5px 10px;
-    border-radius: 100px;
-    width: 100%;
-    &:hover {
-      background: #005b83;
     }
   }
 }

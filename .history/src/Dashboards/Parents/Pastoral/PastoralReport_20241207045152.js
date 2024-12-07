@@ -163,7 +163,7 @@ function PastoralReport() {
                     </div>
                   </div>
                   <div style={{ flexGrow: 1 }} />
-                  <div className=" col-md-3 mt-4">
+                  <div className=" col-md-3 ">
                     <Search />
                   </div>
                 </div>
@@ -184,7 +184,7 @@ function PastoralReport() {
                   {" "}
                   <Search />
                 </div>
-                <div className="d-md-flex mt-4">
+                <div className="d-md-flex mt-3">
                   {" "}
                   <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 col-md-3">
                     <div className="col">
@@ -214,7 +214,7 @@ function PastoralReport() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-12 mt-4">
+                  <div className="d-md-flex col-md-4 offset-md-5">
                     <RequestExeat />
                   </div>
                 </div>
@@ -239,7 +239,7 @@ function PastoralReport() {
               {" "}
               <div className="page-session">
                 {" "}
-                <div className="d-md-flex ">
+                <div className="d-md-flex">
                   {" "}
                   <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 col-md-3">
                     <div className=" col">
@@ -272,7 +272,7 @@ function PastoralReport() {
                     </div>
                   </div>
                   <div style={{ flexGrow: 1 }} />
-                  <div className=" col-md-3 mt-4">
+                  <div className=" col-md-3 ">
                     <h6>Search</h6>
                     <div className="input-div d-flex">
                       <RiSearch2Line className="icon" />

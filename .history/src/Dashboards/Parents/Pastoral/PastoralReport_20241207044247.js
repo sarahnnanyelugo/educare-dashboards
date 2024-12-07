@@ -14,8 +14,7 @@ import Select from "../../../components/Select/Select";
 import { Search } from "../../../components/Search/Search";
 import { Desktop, TabletAndBelow } from "../../../Utils/mediaQueries";
 import Note from "../../../assets/images/note.svg";
-import RequestExeat from "./RequestExeat";
-import { generateHostelReport } from "../../../Utils/DataUtils";
+
 const terms = [
   { value: "first term", label: "First Term" },
   { value: "second term", label: "Second Term" },
@@ -30,8 +29,6 @@ const sessions = [
 function PastoralReport() {
   const [report, setReport] = useState([]);
   const headers = ["Date", "Child", "Class", "Action"];
-  const [hostelReport, setHostelReport] = useState([]);
-
   const avatarList = [Student, Peter];
   const [activeIndex, setActiveIndex] = useState(1);
   const handleClick = (index) => setActiveIndex(index);
@@ -44,11 +41,7 @@ function PastoralReport() {
     setReport(fb);
     console.log(fb);
   }, []);
-  useEffect(() => {
-    const fb = generateHostelReport(4, avatarList);
-    setHostelReport(fb);
-    console.log(fb);
-  }, []);
+
   return (
     <>
       <Desktop>
@@ -163,7 +156,7 @@ function PastoralReport() {
                     </div>
                   </div>
                   <div style={{ flexGrow: 1 }} />
-                  <div className=" col-md-3 mt-4">
+                  <div className=" col-md-3 ">
                     <Search />
                   </div>
                 </div>
@@ -180,11 +173,7 @@ function PastoralReport() {
             <div className={`panel ${checkActive(2, "active2")}`}>
               {" "}
               <div className="page-session">
-                <div className=" col-12">
-                  {" "}
-                  <Search />
-                </div>
-                <div className="d-md-flex mt-4">
+                <div className="d-md-flex">
                   {" "}
                   <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 col-md-3">
                     <div className="col">
@@ -214,8 +203,13 @@ function PastoralReport() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-12 mt-4">
+                  <div className="d-md-flex col-md-4 offset-md-5">
+                    <div className="col-md-8">
+                      {" "}
+                      <Search />
+                    </div>
                     <RequestExeat />
+                    {/* <button className="add-feedback-btn"> Request Exeat</button> */}
                   </div>
                 </div>
                 <hr />
@@ -239,7 +233,7 @@ function PastoralReport() {
               {" "}
               <div className="page-session">
                 {" "}
-                <div className="d-md-flex ">
+                <div className="d-md-flex">
                   {" "}
                   <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 col-md-3">
                     <div className=" col">
@@ -272,7 +266,7 @@ function PastoralReport() {
                     </div>
                   </div>
                   <div style={{ flexGrow: 1 }} />
-                  <div className=" col-md-3 mt-4">
+                  <div className=" col-md-3 ">
                     <h6>Search</h6>
                     <div className="input-div d-flex">
                       <RiSearch2Line className="icon" />

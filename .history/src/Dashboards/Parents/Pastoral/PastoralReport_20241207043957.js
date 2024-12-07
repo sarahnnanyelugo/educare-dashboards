@@ -13,9 +13,7 @@ import Peter from "../../../assets/images/peter.png";
 import Select from "../../../components/Select/Select";
 import { Search } from "../../../components/Search/Search";
 import { Desktop, TabletAndBelow } from "../../../Utils/mediaQueries";
-import Note from "../../../assets/images/note.svg";
-import RequestExeat from "./RequestExeat";
-import { generateHostelReport } from "../../../Utils/DataUtils";
+
 const terms = [
   { value: "first term", label: "First Term" },
   { value: "second term", label: "Second Term" },
@@ -30,8 +28,6 @@ const sessions = [
 function PastoralReport() {
   const [report, setReport] = useState([]);
   const headers = ["Date", "Child", "Class", "Action"];
-  const [hostelReport, setHostelReport] = useState([]);
-
   const avatarList = [Student, Peter];
   const [activeIndex, setActiveIndex] = useState(1);
   const handleClick = (index) => setActiveIndex(index);
@@ -44,11 +40,7 @@ function PastoralReport() {
     setReport(fb);
     console.log(fb);
   }, []);
-  useEffect(() => {
-    const fb = generateHostelReport(4, avatarList);
-    setHostelReport(fb);
-    console.log(fb);
-  }, []);
+
   return (
     <>
       <Desktop>
@@ -163,7 +155,7 @@ function PastoralReport() {
                     </div>
                   </div>
                   <div style={{ flexGrow: 1 }} />
-                  <div className=" col-md-3 mt-4">
+                  <div className=" col-md-3 ">
                     <Search />
                   </div>
                 </div>
@@ -177,120 +169,8 @@ function PastoralReport() {
                 </div>
               </div>
             </div>
-            <div className={`panel ${checkActive(2, "active2")}`}>
-              {" "}
-              <div className="page-session">
-                <div className=" col-12">
-                  {" "}
-                  <Search />
-                </div>
-                <div className="d-md-flex mt-4">
-                  {" "}
-                  <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 col-md-3">
-                    <div className="col">
-                      {" "}
-                      <h6>Session</h6>
-                      <div className="card col-md-12">
-                        <Select
-                          options={sessions}
-                          value={selectedSession}
-                          onChange={setSelectedSession}
-                          placeholder="Select Session"
-                          Icon={Icon1}
-                        />
-                      </div>
-                    </div>
-                    <div className="col">
-                      {" "}
-                      <h6>Term</h6>
-                      <div className="card col-md-12">
-                        <Select
-                          options={terms}
-                          value={selectedTerm}
-                          onChange={setSelectedTerm}
-                          Icon={Icon1}
-                          placeholder="Select Term"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 mt-4">
-                    <RequestExeat />
-                  </div>
-                </div>
-                <hr />
-                <div className="">
-                  <center>
-                    <div className="col-md-2 empty-record">
-                      <div className="img-div">
-                        <center>
-                          {" "}
-                          <img src={Note} />
-                        </center>
-                      </div>
-                      <h6>No exeat records</h6>
-                      <p>All exit records would show up here</p>
-                    </div>
-                  </center>
-                </div>
-              </div>
-            </div>
-            <div className={`panel ${checkActive(3, "active2")}`}>
-              {" "}
-              <div className="page-session">
-                {" "}
-                <div className="d-md-flex ">
-                  {" "}
-                  <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 col-md-3">
-                    <div className=" col">
-                      <h6>Session</h6>
-                      <div className="select-div  d-flex col">
-                        {" "}
-                        <div>
-                          {" "}
-                          <img src={Icon1} height="" />
-                        </div>
-                        <select>
-                          <option>2023/2024</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className=" col">
-                      <h6>Term</h6>
-                      <div className="select-div  d-flex col">
-                        {" "}
-                        <div>
-                          {" "}
-                          <BsCalendar4Week />
-                        </div>
-                        <select>
-                          <option>First Term</option>
-                          <option>Second Term</option>
-                          <option>Third Term</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div style={{ flexGrow: 1 }} />
-                  <div className=" col-md-3 mt-4">
-                    <h6>Search</h6>
-                    <div className="input-div d-flex">
-                      <RiSearch2Line className="icon" />
-
-                      <input placeholder="search" />
-                    </div>
-                  </div>
-                </div>
-                <hr />
-                <div className="feedbacks-table">
-                  <AppTable
-                    headers={headers}
-                    rows={hostelReport}
-                    includeImages={true}
-                  />
-                </div>
-              </div>
-            </div>
+            <div className={`panel ${checkActive(2, "active2")}`}> 2</div>
+            <div className={`panel ${checkActive(3, "active2")}`}> 3</div>
           </div>
         </div>
       </TabletAndBelow>

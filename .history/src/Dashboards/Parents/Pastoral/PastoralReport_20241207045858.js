@@ -163,7 +163,7 @@ function PastoralReport() {
                     </div>
                   </div>
                   <div style={{ flexGrow: 1 }} />
-                  <div className=" col-md-3 mt-4">
+                  <div className=" col-md-3 ">
                     <Search />
                   </div>
                 </div>
@@ -272,7 +272,7 @@ function PastoralReport() {
                     </div>
                   </div>
                   <div style={{ flexGrow: 1 }} />
-                  <div className=" col-md-3 mt-4">
+                  <div className=" col-md-3 ">
                     <h6>Search</h6>
                     <div className="input-div d-flex">
                       <RiSearch2Line className="icon" />
