@@ -91,7 +91,7 @@ export const VotingSystem = () => {
         <div className="chart-container">
           <h5>Principal for the Day Election</h5>
           <div className="card">
-            <h6 >Top 5 Candidates</h6>
+            {" "}
             <ResponsiveBar />
           </div>
         </div>

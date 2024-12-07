@@ -62,12 +62,13 @@ const CustomBarLabel = (props) => {
         y={imageY + imageHeight + 10} // Position text below the image
         fill="#000"
         textAnchor="middle"
+        fontSize="10px"
       >
-        <tspan fill="#000" fontFamily="rebondG-Medium" fontSize="13px">
+        <tspan fill="#000" fontFamily="rebondG-Medium">
           {value}
         </tspan>
         {/* Description with different style */}
-        <tspan fill="#888" fontFamily="rebondBook" fontSize="10px">
+        <tspan fill="#888" fontFamily="rebondBook">
           {" "}
           Votes
         </tspan>
@@ -84,8 +85,7 @@ const CustomXAxisTick = (props) => {
       x={x}
       y={y + 10} // Adjust y for positioning
       textAnchor="middle"
-      fontSize="10px"
-      fontFamily="rebondG-Medium"
+      fontSize="12px"
     >
       {textLines.map((line, index) => (
         <tspan key={index} x={x} dy={index === 0 ? 0 : 15}>
@@ -98,11 +98,10 @@ const CustomXAxisTick = (props) => {
 const ResponsiveBar = () => (
   <ResponsiveContainer width="100%" height={550}>
     <BarChart data={data}>
-      <XAxis
-        dataKey="name"
-        tick={<CustomXAxisTick />}
-        interval={0} // Ensure all labels are displayed
-      />
+      <XAxis dataKey="name" />
+      tick={<CustomXAxisTick />}
+      interval={0} // Ensure all labels are displayed
+      {/* Remove Y-Axis Labels */}
       <YAxis axisLine={false} tick={false} />
       <Tooltip />
       <Bar

@@ -13,12 +13,13 @@ import {
 
 // Example sorted data
 const rawData = [
-  { name: "Duru Munachisom", sales: 40, image: Peter },
-  { name: "Okonkwo John", sales: 20, image: Student },
-  { name: "Mark Collin", sales: 70, image: Peter },
-  { name: "Eze Sophia", sales: 55, image: Student },
-  { name: "Peter Young", sales: 10, image: Peter },
-  { name: "Mark Kola", sales: 5, image: Student },
+  { name: "January", sales: 40, image: Peter },
+  { name: "February", sales: 20, image: Student },
+  { name: "January", sales: 70, image: Peter },
+  { name: "February", sales: 55, image: Student },
+
+  { name: "March", sales: 10, image: Peter },
+  { name: "March", sales: 5, image: Student },
 ];
 
 // Sort data in descending order
@@ -62,47 +63,23 @@ const CustomBarLabel = (props) => {
         y={imageY + imageHeight + 10} // Position text below the image
         fill="#000"
         textAnchor="middle"
+        fontSize="12px"
       >
-        <tspan fill="#000" fontFamily="rebondG-Medium" fontSize="13px">
+        <tspan fill="#000" font-family:rebondG-Medium>
           {value}
         </tspan>
         {/* Description with different style */}
-        <tspan fill="#888" fontFamily="rebondBook" fontSize="10px">
-          {" "}
-          Votes
-        </tspan>
+        <tspan fill="#888"> Votes</tspan>
       </text>
     </>
   );
 };
-const CustomXAxisTick = (props) => {
-  const { x, y, payload } = props;
-  const textLines = payload.value.split(" "); // Split text into words
 
-  return (
-    <text
-      x={x}
-      y={y + 10} // Adjust y for positioning
-      textAnchor="middle"
-      fontSize="10px"
-      fontFamily="rebondG-Medium"
-    >
-      {textLines.map((line, index) => (
-        <tspan key={index} x={x} dy={index === 0 ? 0 : 15}>
-          {line}
-        </tspan>
-      ))}
-    </text>
-  );
-};
 const ResponsiveBar = () => (
   <ResponsiveContainer width="100%" height={550}>
     <BarChart data={data}>
-      <XAxis
-        dataKey="name"
-        tick={<CustomXAxisTick />}
-        interval={0} // Ensure all labels are displayed
-      />
+      <XAxis dataKey="name" />
+      {/* Remove Y-Axis Labels */}
       <YAxis axisLine={false} tick={false} />
       <Tooltip />
       <Bar
