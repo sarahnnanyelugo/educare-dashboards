@@ -105,7 +105,6 @@ export const ParentsLayout = () => {
       </Desktop>
       <TabletAndBelow>
         <TopNav />
-
         <Routes>
           {" "}
           <Route path="/" element={<MainView />} />{" "}

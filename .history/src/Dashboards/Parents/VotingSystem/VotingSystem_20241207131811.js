@@ -22,9 +22,9 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "January", sales: 30, image: Peter },
-  { name: "February", sales: 50, image: Peter },
-  { name: "March", sales: 40, image: Student },
+  { name: "January", sales: 30, image: "../../../assets/images/student.png" },
+  { name: "February", sales: 50, image: "../../../assets/images/peter.png" },
+  { name: "March", sales: 40, image: "../../../assets/images/student.png" },
 ];
 
 const CustomBarLabel = (props) => {
@@ -57,7 +57,7 @@ export const VotingSystem = () => {
     <>
       <Desktop>
         {" "}
-        <div className="finance-div">
+        {/* <div className="finance-div">
           <h5>Voting System</h5>
 
           <div className="selections">
@@ -116,7 +116,21 @@ export const VotingSystem = () => {
               includeImages={true}
             />
           </div>
-        </div>
+        </div> */}
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={data}>
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Bar
+              dataKey="sales"
+              fill="#8884d8"
+              label={(props) => (
+                <CustomBarLabel {...props} image={data[props.index].image} />
+              )}
+            />
+          </BarChart>
+        </ResponsiveContainer>
       </Desktop>
       <TabletAndBelow>
         <ResponsiveContainer width="100%" height={300}>

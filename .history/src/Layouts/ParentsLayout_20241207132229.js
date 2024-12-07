@@ -105,16 +105,18 @@ export const ParentsLayout = () => {
       </Desktop>
       <TabletAndBelow>
         <TopNav />
-
-        <Routes>
-          {" "}
-          <Route path="/" element={<MainView />} />{" "}
-          <Route path="/my-children" element={<MyChildren />} />{" "}
-          <Route path="/result" element={<Result />} />{" "}
-          <Route path="/calendar" element={<Event />} />{" "}
-          <Route path="/pastoral-report" element={<PastoralReport />} />{" "}
-          <Route path="/voting-system" element={<VotingSystem />} />{" "}
-        </Routes>
+        <div className="d-flex">
+          {/* <SideNav /> */}
+          <Routes>
+            {" "}
+            <Route path="/" element={<MainView />} />{" "}
+            <Route path="/my-children" element={<MyChildren />} />{" "}
+            <Route path="/result" element={<Result />} />{" "}
+            <Route path="/calendar" element={<Event />} />{" "}
+            <Route path="/pastoral-report" element={<PastoralReport />} />{" "}
+            <Route path="/voting-system" element={<VotingSystem />} />{" "}
+          </Routes>
+        </div>
 
         <BottomNav />
       </TabletAndBelow>

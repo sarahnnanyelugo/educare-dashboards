@@ -10,10 +10,43 @@ import { generateVoteRecords } from "../../../Utils/DataUtils";
 import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
 import { IoIosArrowDown } from "react-icons/io";
+import { TabletAndBelow } from "../../../Utils/mediaQueries";
 
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+
+const data = [
+  { name: "January", sales: 30, image: "https://via.placeholder.com/50" },
+  { name: "February", sales: 50, image: "https://via.placeholder.com/50" },
+  { name: "March", sales: 40, image: "https://via.placeholder.com/50" },
+];
+
+const CustomBarLabel = (props) => {
+  const { x, y, width, value, image } = props;
+  return (
+    <>
+      <image
+        x={x + width / 2 - 15}
+        y={y - 40}
+        href={image}
+        height={30}
+        width={30}
+      />
+      <text x={x + width / 2} y={y - 10} fill="#000" textAnchor="middle">
+        {value}
+      </text>
+    </>
+  );
+};
 export const VotingSystem = () => {
   const [voteRecords, setVoteRecords] = useState([]);
-  const headers = ["Start", "End", "Position", "Purpose", "Status", "Action"];
+  const headers = ["Start", "End", "Position", "Status", "Results", "Action"];
   const avatarList = [Student, Peter];
   useEffect(() => {
     const fb = generateVoteRecords(8, avatarList);
@@ -78,6 +111,7 @@ export const VotingSystem = () => {
           <AppTable headers={headers} rows={voteRecords} includeImages={true} />
         </div>
       </div>
+      <TabletAndBelow></TabletAndBelow>
     </>
   );
 };

@@ -22,9 +22,9 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "January", sales: 30, image: Peter },
-  { name: "February", sales: 50, image: Peter },
-  { name: "March", sales: 40, image: Student },
+  { name: "January", sales: 30, image: "../../../assets/images/student.png" },
+  { name: "February", sales: 50, image: "../../../assets/images/peter.png" },
+  { name: "March", sales: 40, image: "../../../assets/images/student.png" },
 ];
 
 const CustomBarLabel = (props) => {
