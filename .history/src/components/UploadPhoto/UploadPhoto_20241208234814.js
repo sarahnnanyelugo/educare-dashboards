@@ -3,7 +3,7 @@ import "./upload-photo.scss";
 export const UploadPhoto = (props) => {
   const [dragActive, setDragActive] = useState(false);
   const [uploadedFileName, setUploadedFileName] = useState("");
-  const { height } = props;
+  const [height] = props;
   const handleDragOver = (e) => {
     e.preventDefault();
     setDragActive(true);

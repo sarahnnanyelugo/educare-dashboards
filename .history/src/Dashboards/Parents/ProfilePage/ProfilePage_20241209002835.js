@@ -207,7 +207,7 @@ export const ProfilePage = () => {
                   </button>
                 </div>
                 <div style={{ textAlign: "right" }}>
-                  <button className="app-btn mt-5">Save changes</button>
+                  <button className="app-btn">Save changes</button>
                 </div>
               </div>
             </div>

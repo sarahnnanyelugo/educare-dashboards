@@ -10,52 +10,7 @@ export const ProfilePage = () => {
   const checkActive = (index, className) =>
     activeIndex === index ? className : "";
   const [pin, setPin] = useState(["", "", "", ""]);
-  const [isVisible, setIsVisible] = useState(false);
 
-  const handleChange = (value, index) => {
-    if (!/^[0-9]?$/.test(value)) return; // Allow only digits
-    const newPin = [...pin];
-    newPin[index] = value;
-    setPin(newPin);
-
-    // Move focus to the next input
-    if (value && index < 3) {
-      document.getElementById(`pin-input-${index + 1}`).focus();
-    }
-  };
-
-  const handleKeyDown = (e, index) => {
-    if (e.key === "Backspace" && !pin[index] && index > 0) {
-      document.getElementById(`pin-input-${index - 1}`).focus();
-    }
-  };
-
-  const handlePaste = (e) => {
-    e.preventDefault();
-    const pastedData = e.clipboardData.getData("Text").slice(0, 4);
-    const newPin = [...pin];
-    for (let i = 0; i < pastedData.length; i++) {
-      if (/^[0-9]$/.test(pastedData[i])) {
-        newPin[i] = pastedData[i];
-      }
-    }
-    setPin(newPin);
-    document
-      .getElementById(`pin-input-${Math.min(pastedData.length - 1, 3)}`)
-      .focus();
-  };
-
-  const generatePin = () => {
-    const randomPin = Array.from({ length: 4 }, () =>
-      Math.floor(Math.random() * 10).toString()
-    );
-    setPin(randomPin);
-    window.alert("PIN has been successfully generated!");
-  };
-
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
-  };
   return (
     <>
       <div className="profile-page">
@@ -144,72 +99,6 @@ export const ProfilePage = () => {
                 <UploadPhoto height="60px" />
               </div>
               <h6>Access PIN</h6>
-              <div style={{ textAlign: "center" }}>
-                <div
-                  style={{
-                    display: "flex",
-
-                    gap: "10px",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {pin.map((digit, index) => (
-                    <input
-                      key={index}
-                      id={`pin-input-${index}`}
-                      type={isVisible ? "text" : "password"}
-                      maxLength="1"
-                      value={digit}
-                      placeholder="*"
-                      onChange={(e) => handleChange(e.target.value, index)}
-                      onKeyDown={(e) => handleKeyDown(e, index)}
-                      onPaste={handlePaste}
-                      style={{
-                        width: "35px",
-                        height: "35px",
-                        textAlign: "center",
-                        fontSize: "18px",
-                        border: "1px solid #E4E7EC",
-                        borderRadius: "6px",
-                      }}
-                    />
-                  ))}
-                </div>
-                <div style={{ textAlign: "left" }}>
-                  <button
-                    onClick={toggleVisibility}
-                    style={{
-                      padding: "8px 25px",
-                      border: "solid 1px #E1E1E1",
-                      borderRadius: "25px",
-                      background: "#fff",
-                      color: "#666666",
-                      fontSize: "14px",
-                      fontFamily: "rebondBook",
-                      marginRight: "10px",
-                    }}
-                  >
-                    {isVisible ? "Hide PIN" : "View PIN"}
-                  </button>
-                  <button
-                    onClick={generatePin}
-                    style={{
-                      padding: "8px 25px",
-                      border: "solid 1px #E1E1E1",
-                      borderRadius: "25px",
-                      background: "#fff",
-                      color: "#666666",
-                      fontSize: "14px",
-                      fontFamily: "rebondBook",
-                    }}
-                  >
-                    Generate
-                  </button>
-                </div>
-                <div style={{ textAlign: "right" }}>
-                  <button className="app-btn mt-5">Save changes</button>
-                </div>
-              </div>
             </div>
             <div className={`panel ${checkActive(2, "active2")}`}> 2</div>
             <div className={`panel ${checkActive(3, "active2")}`}> 3</div>

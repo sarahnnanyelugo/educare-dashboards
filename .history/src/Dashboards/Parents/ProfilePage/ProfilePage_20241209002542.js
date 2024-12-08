@@ -175,7 +175,7 @@ export const ProfilePage = () => {
                     />
                   ))}
                 </div>
-                <div style={{ textAlign: "left" }}>
+                <div style={{ flex: "start" }}>
                   <button
                     onClick={toggleVisibility}
                     style={{
@@ -205,9 +205,6 @@ export const ProfilePage = () => {
                   >
                     Generate
                   </button>
-                </div>
-                <div style={{ textAlign: "right" }}>
-                  <button className="app-btn mt-5">Save changes</button>
                 </div>
               </div>
             </div>

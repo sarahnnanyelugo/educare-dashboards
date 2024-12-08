@@ -148,7 +148,7 @@ export const ProfilePage = () => {
                 <div
                   style={{
                     display: "flex",
-
+                    justifyContent: "center",
                     gap: "10px",
                     marginBottom: "20px",
                   }}
@@ -165,17 +165,17 @@ export const ProfilePage = () => {
                       onKeyDown={(e) => handleKeyDown(e, index)}
                       onPaste={handlePaste}
                       style={{
-                        width: "35px",
-                        height: "35px",
+                        width: "40px",
+                        height: "40px",
                         textAlign: "center",
                         fontSize: "18px",
-                        border: "1px solid #E4E7EC",
-                        borderRadius: "6px",
+                        border: "1px solid #ccc",
+                        borderRadius: "5px",
                       }}
                     />
                   ))}
                 </div>
-                <div style={{ textAlign: "left" }}>
+                <div>
                   <button
                     onClick={toggleVisibility}
                     style={{
@@ -186,7 +186,7 @@ export const ProfilePage = () => {
                       color: "#666666",
                       fontSize: "14px",
                       fontFamily: "rebondBook",
-                      marginRight: "10px",
+                      gap: "10px",
                     }}
                   >
                     {isVisible ? "Hide PIN" : "View PIN"}
@@ -205,9 +205,6 @@ export const ProfilePage = () => {
                   >
                     Generate
                   </button>
-                </div>
-                <div style={{ textAlign: "right" }}>
-                  <button className="app-btn mt-5">Save changes</button>
                 </div>
               </div>
             </div>

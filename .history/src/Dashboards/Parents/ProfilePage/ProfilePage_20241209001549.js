@@ -148,7 +148,7 @@ export const ProfilePage = () => {
                 <div
                   style={{
                     display: "flex",
-
+                    justifyContent: "center",
                     gap: "10px",
                     marginBottom: "20px",
                   }}
@@ -165,28 +165,28 @@ export const ProfilePage = () => {
                       onKeyDown={(e) => handleKeyDown(e, index)}
                       onPaste={handlePaste}
                       style={{
-                        width: "35px",
-                        height: "35px",
+                        width: "40px",
+                        height: "40px",
                         textAlign: "center",
                         fontSize: "18px",
-                        border: "1px solid #E4E7EC",
-                        borderRadius: "6px",
+                        border: "1px solid #ccc",
+                        borderRadius: "5px",
                       }}
                     />
                   ))}
                 </div>
-                <div style={{ textAlign: "left" }}>
+                <div>
                   <button
                     onClick={toggleVisibility}
                     style={{
-                      padding: "8px 25px",
-                      border: "solid 1px #E1E1E1",
-                      borderRadius: "25px",
-                      background: "#fff",
-                      color: "#666666",
-                      fontSize: "14px",
-                      fontFamily: "rebondBook",
+                      padding: "10px 20px",
                       marginRight: "10px",
+                      border: "none",
+                      borderRadius: "5px",
+                      backgroundColor: "#007bff",
+                      color: "#fff",
+                      fontSize: "16px",
+                      cursor: "pointer",
                     }}
                   >
                     {isVisible ? "Hide PIN" : "View PIN"}
@@ -194,20 +194,16 @@ export const ProfilePage = () => {
                   <button
                     onClick={generatePin}
                     style={{
-                      padding: "8px 25px",
-                      border: "solid 1px #E1E1E1",
+                      padding: "10px 20px",
+                      border: "solid 1px #E4E7EC",
                       borderRadius: "25px",
                       background: "#fff",
-                      color: "#666666",
-                      fontSize: "14px",
-                      fontFamily: "rebondBook",
+                      color: "grey",
+                      fontSize: "16px",
                     }}
                   >
-                    Generate
+                    Generate PIN
                   </button>
-                </div>
-                <div style={{ textAlign: "right" }}>
-                  <button className="app-btn mt-5">Save changes</button>
                 </div>
               </div>
             </div>

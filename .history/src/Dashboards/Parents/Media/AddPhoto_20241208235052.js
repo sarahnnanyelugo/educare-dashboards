@@ -17,7 +17,7 @@ export const AddPhoto = () => {
         <h6>Add caption / description</h6>
         <input placeholder="Caption here" />
         <h6>Upload Photo / Video</h6>
-        <UploadPhoto height="130px" />
+        <UploadPhoto />
         <div className="upload-btns">
           {" "}
           <center>

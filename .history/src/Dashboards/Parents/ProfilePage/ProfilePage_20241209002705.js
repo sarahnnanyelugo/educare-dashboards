@@ -206,9 +206,6 @@ export const ProfilePage = () => {
                     Generate
                   </button>
                 </div>
-                <div style={{ textAlign: "right" }}>
-                  <button className="app-btn mt-5">Save changes</button>
-                </div>
               </div>
             </div>
             <div className={`panel ${checkActive(2, "active2")}`}> 2</div>
