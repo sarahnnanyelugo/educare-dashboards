@@ -36,7 +36,7 @@ export const ProfilePage = () => {
           <div className="panels">
             <div className={`panel ${checkActive(1, "active2")}`}>
               <div className="d-flex">
-                <div className="col-3">
+                <div className="col-4">
                   {" "}
                   <img
                     src={User}

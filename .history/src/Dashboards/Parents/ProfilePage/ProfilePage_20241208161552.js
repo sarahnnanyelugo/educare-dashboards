@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./profile-page.scss";
 import User from "../../../assets/images/peter.png";
-import { UploadPhoto } from "../../../components/UploadPhoto/UploadPhoto";
 
 export const ProfilePage = () => {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -36,15 +35,9 @@ export const ProfilePage = () => {
           <div className="panels">
             <div className={`panel ${checkActive(1, "active2")}`}>
               <div className="d-flex">
-                <div className="col-3">
-                  {" "}
-                  <img
-                    src={User}
-                    width="96%"
-                    style={{ borderRadius: "100%" }}
-                  />
+                <div className="col-4">
+                  <img src={User} width="100%" />
                 </div>
-                <UploadPhoto />
               </div>
             </div>
             <div className={`panel ${checkActive(2, "active2")}`}> 2</div>

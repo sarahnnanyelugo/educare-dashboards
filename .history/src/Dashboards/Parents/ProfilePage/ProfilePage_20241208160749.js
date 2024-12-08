@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import "./profile-page.scss";
-import User from "../../../assets/images/peter.png";
-import { UploadPhoto } from "../../../components/UploadPhoto/UploadPhoto";
-
 export const ProfilePage = () => {
   const [activeIndex, setActiveIndex] = useState(1);
   const handleClick = (index) => setActiveIndex(index);
@@ -34,19 +31,7 @@ export const ProfilePage = () => {
             </button>{" "}
           </div>
           <div className="panels">
-            <div className={`panel ${checkActive(1, "active2")}`}>
-              <div className="d-flex">
-                <div className="col-3">
-                  {" "}
-                  <img
-                    src={User}
-                    width="96%"
-                    style={{ borderRadius: "100%" }}
-                  />
-                </div>
-                <UploadPhoto />
-              </div>
-            </div>
+            <div className={`panel ${checkActive(1, "active2")}`}> 1</div>
             <div className={`panel ${checkActive(2, "active2")}`}> 2</div>
             <div className={`panel ${checkActive(3, "active2")}`}> 3</div>
           </div>
