@@ -72,13 +72,6 @@ export const AddPhoto = () => {
             </span>
           </label>
         </div>
-        <div className="upload-btns">
-          {" "}
-          <center>
-            <button className="cancel col-5">Cancel</button>
-            <button className="app-btn col-5">Upload</button>
-          </center>
-        </div>
       </form>
     </div>
   );
