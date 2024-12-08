@@ -45,29 +45,30 @@ export const ProfilePage = () => {
                   />
                 </div>
                 <UploadPhoto />
-              </div>{" "}
-              <h6>Full name</h6>
-              <div className="parent-info">
-                <p>Peter Olugbenga</p>
-              </div>
-              <h6>Alternative email</h6>
-              <div className="parent-info">
-                <p>olugnenga.p@gmail.com</p>
-              </div>
-              <h6>Mobile Number</h6>
-              <div className="parent-info">
-                <p>+2347064711742</p>
-              </div>
-              <h6>Current Address</h6>
-              <div className="parent-info">
-                <p>
-                  Chevron Hospital Warri, Kilometer 4, Warri New Port
-                  Expressway, Pmb 1244, Warri Delta State
-                </p>
-              </div>
-              <h6>Personal ID</h6>
-              <div className="parent-info">
-                <p>Personal ID</p>
+
+                <h6>Full name</h6>
+                <div>
+                  <p>Peter Olugbenga</p>
+                </div>
+                <h6>Alternative email</h6>
+                <div>
+                  <p>olugnenga.p@gmail.com</p>
+                </div>
+                <h6>Mobile Number</h6>
+                <div>
+                  <p>+2347064711742</p>
+                </div>
+                <h6>Current Address</h6>
+                <div>
+                  <p>
+                    Chevron Hospital Warri, Kilometer 4, Warri New Port
+                    Expressway, Pmb 1244, Warri Delta State
+                  </p>
+                </div>
+                <h6>Personal ID</h6>
+                <div>
+                  <p>Personal ID</p>
+                </div>
               </div>
             </div>
             <div className={`panel ${checkActive(2, "active2")}`}> 2</div>
