@@ -100,7 +100,7 @@ const PhotoGallery = () => {
           <div className="d-md-flex gallery-heading">
             <button onClick={() => setSelectedAlbum(null)}>
               {" "}
-              <GoArrowLeft /> Back
+              <GoArrowLeft /> Backs
             </button>
             <h5 className="album-title">{selectedAlbum.title}</h5>{" "}
           </div>

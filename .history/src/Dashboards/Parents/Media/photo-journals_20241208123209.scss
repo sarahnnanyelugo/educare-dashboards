@@ -188,8 +188,7 @@
   }
   h6,
   h5 {
-    margin-top: 20px;
-    font-family: rebondG-Medium;
+    margin-top: 30px;
   }
   input {
     width: 100%;
@@ -229,6 +228,7 @@
     color: #000000;
     font-size: 14px;
     font-family: rebondBook;
+    font-weight: bold;
     text-align: center;
     pointer-events: none; /* Prevent label from blocking the file input clicks */
   }
@@ -236,6 +236,7 @@
   .file-upload-text small {
     display: block;
     font-size: 14px;
+    font-family: rebondBook;
   }
   .file-upload.drag-active {
     background-color: #fff;

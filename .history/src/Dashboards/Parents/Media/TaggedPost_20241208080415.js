@@ -145,14 +145,14 @@ const TaggedPhoto = () => {
   return (
     <div className="gallery-page">
       {/* Photo Grid */}
-      <div className="photo-grid row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <div className="photo-grid row row-cols-2 row-cols-lg-5 g-4 g-lg-3">
         {photos.map((photo) => (
           <div key={photo.src} className="photo-item">
             <img
               src={photo.src}
               alt={photo.title}
               onClick={() => openPhoto(photo)}
-              className="photo-thumbnail2"
+              className="photo-thumbnail"
               width="100%"
             />
             <div className="photo-info d-flex mt-2 ">
@@ -161,11 +161,12 @@ const TaggedPhoto = () => {
                   {" "}
                   <TbHeart
                     style={{
+                      fontSize: "17px",
+                      marginRight: "5px",
                       cursor: "pointer",
                       color: selectedPhoto?.liked ? "red" : "grey",
                     }}
                     onClick={() => handleLikeClick(photo.src)}
-                    className="reaction-icons"
                   />
                   {photo.likes}
                 </strong>{" "}
@@ -174,7 +175,9 @@ const TaggedPhoto = () => {
               <p>
                 <strong>
                   {" "}
-                  <BiCommentDetail className="reaction-icons" />
+                  <BiCommentDetail
+                    style={{ fontSize: "17px", marginRight: "5px" }}
+                  />
                   {photo.comments}
                 </strong>{" "}
                 comments

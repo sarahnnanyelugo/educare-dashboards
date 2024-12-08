@@ -145,7 +145,7 @@ const TaggedPhoto = () => {
   return (
     <div className="gallery-page">
       {/* Photo Grid */}
-      <div className="photo-grid row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <div className="photo-grid row row-cols-2 row-cols-lg-5 g-3 g-lg-3">
         {photos.map((photo) => (
           <div key={photo.src} className="photo-item">
             <img

@@ -100,7 +100,7 @@ const PhotoGallery = () => {
           <div className="d-md-flex gallery-heading">
             <button onClick={() => setSelectedAlbum(null)}>
               {" "}
-              <GoArrowLeft /> Back
+              <GoArrowLeft /> Backs
             </button>
             <h5 className="album-title">{selectedAlbum.title}</h5>{" "}
           </div>
@@ -149,7 +149,7 @@ const PhotoGallery = () => {
       </Modal>
       <div className="d-flex">
         <div style={{ flexGrow: 1 }} />
-        <Link to={"/add-photo"} className="add-photo">
+        <Link to={"/add-photo"}>
           <IoAdd />
         </Link>
       </div>

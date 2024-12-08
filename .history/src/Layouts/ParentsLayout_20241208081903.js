@@ -25,7 +25,6 @@ import { CartItems } from "../Dashboards/Parents/Store/CartItems";
 import { Desktop, TabletAndBelow } from "../Utils/mediaQueries";
 import { BottomNav } from "../components/BottomNav/BottomNav";
 import { ProfilePage } from "../Dashboards/Parents/ProfilePage/ProfilePage";
-import { AddPhoto } from "../Dashboards/Parents/Media/AddPhoto";
 
 export const ParentsLayout = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -119,7 +118,6 @@ export const ParentsLayout = () => {
           <Route path="/photo-journals" element={<PhotoJournal />} />{" "}
           <Route path="/tagged-posts" element={<TaggedPost />} />{" "}
           <Route path="/profile-page" element={<ProfilePage />} />{" "}
-          <Route path="/add-photo" element={<AddPhoto />} />{" "}
         </Routes>
 
         <BottomNav />
