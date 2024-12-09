@@ -103,16 +103,15 @@ export const MobileSidebarData = [
     ],
   },
   {
-    name: "Messages",
-    icon: "IoMail",
-    url: "/chat-interface",
+    name: "Store",
+    icon: "IoStorefrontOutline",
+    url: "/store",
   },
   {
     name: "Store",
     icon: "IoStorefrontOutline",
     url: "/store",
   },
-
   {
     name: "Transport System",
     icon: "MdOutlineEmojiTransportation",

@@ -19,7 +19,7 @@ import { VotingSystem } from "../Dashboards/Parents/VotingSystem/VotingSystem";
 import { TransportSystem } from "../Dashboards/Parents/TransportSystem/TransportSystem";
 import PhotoJournal from "../Dashboards/Parents/Media/PhotoJournals";
 import TaggedPost from "../Dashboards/Parents/Media/TaggedPost";
-import ChatInterface from "../Dashboards/Parents/ChatInterface/ChatInterface";
+import ChatInterface from "../components/TopNav/ChatInterface/ChatInterface";
 import { PaymentGateway } from "../Dashboards/Parents/PaymentGateway/PaymentGateway";
 import { CartItems } from "../Dashboards/Parents/Store/CartItems";
 import { Desktop, TabletAndBelow } from "../Utils/mediaQueries";
@@ -120,7 +120,7 @@ export const ParentsLayout = () => {
           <Route path="/tagged-posts" element={<TaggedPost />} />{" "}
           <Route path="/profile-page" element={<ProfilePage />} />{" "}
           <Route path="/add-photo" element={<AddPhoto />} />{" "}
-          <Route path="/chat-interface" element={<ChatInterface />} />{" "}
+                  <Route path="/chat-interface" element={<ChatInterface />} />{" "}
         </Routes>
 
         <BottomNav />

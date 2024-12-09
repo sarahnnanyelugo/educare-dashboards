@@ -123,7 +123,7 @@ export const ParentsLayout = () => {
           <Route path="/chat-interface" element={<ChatInterface />} />{" "}
         </Routes>
 
-        <BottomNav />
+        {/* <BottomNav /> */}
       </TabletAndBelow>
     </>
   );

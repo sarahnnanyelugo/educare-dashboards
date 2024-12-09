@@ -55,7 +55,6 @@ export const SideNav = () => {
     IoCalendarNumberOutline: IoCalendarNumberOutline,
     MdOutlineHowToVote: MdOutlineHowToVote,
     TbPhoto: TbPhoto,
-    IoMail: IoMail,
   };
 
   return (

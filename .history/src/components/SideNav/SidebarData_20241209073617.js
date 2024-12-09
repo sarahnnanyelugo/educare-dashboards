@@ -104,7 +104,7 @@ export const MobileSidebarData = [
   },
   {
     name: "Messages",
-    icon: "IoMail",
+    icon: "IoStorefrontOutline",
     url: "/chat-interface",
   },
   {
