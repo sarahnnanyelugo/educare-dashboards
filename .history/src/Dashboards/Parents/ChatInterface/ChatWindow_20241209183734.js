@@ -119,7 +119,7 @@ export const ChatWindow = ({
   };
 
   return (
-    <div className="chat-window card col-md-8 col-12">
+    <div className="chat-window card col-md-8 ">
       <div className="d-flex">
         <TabletAndBelow>
           {onBack && (
@@ -130,13 +130,7 @@ export const ChatWindow = ({
           <img
             src={profilePicture || Img1} // Use a fallback image if profilePicture is not passed
             alt={selectedContact}
-            style={{
-              width: "27px",
-              height: "27px",
-              borderRadius: "50%",
-              marginRight: "10px",
-              marginLeft: "10px",
-            }}
+            style={{ width: "27px", height: "27px", borderRadius: "50%" }}
           />
         </TabletAndBelow>
 

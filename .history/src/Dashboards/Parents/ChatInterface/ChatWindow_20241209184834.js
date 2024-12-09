@@ -134,8 +134,7 @@ export const ChatWindow = ({
               width: "27px",
               height: "27px",
               borderRadius: "50%",
-              marginRight: "10px",
-              marginLeft: "10px",
+              marginRight: "5px",
             }}
           />
         </TabletAndBelow>

@@ -3,7 +3,7 @@ import { CiSearch } from "react-icons/ci";
 
 const Contacts = ({ contacts, onSelectContact, activeContactId }) => {
   return (
-    <div className="col-md-3 cover col-12">
+    <div className="col-md-3 cover">
       {" "}
       <div className="chat-contacts card col-md-12">
         <h6>Chats</h6>
