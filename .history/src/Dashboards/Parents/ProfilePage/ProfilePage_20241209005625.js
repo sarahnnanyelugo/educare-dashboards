@@ -241,104 +241,16 @@ export const ProfilePage = () => {
               </div>
             </div>
             <div className={`panel ${checkActive(3, "active2")}`}>
-              <div className="d-flex notification-toggle">
-                <div className="col-6">
+              <div className="d-flex">
+                <div className="col-md-6">
                   <h6>Tags</h6>
                   <p>
                     These are notofications for when someone tags you in a
                     comment, post or story
                   </p>
                 </div>
-                <div style={{ flexGrow: 1 }} />
-                <div>
-                  <div className="d-flex mt-2">
-                    {" "}
-                    <ToggleSwitch />
-                    <small>Push</small>
-                  </div>
-                  <div className="d-flex mt-2">
-                    {" "}
-                    <ToggleSwitch />
-                    <small>Email</small>
-                  </div>
-                  <div className="d-flex mt-2">
-                    {" "}
-                    <ToggleSwitch />
-                    <small>SMS</small>
-                  </div>
-                </div>
-              </div>{" "}
-              <div className="d-flex notification-toggle">
-                <div className="col-6">
-                  <h6>Reminders</h6>
-                  <p>
-                    These are notofications to remind you of updates you might
-                    have missed
-                  </p>
-                </div>
-                <div style={{ flexGrow: 1 }} />
-                <div>
-                  <div className="d-flex mt-2">
-                    {" "}
-                    <ToggleSwitch />
-                    <small>Push</small>
-                  </div>
-                  <div className="d-flex mt-2">
-                    {" "}
-                    <ToggleSwitch />
-                    <small>Email</small>
-                  </div>
-                  <div className="d-flex mt-2">
-                    {" "}
-                    <ToggleSwitch />
-                    <small>SMS</small>
-                  </div>
-                </div>
-              </div>{" "}
-              <div className="d-flex notification-toggle">
-                <div className="col-6">
-                  <h6>Comments</h6>
-                  <p>
-                    These are notofications for comments on your posts and
-                    replies to your comments
-                  </p>
-                </div>
-                <div style={{ flexGrow: 1 }} />
-                <div>
-                  <div className="d-flex mt-2">
-                    {" "}
-                    <ToggleSwitch />
-                    <small>Push</small>
-                  </div>
-                  <div className="d-flex mt-2">
-                    {" "}
-                    <ToggleSwitch />
-                    <small>Email</small>
-                  </div>
-                  <div className="d-flex mt-2">
-                    {" "}
-                    <ToggleSwitch />
-                    <small>SMS</small>
-                  </div>
-                </div>
               </div>
-              <div style={{ textAlign: "right", marginTop: "100px" }}>
-                <button
-                  style={{
-                    padding: "8px 25px",
-                    border: "solid 1px #E1E1E1",
-                    borderRadius: "25px",
-                    background: "#fff",
-                    color: "#666666",
-                    fontSize: "14px",
-                    fontFamily: "rebondBook",
-                    marginRight: "10px",
-                  }}
-                >
-                  Cancel
-                </button>
-                <button className="app-btn mt-5">Save changes</button>
-              </div>
+              <ToggleSwitch />
             </div>
           </div>
         </div>

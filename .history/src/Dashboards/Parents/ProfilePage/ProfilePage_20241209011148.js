@@ -322,23 +322,6 @@ export const ProfilePage = () => {
                   </div>
                 </div>
               </div>
-              <div style={{ textAlign: "right", marginTop: "100px" }}>
-                <button
-                  style={{
-                    padding: "8px 25px",
-                    border: "solid 1px #E1E1E1",
-                    borderRadius: "25px",
-                    background: "#fff",
-                    color: "#666666",
-                    fontSize: "14px",
-                    fontFamily: "rebondBook",
-                    marginRight: "10px",
-                  }}
-                >
-                  Cancel
-                </button>
-                <button className="app-btn mt-5">Save changes</button>
-              </div>
             </div>
           </div>
         </div>
