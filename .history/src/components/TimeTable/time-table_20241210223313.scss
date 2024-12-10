@@ -4,7 +4,6 @@
   th {
     font-family: rebondBook;
     text-align: center;
-    font-size: 14px;
   }
   td {
     height: 35px !important;
@@ -15,6 +14,7 @@
   .vertical-td {
     writing-mode: vertical-rl;
 
+    font-weight: bold;
     color: #333;
     margin: auto;
     height: 100%;

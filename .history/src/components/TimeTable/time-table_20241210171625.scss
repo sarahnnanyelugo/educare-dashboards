@@ -1,0 +1,45 @@
+.timetable {
+  display: grid;
+  grid-template-rows: auto;
+  font-family: Arial, sans-serif;
+  border-spacing: 0;
+}
+
+.timetable-header {
+  display: grid;
+  grid-template-columns: 1fr repeat(10, 1fr);
+}
+
+.timetable-row {
+  display: grid;
+  grid-template-columns: 1fr repeat(10, 1fr);
+}
+
+.header-cell,
+.row-cell {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  position: relative;
+}
+
+.break-cell {
+  grid-row: span 5;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: bold;
+  color: #333;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

@@ -1,8 +1,8 @@
 import Table from "react-bootstrap/Table";
-import "./time-table.scss";
+
 function Timetable() {
   return (
-    <Table bordered className="subject-table">
+    <Table bordered>
       <thead>
         <tr>
           <th></th>
@@ -21,14 +21,10 @@ function Timetable() {
         <tr>
           <td>Monday</td>
           <td>H. Econs</td> <td>French</td>
-          <td rowSpan={6} className="vertical-td">
-            Short break
-          </td>
+          <td rowSpan={6}>break</td>
           <td>Basic Science</td>
           <td>Basic Science</td>
-          <td rowSpan={6} className="vertical-td">
-            Long break
-          </td>
+          <td rowSpan={6}>break</td>
           <td>Basic Tech.</td>
           <td>S. O. S.</td>
           <td>Business Studies</td>
@@ -40,36 +36,40 @@ function Timetable() {
           <td>French</td>
           <td>Basic Science</td>
           <td>P. H. E.</td>
-          <td>Basic Tech.</td>
-          <td>S. O. S.</td>
-          <td>Business Studies</td>
+          <td>9:00am-9:30am</td>
+
+          <td>Thornton</td>
+          <td>@fat</td>
         </tr>
         <tr>
           <td>Wednesday</td>
-          <td>H. Econs</td> <td>French</td>
-          <td>Basic Science</td> <td>Music</td>
-          <td>Basic Tech.</td>
-          <td>S. O. S.</td>
-          <td>Business Studies</td>
+          <td>9:30am-10:00am</td>
+          <td>@twitter</td>
+          <td>@twitter</td> <td>Wednesday</td>
+          <td>9:30am-10:00am</td>
+          <td>@twitter</td>
+          <td>@twitter</td>
         </tr>{" "}
         <tr>
           <td>Thursday</td>
-          <td>H. Econs</td>
-          <td>French</td>
-          <td>Basic Science</td> <td>Music</td>
-          <td>Basic Tech.</td>
-          <td>S. O. S.</td>
-          <td>Business Studies</td>
+          <td>10:00am-10:30am</td>
+
+          <td>@twitter</td>
+          <td>@twitter</td>
+          <td>Thursday</td>
+          <td>10:00am-10:30am</td>
+
+          <td>@twitter</td>
+          <td>@twitter</td>
         </tr>{" "}
         <tr>
           <td>Friday</td>
-          <td>H. Econs</td>
-          <td>French</td>
-          <td>English</td>
-          <td>Music</td>
-          <td>Basic Tech.</td>
-          <td>S. O. S.</td>
-          <td>Business Studies</td>
+          <td>10:30am-11:00am</td>
+          <td>@twitter</td>
+          <td>@twitter</td> <td>Friday</td>
+          <td>10:30am-11:00am</td>
+          <td>@twitter</td>
+          <td>@twitter</td>
         </tr>
       </tbody>
     </Table>

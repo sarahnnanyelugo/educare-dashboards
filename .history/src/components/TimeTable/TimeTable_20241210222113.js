@@ -21,13 +21,13 @@ function Timetable() {
         <tr>
           <td>Monday</td>
           <td>H. Econs</td> <td>French</td>
-          <td rowSpan={6} className="vertical-td">
-            Short break
+          <td rowSpan={6} className="vertical-text">
+            break
           </td>
           <td>Basic Science</td>
           <td>Basic Science</td>
           <td rowSpan={6} className="vertical-td">
-            Long break
+            break
           </td>
           <td>Basic Tech.</td>
           <td>S. O. S.</td>

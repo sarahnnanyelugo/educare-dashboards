@@ -4,17 +4,17 @@
   th {
     font-family: rebondBook;
     text-align: center;
-    font-size: 14px;
   }
   td {
     height: 35px !important;
   }
   tr {
-    padding-top: 10px !important;
+    padding-top: 10px;
   }
   .vertical-td {
     writing-mode: vertical-rl;
 
+    font-weight: bold;
     color: #333;
     margin: auto;
     height: 100%;

@@ -1,0 +1,49 @@
+.Subject-allocation {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+
+  .row {
+    display: grid;
+    grid-template-columns: 150px repeat(9, 1fr);
+    margin-bottom: 10px;
+  }
+
+  .cell {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .header .cell {
+    font-weight: bold;
+    background-color: #f0f0f0;
+  }
+
+  .day-name {
+    font-weight: bold;
+    background-color: #eaeaea;
+  }
+
+  .subject {
+    background-color: #d9f2d9;
+  }
+
+  .break {
+    background-color: #ffe6e6;
+    position: relative;
+  }
+
+  .break .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    transform: rotate(180deg);
+    // height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

@@ -1,8 +1,8 @@
 import Table from "react-bootstrap/Table";
-import "./time-table.scss";
+
 function Timetable() {
   return (
-    <Table bordered className="subject-table">
+    <Table bordered>
       <thead>
         <tr>
           <th></th>
@@ -21,14 +21,10 @@ function Timetable() {
         <tr>
           <td>Monday</td>
           <td>H. Econs</td> <td>French</td>
-          <td rowSpan={6} className="vertical-td">
-            Short break
-          </td>
+          <td rowSpan={6}>break</td>
           <td>Basic Science</td>
           <td>Basic Science</td>
-          <td rowSpan={6} className="vertical-td">
-            Long break
-          </td>
+          <td rowSpan={6}>break</td>
           <td>Basic Tech.</td>
           <td>S. O. S.</td>
           <td>Business Studies</td>

@@ -7,7 +7,7 @@ export const AppTable = ({
   rows = [],
   includeImages = false,
 }) => {
-  const statusArray = { Pending: "orange", Paid: "green", Canceled: "red" };
+  const statusArray = { Pending: "orange", Paid: "green", Cancelled: "red" };
   return (
     <>
       <Table className="app-table" responsive striped hover>

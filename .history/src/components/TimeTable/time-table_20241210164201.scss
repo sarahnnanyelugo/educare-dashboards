@@ -1,0 +1,53 @@
+.timetable {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 150px repeat(8, 1fr);
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 150px repeat(9, 1fr);
+}
+
+.cell {
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.header .cell {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.day-name {
+  font-weight: bold;
+  background-color: #eaeaea;
+}
+
+.subject {
+  background-color: #d9f2d9;
+}
+
+.break-placeholder {
+  background-color: #ffe6e6;
+}
+
+.break-column {
+  position: absolute;
+  grid-column: 4; /* or 7 for the second break */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.break-column .vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  transform: rotate(180deg);
+  font-size: 20px;
+  font-weight: bold;
+}

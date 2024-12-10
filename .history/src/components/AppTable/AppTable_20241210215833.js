@@ -7,7 +7,7 @@ export const AppTable = ({
   rows = [],
   includeImages = false,
 }) => {
-  const statusArray = { Pending: "orange", Paid: "green", Canceled: "red" };
+  const statusArray = { Pending: "orange", Paid: "green", Cancelled: "red" };
   return (
     <>
       <Table className="app-table" responsive striped hover>
@@ -44,9 +44,7 @@ export const AppTable = ({
                         {row[header]}
                       </>
                     ) : header == "Status" ? (
-                      <span style={{ color: statusArray[row[header]] }}>
-                        {row[header]}
-                      </span>
+                      <span style={{ color: "red" }}>{row[header]}</span>
                     ) : (
                       [row[header] || "N/A"]
                     )}

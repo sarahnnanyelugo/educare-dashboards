@@ -1,0 +1,43 @@
+.timetable {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  border-collapse: collapse;
+}
+
+.header {
+  display: contents;
+}
+
+.corner {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.day-header {
+  padding: 10px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+}
+
+.time {
+  padding: 10px;
+  background-color: #eaeaea;
+  border: 1px solid #ccc;
+}
+
+.cell {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.cell.break {
+  background-color: #ffdfba;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
