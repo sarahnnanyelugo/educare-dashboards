@@ -6,6 +6,7 @@ export const AppTable = ({
   headers = [],
   rows = [],
   includeImages = false,
+  props,
 }) => {
   return (
     <>
@@ -17,7 +18,6 @@ export const AppTable = ({
             ) : (
               <th>No headers available</th>
             )}
-            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -48,7 +48,7 @@ export const AppTable = ({
                   </td>
                 ))}
                 <td>
-                  <Link to={"/view-voting"}>View</Link>
+                  <Link to={props.viewUrl}>view</Link>
                 </td>
               </tr>
             ))

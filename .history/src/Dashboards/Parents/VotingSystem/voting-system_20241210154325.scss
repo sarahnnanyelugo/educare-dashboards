@@ -16,15 +16,13 @@
   padding: 20px;
   .view-vote-count {
     padding: 15px;
+    margin-top: 20px;
   }
   .vote-chart {
     margin-right: 6px;
   }
   .vote-table {
     margin-left: 6px;
-    @media screen and (max-width: 820px) {
-      margin-top: 20px;
-    }
   }
 }
 .back-link {
@@ -32,8 +30,5 @@
   border: solid 1px #cecfd0;
   border-radius: 6px;
   padding: 4px 10px;
-}
-.bl-div {
   margin-top: 30px;
-  margin-top: 20px;
 }

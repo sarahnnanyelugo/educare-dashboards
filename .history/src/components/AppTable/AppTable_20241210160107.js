@@ -1,6 +1,5 @@
 import React from "react";
 import { Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import "./table.scss";
 export const AppTable = ({
   headers = [],
@@ -47,9 +46,6 @@ export const AppTable = ({
                     )}
                   </td>
                 ))}
-                <td>
-                  <Link to={"/view-voting"}>View</Link>
-                </td>
               </tr>
             ))
           ) : (

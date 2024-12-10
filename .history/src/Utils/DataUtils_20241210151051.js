@@ -283,7 +283,7 @@ export const generateVoteRecords = (numEntries, avatarList) => {
       Status: arrayElement(["Not Conducted", "Conducted"]),
       Results: arrayElement(["Not Published", "Published"]),
       Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
-      // Action: arrayElement([""]),
+      Action: arrayElement([""]),
     });
   }
   return voteRecords;

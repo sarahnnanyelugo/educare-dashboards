@@ -1,5 +1,5 @@
 import React from "react";
-import "./time-table.scss";
+import "./Timetable.css";
 
 const Timetable = () => {
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -31,20 +31,10 @@ const Timetable = () => {
             {days.map((day, colIndex) => (
               <div
                 key={`${day}-${rowIndex}`}
-                className={`cell ${period.subject === "Break" ? "break" : ""}`}
+                className={`cell ${
+                  period.subject === "Break" ? "break" : ""
+                }`}
               >
                 {period.subject === "Break" ? (
                   <span className="vertical-text">Break</span>
                 ) : (
-                  period.subject
-                )}
-              </div>
-            ))}
-          </React.Fragment>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default Timetable;

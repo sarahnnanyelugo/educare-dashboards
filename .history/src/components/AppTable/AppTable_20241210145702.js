@@ -6,7 +6,9 @@ export const AppTable = ({
   headers = [],
   rows = [],
   includeImages = false,
+  props,
 }) => {
+  const  (viewUrl)  = props;
   return (
     <>
       <Table className="app-table" responsive striped hover>
@@ -17,7 +19,6 @@ export const AppTable = ({
             ) : (
               <th>No headers available</th>
             )}
-            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -48,7 +49,7 @@ export const AppTable = ({
                   </td>
                 ))}
                 <td>
-                  <Link to={"/view-voting"}>View</Link>
+                  <Link to={viewUrl}>view</Link>
                 </td>
               </tr>
             ))

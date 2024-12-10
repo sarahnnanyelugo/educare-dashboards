@@ -117,8 +117,7 @@ export const ParentsLayout = () => {
           <Route path="/result" element={<Result />} />{" "}
           <Route path="/calendar" element={<Event />} />{" "}
           <Route path="/pastoral-report" element={<PastoralReport />} />{" "}
-          <Route path="/voting-system" element={<VotingSystem />} />
-          <Route path="/view-voting" element={<ViewVoting />} />{" "}
+          <Route path="/voting-system" element={<VotingSystem />} />{" "}
           <Route path="/photo-journals" element={<PhotoJournal />} />{" "}
           <Route path="/tagged-posts" element={<TaggedPost />} />{" "}
           <Route path="/profile-page" element={<ProfilePage />} />{" "}
