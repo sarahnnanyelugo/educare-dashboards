@@ -93,9 +93,7 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
     setStoreItems(fb);
     console.log(fb);
   }, []);
-  const handleToggle = (isOpen) => {
-    setDropdownOpen(isOpen);
-  };
+
   useEffect(() => {
     console.log(category);
     let avt;
@@ -148,11 +146,7 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
             <div className="d-flex">
               <TabletAndBelow>
                 {" "}
-                <Dropdown
-                  style={{ flexGrow: 1 }}
-                  show={isDropdownOpen}
-                  onToggle={handleToggle}
-                >
+                <Dropdown style={{ flexGrow: 1 }}>
                   <Dropdown.Toggle id="dropdown-basic">
                     <GiHamburgerMenu />
                   </Dropdown.Toggle>

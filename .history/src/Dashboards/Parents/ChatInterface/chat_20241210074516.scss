@@ -134,10 +134,6 @@
   border-radius: 36px;
   padding: 5px 10px;
   margin-right: 5px;
-  @media screen and (max-width: 820px) {
-    margin-top: 0;
-    padding: 0 10px;
-  }
 }
 /* Recording button styles */
 .record-button {
@@ -151,6 +147,9 @@
   width: 35px;
   border: solid 1px #e7e7e7;
   margin: 15px 2px;
+  @media screen and (max-width: "820px") {
+    margin-top: 20px;
+  }
 }
 .upload-button {
   background-color: #fff;
@@ -186,9 +185,6 @@
   color: #0098da;
   font-family: rebondG-Medium !important;
   cursor: pointer;
-  @media screen and (max-width: 820px) {
-    margin-top: 20px;
-  }
 }
 .search-contact {
   border: solid 1px #e4e7ec;
@@ -274,9 +270,28 @@
     margin: 10px 0;
   }
 
+  .sent {
+    text-align: right;
+    color: blue;
+  }
+
   .received {
     text-align: left;
     color: black;
+  }
+
+  .input-box {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    gap: 10px;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
   }
 }
 .back-button {

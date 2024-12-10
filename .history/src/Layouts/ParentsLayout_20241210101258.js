@@ -87,16 +87,6 @@ export const ParentsLayout = () => {
                   />
                 }
               />{" "}
-              <Route
-                path="/cart-items"
-                element={
-                  <CartItems
-                    cartItems={cartItems}
-                    setCartItems={setCartItems}
-                    totalItemCount={getTotalItemCount()}
-                  />
-                }
-              />{" "}
               <Route path="/voting-system" element={<VotingSystem />} />{" "}
               <Route path="/transport-system" element={<TransportSystem />} />{" "}
               <Route path="/photo-journals" element={<PhotoJournal />} />{" "}

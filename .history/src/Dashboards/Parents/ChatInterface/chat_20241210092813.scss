@@ -186,9 +186,6 @@
   color: #0098da;
   font-family: rebondG-Medium !important;
   cursor: pointer;
-  @media screen and (max-width: 820px) {
-    margin-top: 20px;
-  }
 }
 .search-contact {
   border: solid 1px #e4e7ec;
@@ -272,6 +269,11 @@
 
   .message {
     margin: 10px 0;
+  }
+
+  .sent {
+    text-align: right;
+    color: blue;
   }
 
   .received {

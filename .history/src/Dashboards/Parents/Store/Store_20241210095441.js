@@ -52,8 +52,6 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
   const [storeItems, setStoreItems] = useState([]);
   const [filterCategory, setFilterCategory] = useState("All Products"); // Step 1: Create filter state
   const [category, setCategory] = useState("All Products"); // Step 1: Create filter state
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
-
   const cat = ["All Products", "Uniforms", "Books", "Accessories"];
   const catList = ["Uniforms", "Books", "Accessories"];
   const avatarList = {
@@ -93,9 +91,7 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
     setStoreItems(fb);
     console.log(fb);
   }, []);
-  const handleToggle = (isOpen) => {
-    setDropdownOpen(isOpen);
-  };
+
   useEffect(() => {
     console.log(category);
     let avt;
@@ -116,8 +112,7 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
     console.log(fb);
   }, [category]);
   const handleFilterChange = (category) => {
-    setCategory(category);
-    setDropdownOpen(false); // Step 3: Update filter state on button click
+    setCategory(category); // Step 3: Update filter state on button click
   };
   const handleItemClick = (item) => {
     setSelectedItem(item); // Set the clicked item as selected
@@ -145,14 +140,10 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
             </div>
             <div style={{ flexGrow: 1 }} />
 
-            <div className="d-flex">
+            <div>
               <TabletAndBelow>
                 {" "}
-                <Dropdown
-                  style={{ flexGrow: 1 }}
-                  show={isDropdownOpen}
-                  onToggle={handleToggle}
-                >
+                <Dropdown>
                   <Dropdown.Toggle id="dropdown-basic">
                     <GiHamburgerMenu />
                   </Dropdown.Toggle>

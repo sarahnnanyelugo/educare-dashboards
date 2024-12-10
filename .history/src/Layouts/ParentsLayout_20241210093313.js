@@ -77,26 +77,6 @@ export const ParentsLayout = () => {
                 path="/transaction-history"
                 element={<TransactionHistory />}
               />{" "}
-              <Route
-                path="/store"
-                element={
-                  <Store
-                    cartItems={cartItems}
-                    onAddToCart={handleAddToCart}
-                    totalItemCount={getTotalItemCount()}
-                  />
-                }
-              />{" "}
-              <Route
-                path="/cart-items"
-                element={
-                  <CartItems
-                    cartItems={cartItems}
-                    setCartItems={setCartItems}
-                    totalItemCount={getTotalItemCount()}
-                  />
-                }
-              />{" "}
               <Route path="/voting-system" element={<VotingSystem />} />{" "}
               <Route path="/transport-system" element={<TransportSystem />} />{" "}
               <Route path="/photo-journals" element={<PhotoJournal />} />{" "}
@@ -141,7 +121,6 @@ export const ParentsLayout = () => {
               />
             }
           />{" "}
-          <Route path="/payment-gateway" element={<PaymentGateway />} />{" "}
         </Routes>
 
         <BottomNav />

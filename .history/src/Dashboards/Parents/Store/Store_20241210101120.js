@@ -148,11 +148,7 @@ export const Store = ({ cartItems, onAddToCart, totalItemCount }) => {
             <div className="d-flex">
               <TabletAndBelow>
                 {" "}
-                <Dropdown
-                  style={{ flexGrow: 1 }}
-                  show={isDropdownOpen}
-                  onToggle={handleToggle}
-                >
+                <Dropdown style={{ flexGrow: 1 }}>
                   <Dropdown.Toggle id="dropdown-basic">
                     <GiHamburgerMenu />
                   </Dropdown.Toggle>

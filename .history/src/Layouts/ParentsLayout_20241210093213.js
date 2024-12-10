@@ -71,22 +71,6 @@ export const ParentsLayout = () => {
               <Route path="/pocket-money" element={<PocketMoney />} />{" "}
               <Route path="/invoices" element={<Invoices />} />{" "}
               <Route path="/payment-gateway" element={<PaymentGateway />} />{" "}
-              <Route path="/calendar" element={<Event />} />{" "}
-              <Route path="/chat-interface" element={<ChatInterface />} />{" "}
-              <Route
-                path="/transaction-history"
-                element={<TransactionHistory />}
-              />{" "}
-              <Route
-                path="/store"
-                element={
-                  <Store
-                    cartItems={cartItems}
-                    onAddToCart={handleAddToCart}
-                    totalItemCount={getTotalItemCount()}
-                  />
-                }
-              />{" "}
               <Route
                 path="/cart-items"
                 element={
@@ -96,6 +80,12 @@ export const ParentsLayout = () => {
                     totalItemCount={getTotalItemCount()}
                   />
                 }
+              />{" "}
+              <Route path="/calendar" element={<Event />} />{" "}
+              <Route path="/chat-interface" element={<ChatInterface />} />{" "}
+              <Route
+                path="/transaction-history"
+                element={<TransactionHistory />}
               />{" "}
               <Route path="/voting-system" element={<VotingSystem />} />{" "}
               <Route path="/transport-system" element={<TransportSystem />} />{" "}
@@ -131,17 +121,6 @@ export const ParentsLayout = () => {
               />
             }
           />{" "}
-          <Route
-            path="/cart-items"
-            element={
-              <CartItems
-                cartItems={cartItems}
-                setCartItems={setCartItems}
-                totalItemCount={getTotalItemCount()}
-              />
-            }
-          />{" "}
-          <Route path="/payment-gateway" element={<PaymentGateway />} />{" "}
         </Routes>
 
         <BottomNav />

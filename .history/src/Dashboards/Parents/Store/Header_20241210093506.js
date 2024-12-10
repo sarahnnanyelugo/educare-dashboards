@@ -7,7 +7,8 @@ export const Header = ({ totalItemCount }) => {
       <h5 style={{ flexGrow: 1 }}>Store</h5>
       <Link to={"/cart-items"} className="cart-icon">
         <IoCartOutline />
-        <sup className="cart-count">{totalItemCount}</sup> Cart
+      
+        <sup className="cart-count">{totalItemCount}</sup>  Cart
       </Link>
     </div>
   );
