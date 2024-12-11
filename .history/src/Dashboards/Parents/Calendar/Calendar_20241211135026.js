@@ -87,7 +87,7 @@ export default function Event({ localizer = mLocalizer, ...props }) {
 
     if (event.title === "Open Day") borderLeft = "solid 4px #08B529";
     else if (event.title === "Picture Day") borderLeft = "solid 4px #B50808";
-    else if (event.title === "Heritage Day") borderLeft = "solid 4px #8B63E6";
+    else if (event.title === "Heritage Day") borderLeft = "solid 4px purple";
     else if (event.title === "Election Day") borderLeft = "solid 4px #0098DA";
     else if (event.title === "Cultural Day") borderLeft = "solid 4px #E6DC63";
 

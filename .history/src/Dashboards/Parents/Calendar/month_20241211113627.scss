@@ -52,14 +52,6 @@
 .rbc-month-header {
   display: flex;
   flex-direction: row;
-  padding-top: 9px;
-  padding-bottom: 9px;
-  border: none !important;
-
-  span {
-    font-family: rebondBook;
-    font-weight: 500;
-  }
 }
 
 .rbc-month-row {
@@ -81,7 +73,7 @@
   flex: 1 1 0;
   min-width: 0;
   padding-right: 5px;
-  text-align: left;
+  text-align: right;
 
   &.rbc-now {
     font-weight: bold;

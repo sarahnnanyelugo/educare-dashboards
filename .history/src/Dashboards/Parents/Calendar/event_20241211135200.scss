@@ -12,15 +12,14 @@
   width: 100%;
   text-align: left;
   font-size: 10px;
+  padding-left: 10px;
   .rbc-slot-selecting & {
     cursor: inherit;
     pointer-events: none;
   }
 
   &.rbc-selected {
-    background-color: #0098da;
-    color: #fff !important;
-    padding: 25px 0;
+    background-color: darken($event-bg, 10%);
   }
 
   &:focus {

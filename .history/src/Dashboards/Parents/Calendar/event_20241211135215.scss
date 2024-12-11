@@ -18,9 +18,7 @@
   }
 
   &.rbc-selected {
-    background-color: #0098da;
-    color: #fff !important;
-    padding: 25px 0;
+    background-color: darken($event-bg, 10%);
   }
 
   &:focus {

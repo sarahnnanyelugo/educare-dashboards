@@ -1,8 +1,6 @@
 import React, { Fragment, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
-import { HiOutlineDownload } from "react-icons/hi";
-
 import "./calendar.scss";
 import {
   Calendar,
@@ -83,21 +81,19 @@ export default function Event({ localizer = mLocalizer, ...props }) {
     },
   ]);
   const eventStyleGetter = (event) => {
-    let borderLeft = "solid 1px blue"; // Default blue
+    let backgroundColor = "#3174ad"; // Default blue
 
-    if (event.title === "Open Day") borderLeft = "solid 4px #08B529";
-    else if (event.title === "Picture Day") borderLeft = "solid 4px #B50808";
-    else if (event.title === "Heritage Day") borderLeft = "solid 4px #8B63E6";
-    else if (event.title === "Election Day") borderLeft = "solid 4px #0098DA";
-    else if (event.title === "Cultural Day") borderLeft = "solid 4px #E6DC63";
+    if (event.title === "Open Day") backgroundColor = "red";
+    else if (event.title === "Picture Day") backgroundColor = "green";
+    else if (event.title === "Heritage Day") backgroundColor = "purple";
 
     return {
       style: {
-        borderLeft,
-        borderRadius: "0px",
+        backgroundColor,
+        borderRadius: "5px",
         opacity: 0.8,
         color: "white",
-        // border: "0px",
+        border: "0px",
         display: "block",
         fontFamily: " rebondG-Medium",
       },
@@ -128,9 +124,11 @@ export default function Event({ localizer = mLocalizer, ...props }) {
     }
 
     return (
-      <ul className="list-unstyled" style={{ fontFamily: " rebondBook" }}>
+      <ul>
         {selectedEvents.map((event, index) => (
-          <li key={index}>{event.title}</li>
+          <li key={index}>
+            <strong>{event.title}</strong>
+          </li>
         ))}
       </ul>
     );
@@ -174,14 +172,6 @@ export default function Event({ localizer = mLocalizer, ...props }) {
           <div className=" col-md-3 ">
             <Search />
           </div>
-          <button
-            className="pdf-download-btn"
-            style={{ color: "#191919", fontSize: "12px" }}
-          >
-            {" "}
-            <HiOutlineDownload className="icon2" />
-            Export as csv
-          </button>
         </div>
         <hr />
         <div className="calendar-section">
