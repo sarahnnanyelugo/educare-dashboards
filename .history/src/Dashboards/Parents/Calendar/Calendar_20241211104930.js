@@ -30,7 +30,7 @@ export default function Event({ localizer = mLocalizer, ...props }) {
       components: {
         timeSlotWrapper: ColoredDateCellWrapper,
       },
-      defaultDate: new Date(2024, 8, 1),
+      defaultDate: new Date(2024, 3, 1),
       max: dates.add(dates.endOf(new Date(2024, 17, 1), "day"), -1, "hours"),
       views: Object.keys(Views).map((k) => Views[k]),
     }),

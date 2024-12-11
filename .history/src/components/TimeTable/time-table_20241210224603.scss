@@ -13,10 +13,10 @@
     padding-top: 10px !important;
   }
   .vertical-td {
-    writing-mode: vertical-rl;
+    // writing-mode: vertical;
     color: #333;
     margin: auto;
-    height: 100%;
-    padding: 0;
+    // height: 100%;
+    transform: rotate(90deg) !important;
   }
 }
