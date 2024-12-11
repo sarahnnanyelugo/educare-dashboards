@@ -171,32 +171,18 @@ export default function Event({ localizer = mLocalizer, ...props }) {
               </div>
             </div>
           </div>
-          <Desktop>
+          <div style={{ flexGrow: 1 }} />
+          <div className=" col-md-3 ">
+            <Search />
+          </div>
+          <button
+            className="pdf-download-btn"
+            style={{ color: "#191919", fontSize: "12px" }}
+          >
             {" "}
-            <div style={{ flexGrow: 1 }} />
-            <div className=" col-md-3 ">
-              <Search />
-            </div>
-            <button
-              className="pdf-download-btn "
-              style={{ color: "#191919", fontSize: "12px" }}
-            >
-              {" "}
-              <HiOutlineDownload className="icon2" />
-              Export as csv
-            </button>{" "}
-          </Desktop>
-          <TabletAndBelow>
-            {" "}
-            <button
-              className="pdf-download-btn col-12 "
-              style={{ color: "#191919", fontSize: "12px" }}
-            >
-              {" "}
-              <HiOutlineDownload className="icon2" />
-              Export as csv
-            </button>{" "}
-          </TabletAndBelow>
+            <HiOutlineDownload className="icon2" />
+            Export as csv
+          </button>
         </div>
         <hr />
         <div className="calendar-section">
@@ -240,7 +226,7 @@ export default function Event({ localizer = mLocalizer, ...props }) {
               />
             </div>
             <TabletAndBelow>
-              <div className="col-md-4 col-12">
+              <div className="col-md-4">
                 <div style={{ padding: "20px" }}>
                   <h6>
                     {selectedDate

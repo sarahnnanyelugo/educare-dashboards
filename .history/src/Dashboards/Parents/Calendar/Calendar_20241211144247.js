@@ -177,26 +177,15 @@ export default function Event({ localizer = mLocalizer, ...props }) {
             <div className=" col-md-3 ">
               <Search />
             </div>
-            <button
-              className="pdf-download-btn "
-              style={{ color: "#191919", fontSize: "12px" }}
-            >
-              {" "}
-              <HiOutlineDownload className="icon2" />
-              Export as csv
-            </button>{" "}
           </Desktop>
-          <TabletAndBelow>
+          <button
+            className="pdf-download-btn "
+            style={{ color: "#191919", fontSize: "12px" }}
+          >
             {" "}
-            <button
-              className="pdf-download-btn col-12 "
-              style={{ color: "#191919", fontSize: "12px" }}
-            >
-              {" "}
-              <HiOutlineDownload className="icon2" />
-              Export as csv
-            </button>{" "}
-          </TabletAndBelow>
+            <HiOutlineDownload className="icon2" />
+            Export as csv
+          </button>
         </div>
         <hr />
         <div className="calendar-section">

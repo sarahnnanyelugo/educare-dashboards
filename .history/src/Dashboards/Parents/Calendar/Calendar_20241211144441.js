@@ -186,17 +186,6 @@ export default function Event({ localizer = mLocalizer, ...props }) {
               Export as csv
             </button>{" "}
           </Desktop>
-          <TabletAndBelow>
-            {" "}
-            <button
-              className="pdf-download-btn col-12 "
-              style={{ color: "#191919", fontSize: "12px" }}
-            >
-              {" "}
-              <HiOutlineDownload className="icon2" />
-              Export as csv
-            </button>{" "}
-          </TabletAndBelow>
         </div>
         <hr />
         <div className="calendar-section">

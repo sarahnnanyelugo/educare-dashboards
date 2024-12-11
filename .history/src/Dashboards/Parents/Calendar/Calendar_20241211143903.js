@@ -2,7 +2,7 @@ import React, { Fragment, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 import { HiOutlineDownload } from "react-icons/hi";
-import { Desktop, TabletAndBelow } from "../../../Utils/mediaQueries";
+import { Desktop, TabletAndBelow } from "../../Utils/mediaQueries";
 
 import "./calendar.scss";
 import {
@@ -171,32 +171,18 @@ export default function Event({ localizer = mLocalizer, ...props }) {
               </div>
             </div>
           </div>
-          <Desktop>
+          <div style={{ flexGrow: 1 }} />
+          <div className=" col-md-3 ">
+            <Search />
+          </div>
+          <button
+            className="pdf-download-btn"
+            style={{ color: "#191919", fontSize: "12px" }}
+          >
             {" "}
-            <div style={{ flexGrow: 1 }} />
-            <div className=" col-md-3 ">
-              <Search />
-            </div>
-            <button
-              className="pdf-download-btn "
-              style={{ color: "#191919", fontSize: "12px" }}
-            >
-              {" "}
-              <HiOutlineDownload className="icon2" />
-              Export as csv
-            </button>{" "}
-          </Desktop>
-          <TabletAndBelow>
-            {" "}
-            <button
-              className="pdf-download-btn col-12 "
-              style={{ color: "#191919", fontSize: "12px" }}
-            >
-              {" "}
-              <HiOutlineDownload className="icon2" />
-              Export as csv
-            </button>{" "}
-          </TabletAndBelow>
+            <HiOutlineDownload className="icon2" />
+            Export as csv
+          </button>
         </div>
         <hr />
         <div className="calendar-section">
@@ -239,26 +225,6 @@ export default function Event({ localizer = mLocalizer, ...props }) {
                 onSelectEvent={(event) => handleSelectDate(event.start)}
               />
             </div>
-            <TabletAndBelow>
-              <div className="col-md-4 col-12">
-                <div style={{ padding: "20px" }}>
-                  <h6>
-                    {selectedDate
-                      ? moment(selectedDate).format("MMMM , YYYY")
-                      : ""}
-                  </h6>
-                  <h6 style={{ color: "#007AAE", marginTop: "50px" }}>
-                    {" "}
-                    {selectedDate ? moment(selectedDate).format("dddd") : ""}
-                  </h6>
-                  <h1>
-                    {" "}
-                    {selectedDate ? moment(selectedDate).format(" Do,") : ""}
-                  </h1>
-                  <EventPreview />
-                </div>
-              </div>
-            </TabletAndBelow>
           </div>
         </div>
       </div>
