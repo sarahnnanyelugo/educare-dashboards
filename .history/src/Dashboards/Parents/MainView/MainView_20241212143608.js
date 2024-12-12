@@ -139,7 +139,7 @@ export const MainView = () => {
                 <h6>Performance Review</h6>
                 <div
                   className=" card performance-review"
-                  style={{ paddingBottom: "45px" }}
+                  style={{ paddingBottom: "40px" }}
                 >
                   <div className="card ">
                     <Select
@@ -190,7 +190,6 @@ export const MainView = () => {
                           fontSize: "10px",
                           fontFamily: "rebondBook;",
                           marginBottom: "20px",
-                          textDecoration: "underline",
                         }}
                       >
                         View Subject

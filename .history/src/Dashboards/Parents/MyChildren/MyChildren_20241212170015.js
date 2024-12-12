@@ -94,7 +94,7 @@ export const MyChildren = () => {
                   <p>59 days present</p>
                 </div>
                 <h6>Documents</h6>
-                <div className="card file-input" style={{ minHeight: "500px" }}>
+                <div className="card file-input">
                   <Documents />
                 </div>
               </div>

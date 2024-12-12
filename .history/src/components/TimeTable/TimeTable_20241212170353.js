@@ -3,9 +3,9 @@ import "./time-table.scss";
 function Timetable() {
   return (
     <Table bordered className="subject-table">
-      <thead>
+      <tdead>
         <tr>
-          <th></th>
+          <td></td>
           <td>8:00am-8:30am</td>
           <td>8:30am-9:00am</td>
           <td>9:00am-9:30am</td>
@@ -16,7 +16,7 @@ function Timetable() {
           <td>1:30pm-2:00pm</td>
           <td>2:00pm-3:00pm</td>
         </tr>
-      </thead>
+      </tdead>
       <tbody>
         <tr>
           <td>Monday</td>

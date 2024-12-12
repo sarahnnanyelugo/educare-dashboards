@@ -190,7 +190,6 @@ export const MainView = () => {
                           fontSize: "10px",
                           fontFamily: "rebondBook;",
                           marginBottom: "20px",
-                          textDecoration: "underline",
                         }}
                       >
                         View Subject

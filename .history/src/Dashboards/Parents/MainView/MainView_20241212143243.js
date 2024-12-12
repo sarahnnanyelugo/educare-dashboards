@@ -137,10 +137,7 @@ export const MainView = () => {
               <div className="col-md-5 stats-container2 ">
                 {" "}
                 <h6>Performance Review</h6>
-                <div
-                  className=" card performance-review"
-                  style={{ paddingBottom: "45px" }}
-                >
+                <div className=" card performance-review">
                   <div className="card ">
                     <Select
                       options={child}
@@ -190,7 +187,6 @@ export const MainView = () => {
                           fontSize: "10px",
                           fontFamily: "rebondBook;",
                           marginBottom: "20px",
-                          textDecoration: "underline",
                         }}
                       >
                         View Subject

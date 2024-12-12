@@ -103,10 +103,6 @@
       padding: 0.5rem;
       margin: 0;
       font-family: rebondG-Semi-Bold;
-      white-space: nowrap; // Prevent text wrapping
-      overflow: hidden; // Ensure text doesn’t overflow the button
-      text-overflow: ellipsis; // Adds ellipsis if text overflows
-
       &:not(:last-child) {
         margin-right: 0.5rem; // Optional spacing between buttons
       }

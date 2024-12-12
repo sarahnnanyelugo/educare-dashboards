@@ -17,7 +17,6 @@ import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
 import { ResultChart } from "../../../components/ResultChart/ResultChart";
 import { examSubjects, communication } from "../../../TestData/subjects";
-import SubjectTab from "./SubjectTab/SubjectTab";
 const customData = [100, 80, 50, 100, 90, 70, 40, 90, 100, 80, 70];
 const customLabels = [
   "Math",
@@ -203,8 +202,8 @@ export const ActivityTab = () => {
             </div>
           </div>
           <hr />
-          <div className="d-flex over-scroll subject-lesson-cover col-md-12">
-            {/* <div
+          <div className="d-flex over-scroll subject-lesson-cover">
+            <div
               className="col-md-5 teacher-subjects col-10"
               style={{ marginRight: "20px", background: "#fff" }}
             >
@@ -240,9 +239,7 @@ export const ActivityTab = () => {
                   <p>Week 1-2</p>
                 </Col>
               </Row>
-            </div> */}
-
-            <SubjectTab />
+            </div>
           </div>
         </div>
         <div className={`panel ${checkActive(3, "active2")}`}>

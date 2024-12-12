@@ -34,14 +34,14 @@ export const ResultChart = () => (
         interval={0} // Ensure all labels are displayed
         angle={-45} // Slant labels at a 45-degree angle
         textAnchor="end" // Align the text properly when slanted
-        style={{ fontSize: "8px" }}
+        style={{ fontSize: "9px" }}
         axisLine={false} // Remove Y-axis line
         tickLine={false} // Remove Y-axis tick marks
       />
       <YAxis
         tickFormatter={(value) => `${value}%`} // Display percentage on Y-axis
         interval="preserveStartEnd" // Ensure clear label placement
-        style={{ fontSize: "8px" }}
+        style={{ fontSize: "9px" }}
         axisLine={false} // Remove Y-axis line
         tickLine={false} // Remove Y-axis tick marks// Adjust font size for the Y-axis
       />

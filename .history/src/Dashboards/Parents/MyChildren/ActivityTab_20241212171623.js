@@ -203,7 +203,7 @@ export const ActivityTab = () => {
             </div>
           </div>
           <hr />
-          <div className="d-flex over-scroll subject-lesson-cover col-md-12">
+          <div className="d-flex over-scroll subject-lesson-cover">
             {/* <div
               className="col-md-5 teacher-subjects col-10"
               style={{ marginRight: "20px", background: "#fff" }}

@@ -1,0 +1,56 @@
+.vertical-tab {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+
+  .tab-list {
+    // flex: 1;
+    // max-width: 300px; // Adjust width as needed
+    background: #f8f9fa;
+    border-right: 1px solid #ccc;
+    padding: 0;
+
+    .tab-item {
+      padding: 1rem;
+      cursor: pointer;
+      border-bottom: 1px solid #e0e0e0;
+      transition: background-color 0.3s ease;
+
+      .subject {
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      .teacher {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      &:hover {
+        background: #e9ecef;
+      }
+
+      &.active {
+        background: #e0f7fa;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .tab-content {
+    // flex: 2;
+    padding: 1.5rem;
+    background: #ffffff;
+
+    h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #333;
+    }
+  }
+}

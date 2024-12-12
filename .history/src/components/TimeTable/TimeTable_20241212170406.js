@@ -7,14 +7,14 @@ function Timetable() {
         <tr>
           <th></th>
           <td>8:00am-8:30am</td>
-          <td>8:30am-9:00am</td>
-          <td>9:00am-9:30am</td>
-          <td>9:30am-10:00am</td>
-          <td>10:00am-10:30am</td>
-          <td>12:00pm-1:00pm</td>
-          <td>1:00pm-1:30pm</td>
-          <td>1:30pm-2:00pm</td>
-          <td>2:00pm-3:00pm</td>
+          <th>8:30am-9:00am</th>
+          <th>9:00am-9:30am</th>
+          <th>9:30am-10:00am</th>
+          <th>10:00am-10:30am</th>
+          <th>12:00pm-1:00pm</th>
+          <th>1:00pm-1:30pm</th>
+          <th>1:30pm-2:00pm</th>
+          <th>2:00pm-3:00pm</th>
         </tr>
       </thead>
       <tbody>

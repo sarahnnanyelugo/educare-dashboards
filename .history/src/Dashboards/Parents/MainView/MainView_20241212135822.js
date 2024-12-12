@@ -123,7 +123,7 @@ export const MainView = () => {
                 </div>
               </div>
             </div>
-            <div className="d-md-flex mt-4 ">
+            <div className="d-md-flex mt-5 ">
               <div className="col-md-7 stats-container web-news">
                 {" "}
                 <h6>Posts Feed</h6>
@@ -137,10 +137,7 @@ export const MainView = () => {
               <div className="col-md-5 stats-container2 ">
                 {" "}
                 <h6>Performance Review</h6>
-                <div
-                  className=" card performance-review"
-                  style={{ paddingBottom: "45px" }}
-                >
+                <div className=" card performance-review">
                   <div className="card ">
                     <Select
                       options={child}
@@ -181,21 +178,17 @@ export const MainView = () => {
                     </div>
                   </div>
                   <div className="">
-                    <div className="mt-2">
-                      {" "}
-                      <Link
-                        style={{
-                          color: "#0098DA",
-                          float: "right",
-                          fontSize: "10px",
-                          fontFamily: "rebondBook;",
-                          marginBottom: "20px",
-                          textDecoration: "underline",
-                        }}
-                      >
-                        View Subject
-                      </Link>
-                    </div>
+                    <Link
+                      style={{
+                        color: "#0098DA",
+                        float: "right",
+                        fontSize: "10px",
+                        fontFamily: "rebondBook;",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      View Subject
+                    </Link>
                     <ResultChart />
                   </div>
                 </div>

@@ -77,7 +77,7 @@ export const MyChildren = () => {
             <div style={{ paddingLeft: "10px" }} className="col-md-4">
               <div
                 className="col-md-12 card attendance-summary"
-                style={{ minHeight: "600px" }}
+                style={{ minHeight: "700px" }}
               >
                 {" "}
                 <h6>Attendance Summary</h6>
@@ -94,7 +94,7 @@ export const MyChildren = () => {
                   <p>59 days present</p>
                 </div>
                 <h6>Documents</h6>
-                <div className="card file-input" style={{ minHeight: "500px" }}>
+                <div className="card file-input">
                   <Documents />
                 </div>
               </div>
