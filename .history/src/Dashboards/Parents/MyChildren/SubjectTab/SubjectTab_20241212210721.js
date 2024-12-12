@@ -116,7 +116,7 @@ const SubjectTab = () => {
   return (
     <>
       <div className="vertical-tab col-md-12">
-        <div className="tab-list col-md-5 col-10">
+        <div className="tab-list col-md-5 col-7">
           <Row style={{ borderBottom: "solid 1px #e7e7e7", padding: "10px" }}>
             <Col>
               <h6>Subject</h6>
@@ -143,7 +143,7 @@ const SubjectTab = () => {
           ))}
         </div>
 
-        <div className="tab-content col-md-7 col-12">
+        <div className="tab-content col-md-7 col-9">
           <h3>Lesson Plan</h3>
           <Row>
             {data[selectedIndex].lessonPlan

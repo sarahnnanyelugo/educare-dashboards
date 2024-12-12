@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import Timetable, { TimeTable } from "../../../components/TimeTable/TimeTable";
 
 import { HiOutlineDownload } from "react-icons/hi";
+import { subjects } from "../../../TestData/subjects";
+// import { generateTimetableData } from "../../../Utils/DataUtils";
 import Icon3 from "../../../assets/images/clipboard.svg";
 import Select from "../../../components/Select/Select";
+import { Col, Row } from "react-bootstrap";
 import {
   generateAssignment,
   generateMedicalRecords,
@@ -200,7 +203,7 @@ export const ActivityTab = () => {
             </div>
           </div>
           <hr />
-          <div className="d-flex subject-lesson-cover col-md-12">
+          <div className="d-flex over-scroll subject-lesson-cover col-md-12">
             <SubjectTab />
           </div>
         </div>

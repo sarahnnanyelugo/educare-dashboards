@@ -330,11 +330,7 @@ export const generateAssignment = (numEntries, avatarList) => {
       ]),
 
       Status: arrayElement([" Pending", "Submitted", "Inactive"]),
-      Assignment: arrayElement([
-        "Mention three types of...",
-        "List all the equipments...",
-        "Enumerate the three branches of...",
-      ]),
+      Assignment: faker.lorem.sentence(3),
       Action: "View",
     });
   }

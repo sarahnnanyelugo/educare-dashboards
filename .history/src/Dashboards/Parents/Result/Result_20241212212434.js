@@ -16,7 +16,20 @@ import Select from "../../../components/Select/Select";
 import Icon3 from "../../../assets/images/clipboard.svg";
 
 import { Search } from "../../../components/Search/Search";
-
+const customData = [100, 80, 50, 100, 90, 70, 40, 90, 100, 80, 70];
+const customLabels = [
+  "Math",
+  "Eng",
+  "CRS",
+  "B.Tech",
+  "B.Sci",
+  "G.A.D",
+  "French",
+  "Comp.Sci",
+  "C.C.A",
+  "H. Econs",
+  "Civic Edu.",
+];
 const terms = [
   { value: "first term", label: "First Term" },
   { value: "second term", label: "Second Term" },

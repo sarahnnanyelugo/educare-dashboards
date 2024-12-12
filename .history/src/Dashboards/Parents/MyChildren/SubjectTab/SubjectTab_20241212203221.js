@@ -13,7 +13,7 @@ const SubjectTab = () => {
         "Week 5-6: Types of Family Resources",
         "Week 7-8: Food Preparation Techniques",
         "Week 9-10: Budgeting and Meal Planning",
-        "Week 11: Revision",
+        "Week 11:Revision",
         "Week 12: Examination",
       ],
     },
@@ -27,7 +27,7 @@ const SubjectTab = () => {
         "Week 6-7: Writing Skills: Narrative Essays",
         "Week 8-9: Letter Writing: Formal and Informal",
         "Week 10-11: Poetry Analysis: Introduction to Rhythm",
-        "Week 11: Revision",
+        "Week 11:Revision",
         "Week 12: Examination",
       ],
     },
@@ -40,7 +40,7 @@ const SubjectTab = () => {
         "Week 5-6: Solving Linear Equations",
         "Week 7-8: Geometry: Properties of Triangles",
         "Week 9-10: Data Representation (Bar Charts, Line Graphs)",
-        "Week 11: Revision",
+        "Week 11:Revision",
         "Week 12: Examination",
       ],
     },
@@ -53,7 +53,7 @@ const SubjectTab = () => {
         "Week 5-6: Days of the Week and Months of the Year",
         "Week 7-8: Simple Sentence Construction",
         "Week 9-10: Numbers (1-100) in French",
-        "Week 11: Revision",
+        "Week 11:Revision",
         "Week 12: Examination",
       ],
     },
@@ -66,7 +66,7 @@ const SubjectTab = () => {
         "Week 5-6: Simple Bookkeeping: Basics",
         "Week 7-8: Trade and Its Importance",
         "Week 9-10: Communication in Business",
-        "Week 11: Revision",
+        "Week 11:Revision",
         "Week 12: Examination",
       ],
     },
@@ -79,7 +79,7 @@ const SubjectTab = () => {
         "Week 5-6: Uses of Tools and Materials",
         "Week 7-8: Basic Electricity: Circuits and Symbols",
         "Week 9-10: Introduction to Technical Drawing",
-        "Week 11: Revision",
+        "Week 11:Revision",
         "Week 12: Examination",
       ],
     },
@@ -92,7 +92,7 @@ const SubjectTab = () => {
         "Week 5-6: Government and Citizenship",
         "Week 7-8: Social Vices: Causes and Prevention",
         "Week 9-10: National Symbols and Their Importance",
-        "Week 11: Revision",
+        "Week 11:Revision",
         "Week 12: Examination",
       ],
     },
@@ -105,7 +105,7 @@ const SubjectTab = () => {
         "Week 5-6: Introduction to Software Applications",
         "Week 7-8: Fundamentals of Word Processing",
         "Week 9-10: Internet Safety and Ethics",
-        "Week 11: Revision",
+        "Week 11:Revision",
         "Week 12: Examination",
       ],
     },
@@ -116,7 +116,7 @@ const SubjectTab = () => {
   return (
     <>
       <div className="vertical-tab col-md-12">
-        <div className="tab-list col-md-5 col-10">
+        <div className="tab-list col-md-5">
           <Row style={{ borderBottom: "solid 1px #e7e7e7", padding: "10px" }}>
             <Col>
               <h6>Subject</h6>
@@ -143,7 +143,7 @@ const SubjectTab = () => {
           ))}
         </div>
 
-        <div className="tab-content col-md-7 col-12">
+        <div className="tab-content col-md-7">
           <h3>Lesson Plan</h3>
           <Row>
             {data[selectedIndex].lessonPlan
@@ -158,15 +158,10 @@ const SubjectTab = () => {
               )
               .map((plans, index) => (
                 <Col key={index} md={6}>
-                  <ul className="list-unstyled">
-                    {plans.map((plan, i) => {
-                      const [week, description] = plan.split(":");
-                      return (
-                        <li key={i}>
-                          <strong>{week}:</strong> {description}
-                        </li>
-                      );
-                    })}
+                  <ul>
+                    {plans.map((plan, i) => (
+                      <li key={i}>{plan}</li>
+                    ))}
                   </ul>
                 </Col>
               ))}

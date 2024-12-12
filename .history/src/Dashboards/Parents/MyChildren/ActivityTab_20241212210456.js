@@ -200,7 +200,7 @@ export const ActivityTab = () => {
             </div>
           </div>
           <hr />
-          <div className="d-flex subject-lesson-cover col-md-12">
+          <div className="d-flex over-scroll subject-lesson-cover col-md-12">
             <SubjectTab />
           </div>
         </div>
