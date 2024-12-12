@@ -190,9 +190,6 @@ export const MainView = () => {
                       View Subject
                     </Link>
                     <ResultChart />
-                    <center>
-                      <p>Total Subjects = 15</p>
-                    </center>
                   </div>
                 </div>
               </div>

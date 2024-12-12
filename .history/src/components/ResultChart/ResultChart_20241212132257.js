@@ -10,41 +10,54 @@ import {
 
 // Example unsorted data
 const rawData = [
-  { subject: "Eng", score: 80 },
-  { subject: "Math", score: 70 },
-  { subject: "H. Econs", score: 66 },
-  { subject: "Basic Sci", score: 55 },
-  { subject: "Civic Edu", score: 75 },
+  { subject: "Eng", score: 88 },
+  { subject: "Math", score: 60 },
+  { subject: "H. Econs", score: 100 },
+  { subject: "Basic Sci", score: 65 },
+  { subject: "Civic Edu", score: 60 },
   { subject: "S.O.S", score: 80 },
-  { subject: "French", score: 55 },
+  { subject: "French", score: 79 },
   { subject: "French", score: 67 },
   { subject: "Comp. Sci", score: 45 },
-  { subject: "CRS", score: 100 },
+  { subject: "CRS", score: 65 },
   { subject: "G.A.D", score: 90 },
 ];
 
 // Keep data as is (no sorting)
 const data = rawData;
 
+const CustomXAxisTick = (props) => {
+  const { x, y, payload } = props;
+  const textLines = payload.value.split(" "); // Split text into words
+
+  return (
+    <text
+      x={x}
+      y={y + 10} // Adjust y for positioning
+      textAnchor="middle"
+      fontSize="8px"
+      fontFamily="rebondG-Medium"
+    >
+      {textLines.map((line, index) => (
+        <tspan key={index} x={x} dy={index === 0 ? 0 : 15}>
+          {line}
+        </tspan>
+      ))}
+    </text>
+  );
+};
+
 export const ResultChart = () => (
-  <ResponsiveContainer width="100%" height={330}>
+  <ResponsiveContainer width="100%" height={300}>
     <BarChart data={data}>
       <XAxis
         dataKey="subject"
         interval={0} // Ensure all labels are displayed
         angle={-45} // Slant labels at a 45-degree angle
         textAnchor="end" // Align the text properly when slanted
-        style={{ fontSize: "9px" }}
-        axisLine={false} // Remove Y-axis line
-        tickLine={false} // Remove Y-axis tick marks
+        style={{ fontSize: "6px" }}
       />
-      <YAxis
-        tickFormatter={(value) => `${value}%`} // Display percentage on Y-axis
-        interval="preserveStartEnd" // Ensure clear label placement
-        style={{ fontSize: "9px" }}
-        axisLine={false} // Remove Y-axis line
-        tickLine={false} // Remove Y-axis tick marks// Adjust font size for the Y-axis
-      />
+      <YAxis axisLine={false} tick={false} />
       <Tooltip />
       <Bar
         dataKey="score"

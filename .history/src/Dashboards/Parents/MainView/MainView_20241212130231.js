@@ -146,10 +146,7 @@ export const MainView = () => {
                       placeholder="Select Child"
                     />
                   </div>{" "}
-                  <div
-                    className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 "
-                    style={{ marginTop: "1px" }}
-                  >
+                  <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 ">
                     <div className="col">
                       {" "}
                       <h6>Session</h6>
@@ -177,7 +174,7 @@ export const MainView = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="">
+                  <div className="mt-5">
                     <Link
                       style={{
                         color: "#0098DA",
