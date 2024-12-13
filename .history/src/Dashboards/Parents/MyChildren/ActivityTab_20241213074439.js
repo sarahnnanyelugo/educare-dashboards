@@ -15,7 +15,6 @@ import Peter from "../../../assets/images/peter.png";
 import { ResultChart } from "../../../components/ResultChart/ResultChart";
 import { examSubjects, communication } from "../../../TestData/subjects";
 import SubjectTab from "./SubjectTab/SubjectTab";
-import CommunicateTable from "../../../components/CommunicateTable/CommunicateTable";
 const customData = [100, 80, 50, 100, 90, 70, 40, 90, 100, 80, 70];
 const customLabels = [
   "Math",
@@ -373,11 +372,10 @@ export const ActivityTab = () => {
           <hr />
           <div className="col-md-12">
             {" "}
-            {/* <AppTable
+            <AppTable
               headers={communication.headers}
               rows={communication.rows}
-            /> */}
-            <CommunicateTable />
+            />
           </div>
         </div>
         <div className={`panel ${checkActive(7, "active2")}`}>
