@@ -1,0 +1,25 @@
+.mobile-table-container {
+  border-bottom: solid 1px #e7e7e7;
+  padding-bottom: 12px;
+  h6 {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+  small {
+    font-size: 12px;
+    color: #7f8384;
+  }
+  span {
+    margin-right: 4px;
+    margin-left: 4px;
+    color: #191919;
+    font-size: 14px;
+  }
+  button {
+    padding: 0;
+    border: none;
+    background: inherit;
+    font-size: 10px;
+  }
+}

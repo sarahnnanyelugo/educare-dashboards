@@ -14,8 +14,6 @@ import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
 import { IoIosArrowDown } from "react-icons/io";
 import { Desktop, TabletAndBelow } from "../../../Utils/mediaQueries";
-import { votingData } from "../../../TestData/votingData";
-import { MobileTable } from "../../../components/MobileTable/MobileTable";
 
 export const VotingSystem = () => {
   const [voteRecords, setVoteRecords] = useState([]);
@@ -94,10 +92,10 @@ export const VotingSystem = () => {
             />
           </Desktop>
           <TabletAndBelow>
-            <div className="card mobile-voting mt-4">
+            <div className="card">
               {" "}
-              {votingData.map((data, index) => (
-                <MobileTable data={data} isOdd={index % 2 === 1} key={index} />
+              {schEvents.map((data, index) => (
+                <Calender data={data} />
               ))}
             </div>
           </TabletAndBelow>

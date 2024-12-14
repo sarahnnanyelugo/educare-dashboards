@@ -235,7 +235,7 @@ export const MainView = () => {
                   <small>Session 2014/2015</small>
                 </div>
                 <Link to={"/calendar"}>
-                  <div className="card">
+                  <div className="">
                     {" "}
                     {schEvents.map((data, index) => (
                       <Calender data={data} />

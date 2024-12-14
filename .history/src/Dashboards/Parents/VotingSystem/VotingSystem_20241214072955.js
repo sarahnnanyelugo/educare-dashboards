@@ -94,10 +94,10 @@ export const VotingSystem = () => {
             />
           </Desktop>
           <TabletAndBelow>
-            <div className="card mobile-voting mt-4">
+            <div className="card">
               {" "}
               {votingData.map((data, index) => (
-                <MobileTable data={data} isOdd={index % 2 === 1} key={index} />
+                <MobileTable data={data} />
               ))}
             </div>
           </TabletAndBelow>
