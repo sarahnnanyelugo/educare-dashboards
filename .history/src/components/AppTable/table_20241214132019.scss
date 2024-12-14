@@ -15,21 +15,21 @@
   --bs-table-striped-bg: #f9fafb;
   .status-label {
     border-radius: 11px;
-    font-size: 12px;
+    font-size: 14px;
     padding: 0 5px;
     &.status-conducted {
-      background: #ecfef3;
-      color: #027a48; // Green
+      color: #fff;
+      background-color: #28a745; // Green for conducted
     }
 
     &.status-published {
-      background: #f0f9fd;
-      color: #0098da; // Blue
+      color: #fff;
+      background-color: #007bff; // Blue for published
     }
 
     &.status-default {
-      color: #344054;
-      background-color: #f9fafb; // Black
+      color: #fff;
+      background-color: #343a40; // Black for not conducted or not published
     }
   }
 }

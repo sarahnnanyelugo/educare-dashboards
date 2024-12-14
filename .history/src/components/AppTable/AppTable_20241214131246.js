@@ -1,8 +1,6 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { GoDotFill } from "react-icons/go";
-
 import "./table.scss";
 export const AppTable = ({
   headers = [],
@@ -32,6 +30,7 @@ export const AppTable = ({
             ) : (
               <th>No headers available</th>
             )}
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -61,7 +60,6 @@ export const AppTable = ({
                           row[header]
                         )}`}
                       >
-                        <GoDotFill style={{ marginRight: "5px" }} />
                         {row[header]}
                       </span>
                     ) : (
@@ -69,6 +67,9 @@ export const AppTable = ({
                     )}
                   </td>
                 ))}
+                <td>
+                  <Link to={"/view-voting"}>View</Link>
+                </td>
               </tr>
             ))
           ) : (

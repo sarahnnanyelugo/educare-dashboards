@@ -1,8 +1,6 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { GoDotFill } from "react-icons/go";
-
 import "./table.scss";
 export const AppTable = ({
   headers = [],
@@ -32,6 +30,7 @@ export const AppTable = ({
             ) : (
               <th>No headers available</th>
             )}
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -40,9 +39,10 @@ export const AppTable = ({
               <tr key={rowIndex}>
                 {headers.map((header, colIndex) => (
                   <td key={colIndex}>
-                    {/* Render image for 'Child' field if includeImages is true */}
+                    {/* Conditionally render images if includeImages is true and the row has a Photo field */}
                     {includeImages && header === "Child" && row["Photo"] ? (
                       <>
+                        {" "}
                         <img
                           src={row["Photo"]}
                           alt={`Row ${rowIndex} Photo`}
@@ -51,24 +51,22 @@ export const AppTable = ({
                             height: "30px",
                             marginRight: "10px",
                             borderRadius: "50%",
-                          }}
+                          }} // Adjust size as needed
                         />
                         {row[header]}
                       </>
-                    ) : header === "Status" || header === "Results" ? (
-                      <span
-                        className={`status-label ${getStatusClass(
-                          row[header]
-                        )}`}
-                      >
-                        <GoDotFill style={{ marginRight: "5px" }} />
+                    ) : header == "Status" ? (
+                      <span style={{ color: statusArray[row[header]] }}>
                         {row[header]}
                       </span>
                     ) : (
-                      row[header] || "N/A"
+                      [row[header] || "N/A"]
                     )}
                   </td>
                 ))}
+                <td>
+                  <Link to={"/view-voting"}>View</Link>
+                </td>
               </tr>
             ))
           ) : (

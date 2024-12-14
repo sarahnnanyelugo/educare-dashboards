@@ -32,6 +32,7 @@ export const AppTable = ({
             ) : (
               <th>No headers available</th>
             )}
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>

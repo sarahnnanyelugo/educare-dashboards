@@ -32,6 +32,7 @@ export const AppTable = ({
             ) : (
               <th>No headers available</th>
             )}
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -61,7 +62,6 @@ export const AppTable = ({
                           row[header]
                         )}`}
                       >
-                        <GoDotFill style={{ marginRight: "5px" }} />
                         {row[header]}
                       </span>
                     ) : (
@@ -69,6 +69,9 @@ export const AppTable = ({
                     )}
                   </td>
                 ))}
+                <td>
+                  <Link to={"/view-voting"}>View</Link>
+                </td>
               </tr>
             ))
           ) : (
