@@ -33,18 +33,18 @@
   }
   .status-button {
     &.status-conducted {
-      background: #ecfef3;
-      color: #027a48; // Green
+      color: #fff;
+      background-color: #027a48; // Green
     }
 
     &.status-published {
-      background: #f0f9fd;
-      color: #0098da; // Blue
+      color: #fff;
+      background-color: #007bff; // Blue
     }
 
     &.status-default {
-      color: #344054;
-      background-color: #f9fafb; // Black
+      color: #fff;
+      background-color: #343a40; // Black
     }
   }
 }
