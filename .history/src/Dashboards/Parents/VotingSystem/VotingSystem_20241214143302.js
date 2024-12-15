@@ -19,7 +19,7 @@ import { MobileTable } from "../../../components/MobileTable/MobileTable";
 
 export const VotingSystem = () => {
   const [voteRecords, setVoteRecords] = useState([]);
-  const headers = ["Start", "End", "Position", "Status", "Results", "Action"];
+  const headers = ["Start", "End", "Position", "Status", "Results"];
 
   const avatarList = [Student, Peter];
   useEffect(() => {
@@ -90,7 +90,7 @@ export const VotingSystem = () => {
               headers={headers}
               rows={voteRecords}
               includeImages={true}
-              linkField="id" // Field to make clickable
+              linkField="Action" // Field to make clickable
               linkUrl="/view-voting" // Base URL for the links
             />
           </Desktop>

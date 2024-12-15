@@ -90,7 +90,7 @@ export const VotingSystem = () => {
               headers={headers}
               rows={voteRecords}
               includeImages={true}
-              linkField="id" // Field to make clickable
+              linkField="Action" // Field to make clickable
               linkUrl="/view-voting" // Base URL for the links
             />
           </Desktop>

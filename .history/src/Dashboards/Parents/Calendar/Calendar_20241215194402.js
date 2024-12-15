@@ -42,15 +42,18 @@ const sessions = [
 export default function Event({ localizer = mLocalizer, ...props }) {
   const [selectedTerm, setSelectedTerm] = useState("");
   const [selectedSession, setSelectedSession] = useState("");
-  const { defaultDate, max } = useMemo(
+  const { components, defaultDate, max, views } = useMemo(
     () => ({
+      components: {
+        timeSlotWrapper: ColoredDateCellWrapper,
+      },
       defaultDate: new Date(2024, 8, 1),
       max: dates.add(dates.endOf(new Date(2024, 17, 1), "day"), -1, "hours"),
+      views: Object.keys(Views).map((k) => Views[k]),
     }),
     []
   );
-
-  const [events] = useState([
+  const [events, setEvents] = useState([
     {
       title: "Election Day",
       start: new Date(2024, 8, 2),
@@ -83,15 +86,15 @@ export default function Event({ localizer = mLocalizer, ...props }) {
     },
   ]);
 
-  const [selectedDate, setSelectedDate] = useState(null);
-
   const eventStyleGetter = (event) => {
-    let borderLeft = "solid 1px blue";
+    let borderLeft = "solid 1px blue"; // Default blue
+
     if (event.title === "Open Day") borderLeft = "solid 4px #08B529";
     else if (event.title === "Picture Day") borderLeft = "solid 4px #B50808";
     else if (event.title === "Heritage Day") borderLeft = "solid 4px #8B63E6";
     else if (event.title === "Election Day") borderLeft = "solid 4px #0098DA";
     else if (event.title === "Cultural Day") borderLeft = "solid 4px #E6DC63";
+
     return {
       style: {
         borderLeft,
@@ -104,29 +107,43 @@ export default function Event({ localizer = mLocalizer, ...props }) {
     };
   };
 
-  const handleSelectDate = (date) => setSelectedDate(date);
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  // Handle date click
+  const handleSelectDate = (date) => {
+    setSelectedDate(date);
+  };
+
+  // Filter events for the selected date
+  const getEventsForDate = (date) => {
+    return events.filter(
+      (event) =>
+        moment(event.start).isSame(date, "day") ||
+        moment(event.end).isSame(date, "day")
+    );
+  };
 
   const EventPreview = () => {
-    const selectedEvents = events.filter((event) =>
-      moment(event.start).isSame(selectedDate, "day")
-    );
-    return selectedDate ? (
-      selectedEvents.length ? (
-        <ul className="list-unstyled" style={{ fontFamily: "rebondBook" }}>
-          {selectedEvents.map((event, index) => (
-            <li key={index}>{event.title}</li>
-          ))}
-        </ul>
-      ) : (
-        <p>No events for this day.</p>
-      )
-    ) : (
-      <p>Select a date to see the events.</p>
+    if (!selectedDate) return <p>Select a date to see the events.</p>;
+
+    const selectedEvents = getEventsForDate(selectedDate);
+
+    if (selectedEvents.length === 0) {
+      return <p>No events for this day.</p>;
+    }
+
+    return (
+      <ul className="list-unstyled" style={{ fontFamily: "rebondBook" }}>
+        {selectedEvents.map((event, index) => (
+          <li key={index}>{event.title}</li>
+        ))}
+      </ul>
     );
   };
 
   return (
     <div className="calendar-container">
+      <h5>Calendar</h5>
       <div className="card calendar-inner">
         <div className="d-md-flex">
           <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 col-md-3">
@@ -155,32 +172,60 @@ export default function Event({ localizer = mLocalizer, ...props }) {
               </div>
             </div>
           </div>
+          <Desktop>
+            <div style={{ flexGrow: 1 }} />
+            <div className="col-md-3">
+              <Search />
+            </div>
+            <button
+              className="pdf-download-btn"
+              style={{ color: "#191919", fontSize: "12px" }}
+            >
+              <HiOutlineDownload className="icon2" />
+              Export as CSV
+            </button>
+          </Desktop>
+          <TabletAndBelow>
+            <button
+              className="pdf-download-btn col-12"
+              style={{ color: "#191919", fontSize: "12px" }}
+            >
+              <HiOutlineDownload className="icon2" />
+              Export as CSV
+            </button>
+          </TabletAndBelow>
         </div>
         <hr />
         <div className="calendar-section">
-          <div className="height600 d-md-flex">
-            {/* Preview Section */}
-            <div className="col-md-4" style={{ padding: "10px 20px" }}>
-              <h6>
-                {selectedDate ? moment(selectedDate).format("MMMM , YYYY") : ""}
-              </h6>
-              <h6 style={{ color: "#007AAE", marginTop: "20px" }}>
-                {selectedDate ? moment(selectedDate).format("dddd") : ""}
-              </h6>
-              <h1>{selectedDate ? moment(selectedDate).format("Do") : ""}</h1>
-              <EventPreview />
-            </div>
-
-            {/* Calendar Section */}
+          <div className="height600 d-md-flex" {...props}>
+            <Desktop>
+              <div className="col-md-4">
+                <div style={{ padding: "20px" }}>
+                  <h6>
+                    {selectedDate
+                      ? moment(selectedDate).format("MMMM , YYYY")
+                      : ""}
+                  </h6>
+                  <h6 style={{ color: "#007AAE", marginTop: "50px" }}>
+                    {selectedDate ? moment(selectedDate).format("dddd") : ""}
+                  </h6>
+                  <h1>
+                    {selectedDate ? moment(selectedDate).format("Do,") : ""}
+                  </h1>
+                  <EventPreview />
+                </div>
+              </div>
+            </Desktop>
             <div className="col-md-8">
               <Calendar
                 defaultDate={defaultDate}
                 events={events}
                 localizer={localizer}
                 max={max}
+                showMultiDayTimes
                 step={60}
                 components={{
-                  toolbar: CustomToolbar, // Updated toolbar
+                  toolbar: CustomToolbar, // Custom toolbar with navigation arrows
                 }}
                 eventPropGetter={eventStyleGetter}
                 selectable
@@ -188,6 +233,24 @@ export default function Event({ localizer = mLocalizer, ...props }) {
                 onSelectEvent={(event) => handleSelectDate(event.start)}
               />
             </div>
+            <TabletAndBelow>
+              <div className="col-md-4 col-12">
+                <div style={{ padding: "20px" }}>
+                  <h6>
+                    {selectedDate
+                      ? moment(selectedDate).format("MMMM , YYYY")
+                      : ""}
+                  </h6>
+                  <h6 style={{ color: "#007AAE", marginTop: "50px" }}>
+                    {selectedDate ? moment(selectedDate).format("dddd") : ""}
+                  </h6>
+                  <h1>
+                    {selectedDate ? moment(selectedDate).format("Do,") : ""}
+                  </h1>
+                  <EventPreview />
+                </div>
+              </div>
+            </TabletAndBelow>
           </div>
         </div>
       </div>

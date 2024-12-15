@@ -180,7 +180,11 @@ export default function Event({ localizer = mLocalizer, ...props }) {
                 max={max}
                 step={60}
                 components={{
-                  toolbar: CustomToolbar, // Updated toolbar
+                  toolbar: (props) => (
+                    <div style={{ marginBottom: "10px", textAlign: "left" }}>
+                      <CustomToolbar {...props} />
+                    </div>
+                  ),
                 }}
                 eventPropGetter={eventStyleGetter}
                 selectable

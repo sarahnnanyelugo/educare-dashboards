@@ -162,35 +162,6 @@ export const generateInvoices = (numEntries) => {
   }
   return Invoices;
 };
-
-export const generateVoteRecords = (numEntries, avatarList) => {
-  const voteRecords = [];
-  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
-
-  for (let i = 0; i < numEntries; i++) {
-    voteRecords.push({
-      id: faker.string.uuid(), // Correct method for generating UUIDs in Faker 9.x
-      Start: faker.date.anytime(Date.now()).toLocaleDateString(),
-      Amount: faker.finance.amount({
-        min: 100,
-        max: 10000,
-        dec: 2,
-        symbol: "₦ ",
-      }),
-      End: faker.date.anytime(Date.now()).toLocaleDateString(),
-      Position: arrayElement([
-        "Head of School for the Day",
-        "Principal for the Day Election",
-      ]),
-      Status: arrayElement(["Not Conducted", "Conducted"]),
-      Results: arrayElement(["Not Published", "Published"]),
-      Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
-      Action: "View",
-    });
-  }
-  return voteRecords;
-};
-
 export const generateTransactionHistory = (numEntries, avatarList) => {
   const transactionHistory = [];
   // Helper function to randomly pick an array element
@@ -257,6 +228,34 @@ export const generateStoreItems = (numEntries, avatarList, catList) => {
     });
   }
   return storeItems;
+};
+
+export const generateVoteRecords = (numEntries, avatarList) => {
+  const voteRecords = [];
+  // Helper function to randomly pick an array element
+  const arrayElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+  for (let i = 0; i < numEntries; i++) {
+    voteRecords.push({
+      id: faker.datatype.uuid(), // Generate a unique ID
+      Start: faker.date.anytime(Date.now()).toLocaleDateString(),
+      Amount: faker.finance.amount({
+        min: 100,
+        max: 10000,
+        dec: 2,
+        symbol: "₦ ",
+      }), // Example: ₦5.85
+      End: faker.date.anytime(Date.now()).toLocaleDateString(),
+      Position: arrayElement([
+        "Head of School for the Day",
+        "Principal for the Day Election",
+      ]),
+      Status: arrayElement(["Not Conducted", "Conducted"]),
+      Results: arrayElement(["Not Published", "Published"]),
+      Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
+    });
+  }
+  return voteRecords;
 };
 
 export const generateMobileVoteRecords = (numEntries, avatarList) => {

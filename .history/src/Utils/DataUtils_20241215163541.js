@@ -162,6 +162,7 @@ export const generateInvoices = (numEntries) => {
   }
   return Invoices;
 };
+import { faker } from "@faker-js/faker";
 
 export const generateVoteRecords = (numEntries, avatarList) => {
   const voteRecords = [];
@@ -185,7 +186,6 @@ export const generateVoteRecords = (numEntries, avatarList) => {
       Status: arrayElement(["Not Conducted", "Conducted"]),
       Results: arrayElement(["Not Published", "Published"]),
       Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
-      Action: "View",
     });
   }
   return voteRecords;

@@ -22,12 +22,15 @@ export const VotingSystem = () => {
   const headers = ["Start", "End", "Position", "Status", "Results", "Action"];
 
   const avatarList = [Student, Peter];
+  // useEffect(() => {
+  //   const fb = generateVoteRecords(8, avatarList);
+  //   setVoteRecords(fb);
+  //   console.log(fb);
+  // }, []);
   useEffect(() => {
-    const fb = generateVoteRecords(8, avatarList);
-    setVoteRecords(fb);
-    console.log(fb);
+    const data = generateVoteRecords(10); // Pass the correct arguments
+    console.log(data); // Ensure data is being generated
   }, []);
-
   return (
     <>
       {" "}
@@ -90,7 +93,7 @@ export const VotingSystem = () => {
               headers={headers}
               rows={voteRecords}
               includeImages={true}
-              linkField="id" // Field to make clickable
+              linkField="Action" // Field to make clickable
               linkUrl="/view-voting" // Base URL for the links
             />
           </Desktop>
