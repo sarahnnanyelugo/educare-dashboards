@@ -106,8 +106,7 @@
   }
 
   .accordion-button:not(.collapsed) {
-    background: transparent;
-    width: 170px !important; // Maintain background consistency
+    background: transparent; // Maintain background consistency
   }
 }
 .link-span {

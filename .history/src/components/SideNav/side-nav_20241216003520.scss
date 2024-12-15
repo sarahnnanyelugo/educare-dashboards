@@ -91,7 +91,7 @@
     justify-content: space-between; // Text on the left, icon on the right
     align-items: center; // Vertical alignment
     text-align: left; // Ensure text aligns left
-    width: 170px !important; // Full-width to avoid wrapping
+    width: 150px !important; // Full-width to avoid wrapping
     padding: 8px 10px; // Adjust padding as needed
     background: transparent; // Keep background clean
     border: none; // Remove unnecessary borders
@@ -106,8 +106,7 @@
   }
 
   .accordion-button:not(.collapsed) {
-    background: transparent;
-    width: 170px !important; // Maintain background consistency
+    background: transparent; // Maintain background consistency
   }
 }
 .link-span {
