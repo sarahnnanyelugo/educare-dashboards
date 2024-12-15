@@ -158,7 +158,7 @@ export const SideNav = () => {
                                     ? "#0098DA"
                                     : "#191919",
                                 transition: "color 0.3s ease",
-                                flexGrow: 1,
+                                flexGrow: 2,
                               }}
                             >
                               {item.name}

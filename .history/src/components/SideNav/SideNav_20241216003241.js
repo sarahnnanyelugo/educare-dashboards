@@ -134,10 +134,11 @@ export const SideNav = () => {
                             handleAccordionToggle(index.toString())
                           }
                           style={{
-                            display: "flex", // Enable flexbox
-                            justifyContent: "space-between", // Push content apart
-                            alignItems: "center", // Align items vertically
-                            width: "100%", // Full width
+                            display: "flex", // Flexbox container
+                            justifyContent: "space-between", // Push text and icon apart
+                            alignItems: "center", // Vertical alignment
+                            padding: "8px 10px", // Consistent padding
+                            width: "100%", // Full-width header
                           }}
                         >
                           <IconComponent
@@ -157,8 +158,7 @@ export const SideNav = () => {
                                   activeAccordion === index.toString()
                                     ? "#0098DA"
                                     : "#191919",
-                                transition: "color 0.3s ease",
-                                flexGrow: 1,
+                                flexGrow: 1, // Allow the text to grow and take space
                               }}
                             >
                               {item.name}
@@ -166,9 +166,7 @@ export const SideNav = () => {
                           )}
                           <span
                             style={{
-                              marginLeft: "auto", // Push icon to the far right
-                              display: "flex",
-                              alignItems: "center", // Center icon vertically
+                              marginLeft: "auto", // Push the icon to the far right
                             }}
                           >
                             {activeAccordion === index.toString() ? (

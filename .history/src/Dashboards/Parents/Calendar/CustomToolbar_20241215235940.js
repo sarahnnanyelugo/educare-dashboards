@@ -6,14 +6,7 @@ const CustomToolbar = ({ onNavigate }) => {
   return (
     <div className="custom-toolbar" style={{ display: "flex" }}>
       {/* Previous and Next Buttons */}
-      <div
-        style={{
-          display: "flex",
-          gap: "5px",
-          marginLeft: "-60px",
-          marginBottom: "-60px",
-        }}
-      >
+      <div style={{ display: "flex", gap: "5px", marginLeft: "-40px" }}>
         <button
           onClick={() => onNavigate("PREV")}
           style={{

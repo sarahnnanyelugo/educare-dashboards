@@ -150,33 +150,38 @@ export const SideNav = () => {
                               transition: "color 0.3s ease",
                             }}
                           />
-                          {!isCollapsed && (
+                          <div>
+                            {" "}
+                            {!isCollapsed && (
+                              <span
+                                style={{
+                                  color:
+                                    activeAccordion === index.toString()
+                                      ? "#0098DA"
+                                      : "#191919",
+                                  transition: "color 0.3s ease",
+                                  flexGrow: 1,
+                                }}
+                              >
+                                {item.name}
+                              </span>
+                            )}
                             <span
                               style={{
-                                color:
-                                  activeAccordion === index.toString()
-                                    ? "#0098DA"
-                                    : "#191919",
-                                transition: "color 0.3s ease",
-                                flexGrow: 1,
+                                marginLeft: "auto", // Push icon to the far right
+                                display: "flex",
+                                alignItems: "center", // Center icon vertically
                               }}
                             >
-                              {item.name}
+                              {activeAccordion === index.toString() ? (
+                                <MdKeyboardArrowUp
+                                  style={{ fontSize: "14px" }}
+                                />
+                              ) : (
+                                <IoIosArrowDown style={{ fontSize: "14px" }} />
+                              )}
                             </span>
-                          )}
-                          <span
-                            style={{
-                              marginLeft: "auto", // Push icon to the far right
-                              display: "flex",
-                              alignItems: "center", // Center icon vertically
-                            }}
-                          >
-                            {activeAccordion === index.toString() ? (
-                              <MdKeyboardArrowUp style={{ fontSize: "14px" }} />
-                            ) : (
-                              <IoIosArrowDown style={{ fontSize: "14px" }} />
-                            )}
-                          </span>
+                          </div>
                         </Accordion.Header>
 
                         <Accordion.Body>

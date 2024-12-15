@@ -70,7 +70,7 @@
   flex-basis: 0px;
   overflow: hidden;
 
-  height: 100%; // ie-fix
+  height: 70%; // ie-fix
 
   & + & {
     border-top: 1px solid #e7e7e7;
@@ -82,8 +82,9 @@
   min-width: 0;
   padding-right: 5px;
   text-align: left;
+
   &.rbc-now {
-    // font-weight: bold;
+    font-weight: bold;
   }
 
   > a {

@@ -87,26 +87,18 @@
     width: 100% !important;
   }
   .accordion-button {
-    display: flex; // Flexbox for alignment
-    justify-content: space-between; // Text on the left, icon on the right
-    align-items: center; // Vertical alignment
-    text-align: left; // Ensure text aligns left
-    width: 100%; // Full-width to avoid wrapping
-    padding: 8px 10px; // Adjust padding as needed
-    background: transparent; // Keep background clean
-    border: none; // Remove unnecessary borders
-    outline: none; // Clean focus styles
+    display: flex; // Enable flexbox for alignment
+    justify-content: space-between; // Push the icon to the far right
+    align-items: center; // Vertically align items
+    width: 100%; // Ensure the button spans the full width
+    padding: 8px; // Adjust padding as necessary
+    text-align: left; // Keep text aligned to the left
   }
 
   .accordion-button span:last-child {
-    margin-left: auto; // Push the icon to the far right
-    display: flex; // Flex container for icon alignment
-    align-items: center; // Center icon vertically
-    justify-content: center; // Center icon horizontally (optional)
-  }
-
-  .accordion-button:not(.collapsed) {
-    background: transparent; // Maintain background consistency
+    margin-left: auto; // Ensure the icon aligns far right
+    display: flex; // To center the icon vertically
+    align-items: center; // Vertical centering
   }
 }
 .link-span {
