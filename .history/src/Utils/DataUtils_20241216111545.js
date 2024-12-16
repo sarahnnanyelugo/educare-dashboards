@@ -113,7 +113,7 @@ export const generateWallet = (numEntries, avatarList) => {
         "Bursary",
         "Canteen",
       ]),
-      Status: arrayElement(["Pending", "Paid", "Cancelled"]),
+      Status: arrayElement(["Pending", "Paid", "Canceled"]),
       Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
       Action: arrayElement(["View", "Proceed to pay"]),
     });

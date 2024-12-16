@@ -27,9 +27,8 @@ export const AppTable = ({
     } else if (normalizedStatus === "severe") {
       return "status-severe";
     } else if (normalizedStatus === "cancelled") {
+      return "status-cancelled";else if (normalizedStatus === "cancelled") {
       return "status-cancelled";
-    } else if (normalizedStatus === "paid") {
-      return "status-paid";
     } else {
       return "status-default";
     }

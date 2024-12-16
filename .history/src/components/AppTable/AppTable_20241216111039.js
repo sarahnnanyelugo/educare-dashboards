@@ -24,12 +24,8 @@ export const AppTable = ({
       return "status-submitted";
     } else if (normalizedStatus === "not submitted") {
       return "status-not-submitted";
-    } else if (normalizedStatus === "severe") {
-      return "status-severe";
-    } else if (normalizedStatus === "cancelled") {
-      return "status-cancelled";
-    } else if (normalizedStatus === "paid") {
-      return "status-paid";
+    } else if (normalizedStatus === "not submitted") {
+      return "status-not-submitted";
     } else {
       return "status-default";
     }

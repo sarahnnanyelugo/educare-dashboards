@@ -24,12 +24,6 @@ export const AppTable = ({
       return "status-submitted";
     } else if (normalizedStatus === "not submitted") {
       return "status-not-submitted";
-    } else if (normalizedStatus === "severe") {
-      return "status-severe";
-    } else if (normalizedStatus === "cancelled") {
-      return "status-cancelled";
-    } else if (normalizedStatus === "paid") {
-      return "status-paid";
     } else {
       return "status-default";
     }
@@ -66,9 +60,7 @@ export const AppTable = ({
                       />
                       {row[header]}
                     </>
-                  ) : header === "Status" ||
-                    header === "Results" ||
-                    header === "Severity" ? (
+                  ) : header === "Status" || header === "Results" ? (
                     <span
                       className={`status-label ${getStatusClass(row[header])}`}
                     >

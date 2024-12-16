@@ -28,8 +28,7 @@ export const generateFeedback = (numEntries, avatarList) => {
         "Ella’s uniforms has been requested for two w…",
         "The Library section use is becoming dilapida…",
         "When will we be able to get the bursary for O…",
-        "These lessons are really not helping, I would …",
-        "I would like to be able to see all the school fe…",
+        "",
       ]),
       Action: "View",
     });
@@ -113,7 +112,7 @@ export const generateWallet = (numEntries, avatarList) => {
         "Bursary",
         "Canteen",
       ]),
-      Status: arrayElement(["Pending", "Paid", "Cancelled"]),
+      Status: arrayElement(["Pending", "Paid", "Canceled"]),
       Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
       Action: arrayElement(["View", "Proceed to pay"]),
     });

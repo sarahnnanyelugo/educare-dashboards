@@ -209,7 +209,10 @@ export const ActivityTab = () => {
         <div className={`panel ${checkActive(3, "active2")}`}>
           <div className="d-md-flex">
             {" "}
-            <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 col-md-5 mt-3">
+            <div
+              className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 col-md-5 mt-3"
+              style={{ flexGrow: 1 }}
+            >
               <div className=" col">
                 <h6>Session</h6>
 
@@ -237,18 +240,8 @@ export const ActivityTab = () => {
                 </div>
               </div>
             </div>
-            <div style={{ flexGrow: 1 }} />
-            <div className="mt-5">
-              <Link
-                to={"/assignment-guide"}
-                style={{
-                  color: "#000",
-                  fontSize: "12px",
-                  textDecoration: "underline",
-                }}
-              >
-                How to use
-              </Link>
+            <div>
+              <Link to={"/assignment-guide"}>How to use</Link>
             </div>
           </div>
 

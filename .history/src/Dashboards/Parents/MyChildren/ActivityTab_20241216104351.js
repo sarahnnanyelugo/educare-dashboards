@@ -237,18 +237,8 @@ export const ActivityTab = () => {
                 </div>
               </div>
             </div>
-            <div style={{ flexGrow: 1 }} />
-            <div className="mt-5">
-              <Link
-                to={"/assignment-guide"}
-                style={{
-                  color: "#000",
-                  fontSize: "12px",
-                  textDecoration: "underline",
-                }}
-              >
-                How to use
-              </Link>
+            <div className="flex-end">
+              <Link to={"/assignment-guide"}>How to use</Link>
             </div>
           </div>
 

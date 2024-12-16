@@ -25,21 +25,9 @@
       background: #ecfef3;
       color: #027a48; // Green
     }
-    &.status-paid {
+    &.status-not-submitted {
       background: #ecfef3;
       color: #027a48; // Green
-    }
-    &.status-cancelled {
-      background: #fef3f2;
-      color: #f04438; // Green
-    }
-    &.status-not-submitted {
-      background: #fef3f2;
-      color: #f04438; // Green
-    }
-    &.status-severe {
-      background: #fef3f2;
-      color: #f04438; // Green
     }
 
     &.status-pending {

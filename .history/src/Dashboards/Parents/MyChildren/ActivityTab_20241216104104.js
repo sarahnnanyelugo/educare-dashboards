@@ -207,51 +207,35 @@ export const ActivityTab = () => {
           </div>
         </div>
         <div className={`panel ${checkActive(3, "active2")}`}>
-          <div className="d-md-flex">
-            {" "}
-            <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 col-md-5 mt-3">
-              <div className=" col">
-                <h6>Session</h6>
+          <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 col-md-5 mt-3">
+            <div className=" col">
+              <h6>Session</h6>
 
-                <div className="card col-md-12">
-                  <Select
-                    options={sessions}
-                    value={selectedSession}
-                    onChange={setSelectedSession}
-                    placeholder="Select Session"
-                    Icon={Icon3}
-                  />
-                </div>
-              </div>
-
-              <div className=" col">
-                <h6>Term</h6>
-                <div className="card col-md-12">
-                  <Select
-                    options={terms}
-                    value={selectedTerm}
-                    onChange={setSelectedTerm}
-                    placeholder="Select Term"
-                    Icon={Icon3}
-                  />
-                </div>
+              <div className="card col-md-12">
+                <Select
+                  options={sessions}
+                  value={selectedSession}
+                  onChange={setSelectedSession}
+                  placeholder="Select Session"
+                  Icon={Icon3}
+                />
               </div>
             </div>
-            <div style={{ flexGrow: 1 }} />
-            <div className="mt-5">
-              <Link
-                to={"/assignment-guide"}
-                style={{
-                  color: "#000",
-                  fontSize: "12px",
-                  textDecoration: "underline",
-                }}
-              >
-                How to use
-              </Link>
+
+            <div className=" col">
+              <h6>Term</h6>
+              <div className="card col-md-12">
+                <Select
+                  options={terms}
+                  value={selectedTerm}
+                  onChange={setSelectedTerm}
+                  placeholder="Select Term"
+                  Icon={Icon3}
+                />
+              </div>
             </div>
+            <Link to={"/assignment-guide"}>How to use</Link>
           </div>
-
           <hr />
           <AppTable headers={headers} rows={assignment} includeImages={true} />
         </div>
