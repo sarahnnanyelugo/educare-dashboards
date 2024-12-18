@@ -24,7 +24,7 @@ import { LuCalendarDays } from "react-icons/lu";
 import Logo from "../../assets/images/new-logo.png";
 import Cal from "../../assets/images/cal.svg";
 import Notify from "../../assets/images/notify.svg";
-import Message from "../../assets/images/message.svg";
+import Messagel from "../../assets/images/message.svg";
 
 export const TopNav = () => {
   const [show, setShow] = useState(false);

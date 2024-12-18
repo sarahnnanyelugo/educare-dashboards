@@ -24,7 +24,7 @@ import { LuCalendarDays } from "react-icons/lu";
 import Logo from "../../assets/images/new-logo.png";
 import Cal from "../../assets/images/cal.svg";
 import Notify from "../../assets/images/notify.svg";
-import Message from "../../assets/images/message.svg";
+import Messagel from "../../assets/images/message.svg";
 
 export const TopNav = () => {
   const [show, setShow] = useState(false);
@@ -41,7 +41,7 @@ export const TopNav = () => {
               <div className="profile-drop profile-drop2">
                 <Dropdown>
                   <Dropdown.Toggle>
-                    <img src={Cal} width="24px" />
+                    <img src={Notify} width="24px" />
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
@@ -57,7 +57,7 @@ export const TopNav = () => {
               <div className="profile-drop profile-drop2">
                 <Dropdown>
                   <Dropdown.Toggle>
-                    <img src={Notify} width="24px" />
+                    <CgBell style={{ fontSize: "24px" }} />
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
@@ -99,7 +99,7 @@ export const TopNav = () => {
             <li className="list-inline-item">
               <Link to={"/chat-interface"} style={{ color: "#000" }}>
                 {" "}
-                <img src={Message} width="24px" />
+                <MdOutlineEmail style={{ fontSize: "24px" }} />
               </Link>
             </li>
             <li className="list-inline-item">
