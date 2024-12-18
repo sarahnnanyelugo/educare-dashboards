@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { GoArrowLeft } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { UploadPhoto } from "../../../components/UploadPhoto/UploadPhoto";
@@ -13,7 +13,7 @@ function Image(props) {
       backdrop.style.backgroundColor = "#fff"; // Example blue background
       backdrop.style.opacity = 1; // Example blue background
     }
-  }, [props.show]);
+  }, []);
 
   return (
     <div id="new-photo-section">

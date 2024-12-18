@@ -13,7 +13,7 @@ function Image(props) {
       backdrop.style.backgroundColor = "#fff"; // Example blue background
       backdrop.style.opacity = 1; // Example blue background
     }
-  }, [props.show]);
+  }, []);
 
   return (
     <div id="new-photo-section">

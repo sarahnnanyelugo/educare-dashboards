@@ -53,7 +53,7 @@ export const AppTable = ({
               {headers.map((header, colIndex) => (
                 <td key={colIndex}>
                   {includeImages &&
-                  ["Child", "Candidate"].includes(header) &&
+                  header === ["Child, Candidate"] &&
                   row["Photo"] ? (
                     <>
                       <img

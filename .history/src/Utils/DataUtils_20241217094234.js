@@ -194,19 +194,9 @@ export const generateVoteRecords = (numEntries, avatarList) => {
         "Principal for the Day Election",
       ]),
       Status: arrayElement(["Not Conducted", "Conducted"]),
-      Candidate: arrayElement([
-        "Emmanuella Ozike",
-        "Ogechi Ozike",
-        "Chidera Ozike",
-        "Amaka John",
-        "Prudence Izu",
-        "Collins Mark",
-      ]),
-      Photo: arrayElement(avatarList),
-
+      Candidate: arrayElement(["Emmanuella Ozike", "Conducted"]),
       Results: arrayElement(["Not Published", "Published"]),
       Class: arrayElement(["Basic 7", "Basic 10", "Basic 11"]),
-      Vote: arrayElement([4, 3, 3, 3, 2, 1, 1, 1]),
       Action: "View",
     });
   }

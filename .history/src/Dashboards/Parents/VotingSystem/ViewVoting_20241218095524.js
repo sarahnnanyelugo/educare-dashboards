@@ -26,7 +26,6 @@ export const ViewVoting = () => {
     }
     // Generate dummy data for mobileVoteRecords
     const fb = generateVoteRecords(10, avatarList); // Use a subset for mobile table
-    console.log("fb", fb);
     setMobileVoteRecords(fb);
   }, []);
 

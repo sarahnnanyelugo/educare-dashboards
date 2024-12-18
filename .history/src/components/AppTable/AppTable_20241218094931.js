@@ -52,9 +52,8 @@ export const AppTable = ({
             <tr key={rowIndex}>
               {headers.map((header, colIndex) => (
                 <td key={colIndex}>
-                  {includeImages &&
-                  ["Child", "Candidate"].includes(header) &&
-                  row["Photo"] ? (
+                  {(includeImages && header === "Child") ||
+                  ("Candidate" && row["Photo"]) ? (
                     <>
                       <img
                         src={row["Photo"]}

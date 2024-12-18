@@ -16,7 +16,6 @@ import { IoIosArrowDown } from "react-icons/io";
 import { Desktop, TabletAndBelow } from "../../../Utils/mediaQueries";
 import { votingData } from "../../../TestData/votingData";
 import { MobileTable } from "../../../components/MobileTable/MobileTable";
-import { Link } from "react-router-dom";
 
 export const VotingSystem = () => {
   const [voteRecords, setVoteRecords] = useState([]);

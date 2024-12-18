@@ -42,22 +42,8 @@
   margin-bottom: 150px;
 }
 .view-voting-header {
-  margin-top: 40px;
-  span {
-    margin: 5px;
-    height: fit-content;
-    padding: 0 10px;
-    border-radius: 30px;
-    font-size: 12px;
-  }
-  .status-published {
-    background: #f0f9fd;
-    color: #0098da; // Blue
-    font-family: rebondG-Medium;
-  }
-  .status-conducted {
+  .status-submitted {
     background: #ecfef3;
     color: #027a48; // Green
-    font-family: rebondG-Medium;
   }
 }

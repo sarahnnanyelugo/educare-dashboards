@@ -14,7 +14,11 @@ export const ViewVoting = () => {
 
   const avatarList = [Student, Peter];
   useEffect(() => {
-    const allRecords = generateVoteRecords(10, avatarList);
+    // Fetch all records (you can replace this with an actual API call if needed)
+    const allRecords = generateVoteRecords(10);
+
+    // Find the specific record by `id` (to be used on live)
+    // const selectedRecord = allRecords.find((record) => record.id === id);
 
     const randomIndex = Math.floor(Math.random() * allRecords.length);
     const selectedRecord = allRecords[randomIndex];
@@ -25,8 +29,7 @@ export const ViewVoting = () => {
       console.error("Record not found for id:", id);
     }
     // Generate dummy data for mobileVoteRecords
-    const fb = generateVoteRecords(10, avatarList); // Use a subset for mobile table
-    console.log("fb", fb);
+    const fb = generateVoteRecords(10); // Use a subset for mobile table
     setMobileVoteRecords(fb);
   }, []);
 

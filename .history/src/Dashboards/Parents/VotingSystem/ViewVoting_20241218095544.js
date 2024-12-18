@@ -14,7 +14,7 @@ export const ViewVoting = () => {
 
   const avatarList = [Student, Peter];
   useEffect(() => {
-    const allRecords = generateVoteRecords(10, avatarList);
+    const allRecords = generateVoteRecords(10);
 
     const randomIndex = Math.floor(Math.random() * allRecords.length);
     const selectedRecord = allRecords[randomIndex];
@@ -26,7 +26,6 @@ export const ViewVoting = () => {
     }
     // Generate dummy data for mobileVoteRecords
     const fb = generateVoteRecords(10, avatarList); // Use a subset for mobile table
-    console.log("fb", fb);
     setMobileVoteRecords(fb);
   }, []);
 

@@ -14,7 +14,7 @@ export const ViewVoting = () => {
 
   const avatarList = [Student, Peter];
   useEffect(() => {
-    const allRecords = generateVoteRecords(10, avatarList);
+    const allRecords = generateVoteRecords(10);
 
     const randomIndex = Math.floor(Math.random() * allRecords.length);
     const selectedRecord = allRecords[randomIndex];

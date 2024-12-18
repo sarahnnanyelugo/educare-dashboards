@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { GoArrowLeft } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { UploadPhoto } from "../../../components/UploadPhoto/UploadPhoto";
@@ -7,14 +7,6 @@ import { Desktop, TabletAndBelow } from "../../../Utils/mediaQueries";
 import { IoAdd } from "react-icons/io5";
 
 function Image(props) {
-  useEffect(() => {
-    const backdrop = document.querySelector(".modal-backdrop");
-    if (backdrop) {
-      backdrop.style.backgroundColor = "#fff"; // Example blue background
-      backdrop.style.opacity = 1; // Example blue background
-    }
-  }, [props.show]);
-
   return (
     <div id="new-photo-section">
       <Modal

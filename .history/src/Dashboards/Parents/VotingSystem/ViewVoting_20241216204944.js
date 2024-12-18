@@ -4,17 +4,18 @@ import ResponsiveBar from "./ResponsiveBar";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useParams, Link } from "react-router-dom";
 import { generateVoteRecords } from "../../../Utils/DataUtils";
-import { GoDotFill } from "react-icons/go";
-import Student from "../../../assets/images/student.png";
-import Peter from "../../../assets/images/peter.png";
+
 export const ViewVoting = () => {
   const [voteRecord, setVoteRecord] = useState(null);
   const [mobileVoteRecords, setMobileVoteRecords] = useState([]);
   const { id } = useParams(); // Extract `id` from the URL
 
-  const avatarList = [Student, Peter];
   useEffect(() => {
-    const allRecords = generateVoteRecords(10, avatarList);
+    // Fetch all records (you can replace this with an actual API call if needed)
+    const allRecords = generateVoteRecords(10);
+
+    // Find the specific record by `id` (to be used on live)
+    // const selectedRecord = allRecords.find((record) => record.id === id);
 
     const randomIndex = Math.floor(Math.random() * allRecords.length);
     const selectedRecord = allRecords[randomIndex];
@@ -25,8 +26,7 @@ export const ViewVoting = () => {
       console.error("Record not found for id:", id);
     }
     // Generate dummy data for mobileVoteRecords
-    const fb = generateVoteRecords(10, avatarList); // Use a subset for mobile table
-    console.log("fb", fb);
+    const fb = generateVoteRecords(5); // Use a subset for mobile table
     setMobileVoteRecords(fb);
   }, []);
 
@@ -40,23 +40,7 @@ export const ViewVoting = () => {
       </div>
       {voteRecord ? (
         <>
-          {" "}
-          <div
-            className="d-flex view-voting-header"
-            style={{ padding: "0 20px" }}
-          >
-            <h4 style={{ flexGrow: 1 }}>{voteRecord.Position}</h4>
-            <span className="status-published">
-              {" "}
-              <GoDotFill style={{ marginRight: "4px" }} />
-              Conducted
-            </span>
-            <span className="status-conducted">
-              {" "}
-              <GoDotFill style={{ marginRight: "4px" }} />
-              Published
-            </span>
-          </div>
+          <h2>{voteRecord.Position}</h2>{" "}
           {/* Dynamic title from the `Position` field */}
           <div className="d-md-flex view-voting-container">
             <div className="col-md-7">
