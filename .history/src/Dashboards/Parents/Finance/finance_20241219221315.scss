@@ -1,0 +1,48 @@
+.finance-div {
+  padding: 0px 10px;
+  margin-top: 30px;
+  .wallet-balance {
+    border: solid 1px #e7e7e7;
+
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    p {
+      margin-bottom: 0;
+    }
+    img {
+      margin-right: 8px;
+      margin-top: 10px;
+    }
+    .wallet-btns {
+      button {
+        margin: 20px 5px;
+        padding: 5px 15px;
+        border-radius: 35px;
+        font-family: rebondG-Medium;
+        @media screen and (max-width: 820px) {
+          padding: 15px 20px;
+        }
+      }
+      .withdraw-btn {
+        border: solid 1px #c5c4c4;
+        background: #fff;
+      }
+      .deposit-btn {
+        border: solid 1px #414244;
+        background: #0098da;
+        color: #fff;
+
+        &:hover {
+          background: #005b83;
+        }
+      }
+    }
+  }
+  .selections {
+    margin-top: 15px;
+    border: solid 1px #e7e7e7;
+    border-radius: 10px;
+    padding: 10px;
+  }
+}
