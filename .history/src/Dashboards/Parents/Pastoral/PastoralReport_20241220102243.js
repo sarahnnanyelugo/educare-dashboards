@@ -5,6 +5,7 @@ import { RiSearch2Line } from "react-icons/ri";
 import Icon1 from "../../../assets/images/clipboard.svg";
 import { BsCalendar4Week } from "react-icons/bs";
 import { AppTable } from "../../../components/AppTable/AppTable";
+import { feedbacks } from "../../../TestData/FeedbacksData";
 import { generatePastoralReport } from "../../../Utils/DataUtils";
 import Student from "../../../assets/images/student.png";
 import Peter from "../../../assets/images/peter.png";
@@ -284,24 +285,11 @@ function PastoralReport() {
                 </div>
                 <hr />
                 <div className="feedbacks-table">
-                  <Desktop>
-                    {" "}
-                    <AppTable
-                      headers={headers}
-                      rows={hostelReport}
-                      includeImages={true}
-                    />
-                  </Desktop>
-                  <TabletAndBelow>
-                    {" "}
-                    {hostelReport.map((data, index) => (
-                      <MobileDisplayTable
-                        data={data}
-                        isOdd={index % 2 === 1}
-                        key={index}
-                      />
-                    ))}
-                  </TabletAndBelow>
+                  <AppTable
+                    headers={headers}
+                    rows={hostelReport}
+                    includeImages={true}
+                  />
                 </div>
               </div>
             </div>

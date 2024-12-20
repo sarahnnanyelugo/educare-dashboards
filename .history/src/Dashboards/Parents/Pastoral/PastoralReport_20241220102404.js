@@ -284,24 +284,11 @@ function PastoralReport() {
                 </div>
                 <hr />
                 <div className="feedbacks-table">
-                  <Desktop>
-                    {" "}
-                    <AppTable
-                      headers={headers}
-                      rows={hostelReport}
-                      includeImages={true}
-                    />
-                  </Desktop>
-                  <TabletAndBelow>
-                    {" "}
-                    {hostelReport.map((data, index) => (
-                      <MobileDisplayTable
-                        data={data}
-                        isOdd={index % 2 === 1}
-                        key={index}
-                      />
-                    ))}
-                  </TabletAndBelow>
+                  <AppTable
+                    headers={headers}
+                    rows={hostelReport}
+                    includeImages={true}
+                  />
                 </div>
               </div>
             </div>
