@@ -137,14 +137,6 @@ export const Wallet = () => {
                   Export as csv
                 </button>
               </Desktop>
-              <TabletAndBelow>
-                {" "}
-                <button className="pdf-download-btn  col-12">
-                  {" "}
-                  <HiOutlineDownload className="icon2" />
-                  Export as csv
-                </button>
-              </TabletAndBelow>
             </div>
           </div>
           <hr />
