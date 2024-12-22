@@ -1,0 +1,8 @@
+<svg id="vuesax_linear_import" data-name="vuesax/linear/import" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+  <g id="import">
+    <path id="Vector" d="M0,0,1.6,1.6,3.2,0" transform="translate(5.825 7.3)" fill="none" stroke="#7f8384" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Vector-2" data-name="Vector" d="M0,0V6.356" transform="translate(7.425 2.5)" fill="none" stroke="#7f8384" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Vector-3" data-name="Vector" d="M10,0A4.782,4.782,0,0,1,5,5,4.782,4.782,0,0,1,0,0" transform="translate(2.5 7.612)" fill="none" stroke="#7f8384" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Vector-4" data-name="Vector" d="M0,0H15V15H0Z" transform="translate(15 15) rotate(180)" fill="none" opacity="0"/>
+  </g>
+</svg>
