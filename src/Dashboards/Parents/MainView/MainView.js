@@ -235,7 +235,7 @@ export const MainView = () => {
                   <h6 style={{ flexGrow: 1 }}>School Calender</h6>
                   <small>Session 2014/2015</small>
                 </div>
-                <Link to={"/calendar"}>
+                <Link to={"/calendar"} style={{ textDecoration: "none" }}>
                   <div className="card">
                     {" "}
                     {schEvents.map((data, index) => (

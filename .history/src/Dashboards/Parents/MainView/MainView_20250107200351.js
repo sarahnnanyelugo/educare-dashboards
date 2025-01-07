@@ -3,17 +3,19 @@ import "./main-view.scss";
 import Icon1 from "../../../assets/images/wallet.png";
 import Icon2 from "../../../assets/images/fees.png";
 import Icon3 from "../../../assets/images/clipboard.svg";
+import Icon4 from "../../../assets/images/cal-icon.svg";
 import News from "../../../components/News/News";
+import { ResultChart } from "../../../components/ResultChart/ResultChart";
 import { latestNews } from "../../../TestData/newsData";
 import { children } from "../../../TestData/childrenData";
 import { schEvents } from "../../../TestData/schEvents";
-import { ResultChart } from "../../../components/ResultChart/ResultChart";
 import CountUp from "react-countup";
 import { Link } from "react-router-dom";
 import { Children } from "../MyChildren/Children";
 import { Calender } from "../../../components/Calender/Calender";
 import Select from "../../../components/Select/Select";
 import { GoDotFill } from "react-icons/go";
+import { Desktop } from "../../../Utils/mediaQueries";
 
 const child = [
   { value: "Chidera Ozike -Basic 1", label: "Chidera Ozike -Basic 10" },
@@ -123,7 +125,7 @@ export const MainView = () => {
                 </div>
               </div>
             </div>
-            <div className="d-md-flex mt-5 ">
+            <div className="d-md-flex mt-4 ">
               <div className="col-md-7 stats-container web-news">
                 {" "}
                 <h6>Posts Feed</h6>
@@ -137,7 +139,10 @@ export const MainView = () => {
               <div className="col-md-5 stats-container2 ">
                 {" "}
                 <h6>Performance Review</h6>
-                <div className=" card performance-review">
+                <div
+                  className=" card performance-review"
+                  style={{ paddingBottom: "45px" }}
+                >
                   <div className="card ">
                     <Select
                       options={child}
@@ -146,7 +151,10 @@ export const MainView = () => {
                       placeholder="Select Child"
                     />
                   </div>{" "}
-                  <div className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 mt-2">
+                  <div
+                    className="row row-cols-2 row-cols-lg-2 g-2 g-lg-3 "
+                    style={{ marginTop: "1px" }}
+                  >
                     <div className="col">
                       {" "}
                       <h6>Session</h6>
@@ -162,34 +170,35 @@ export const MainView = () => {
                     </div>
                     <div className="col">
                       {" "}
-                      <h6>Term</h6>
+                      <h6>Trm</h6>
                       <div className="card col-md-12">
                         <Select
                           options={terms}
                           value={selectedTerm}
                           onChange={setSelectedTerm}
                           placeholder="Select Term"
-                          Icon={Icon3}
+                          Icon={Icon4}
                         />
                       </div>
                     </div>
                   </div>
-                  <div className="mt-5">
-                    <Link
-                      style={{
-                        color: "#0098DA",
-                        float: "right",
-                        fontSize: "10px",
-                        fontFamily: "rebondBook;",
-                        marginBottom: "20px",
-                      }}
-                    >
-                      View Subject
-                    </Link>
-                    <ResultChart labels={customLabels} dataset={customData} />
-                    <center>
-                      <p>Total Subjects = 15</p>
-                    </center>
+                  <div className="">
+                    <div className="mt-2">
+                      {" "}
+                      <Link
+                        style={{
+                          color: "#0098DA",
+                          float: "right",
+                          fontSize: "10px",
+                          fontFamily: "rebondBook;",
+                          marginBottom: "20px",
+                          textDecoration: "underline",
+                        }}
+                      >
+                        View full chart
+                      </Link>
+                    </div>
+                    <ResultChart />
                   </div>
                 </div>
               </div>
@@ -205,35 +214,38 @@ export const MainView = () => {
               ))}
             </div>
           </div>
-          <div className="col-md-4 stats-container2">
-            <div className="col-md-12 card children-corner">
-              <h6>My Child(ren)</h6>
-              <div className="">
-                {" "}
-                {children.map((data, index) => (
-                  <Children
-                    data={data}
-                    key={index}
-                    mode="link" // This page uses "link" functionality
-                    linkUrl={`/my-children?tab=${index + 1}`} // Pass the tab index as a query parameter
-                  />
-                ))}
-              </div>
-              <div className="d-flex mt-5">
-                {" "}
-                <h6 style={{ flexGrow: 1 }}>School Calender</h6>
-                <small>Session 2014/2015</small>
-              </div>
-              <Link to={"/calendar"}>
-                <div className="card">
+          <Desktop>
+            {" "}
+            <div className="col-md-4 stats-container2">
+              <div className="col-md-12 card children-corner">
+                <h6>My Child(ren)</h6>
+                <div className="">
                   {" "}
-                  {schEvents.map((data, index) => (
-                    <Calender data={data} />
+                  {children.map((data, index) => (
+                    <Children
+                      data={data}
+                      key={index}
+                      mode="link" // This page uses "link" functionality
+                      linkUrl={`/my-children?tab=${index + 1}`} // Pass the tab index as a query parameter
+                    />
                   ))}
                 </div>
-              </Link>
+                <div className="d-flex mt-5">
+                  {" "}
+                  <h6 style={{ flexGrow: 1 }}>School Calender</h6>
+                  <small>Session 2014/2015</small>
+                </div>
+                <Link to={"/calendar"} style={{ textDecoration: "none" }}>
+                  <div className="card">
+                    {" "}
+                    {schEvents.map((data, index) => (
+                      <Calender data={data} />
+                    ))}
+                  </div>
+                </Link>
+              </div>
             </div>
-          </div>
+          </Desktop>
         </div>
       </div>
     </>
