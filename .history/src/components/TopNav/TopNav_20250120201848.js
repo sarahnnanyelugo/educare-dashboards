@@ -22,7 +22,7 @@ import { Desktop, TabletAndBelow } from "../../Utils/mediaQueries";
 import MainLogo from "../../assets/images/new-logo.png";
 import { LuCalendarDays } from "react-icons/lu";
 import Logo from "../../assets/images/new-logo.png";
-import Cal from "../../assets/images/cal-icon.svg";
+import Cal from "../../assets/images/cal.svg";
 import Notify from "../../assets/images/notify.svg";
 import Message from "../../assets/images/message.svg";
 
@@ -157,9 +157,7 @@ export const TopNav = () => {
 
           <div className="mobile-calender-link">
             {" "}
-            <Link to={"/calendar"}>
-              <img src={Cal} width="24px" />
-            </Link>
+            <Link to={"/calendar"}></Link>
           </div>
           <div className="profile-drop profile-drop2">
             {" "}

@@ -127,7 +127,7 @@ export const BottomNav = () => {
                   src={isActive ? ProfileActive : ProfileDefault}
                   alt="Profile"
                 />
-                <br />
+
                 {!isCollapsed && "Profile"}
               </>
             )}

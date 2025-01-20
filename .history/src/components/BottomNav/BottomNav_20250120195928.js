@@ -8,8 +8,8 @@ import ResultDefault from "../../assets/images/d-result.svg";
 import ResultActive from "../../assets/images/results.svg";
 import ReportDefault from "../../assets/images/d-report.svg";
 import ReportActive from "../../assets/images/report.svg";
-import ProfileDefault from "../../assets/images/d-profile.svg";
-import ProfileActive from "../../assets/images/profile.svg";
+import ProfileDefault from "../../assets/images/d-profile.png";
+import ProfileActive from "../../assets/images/profile.png";
 import "./bottom-nav.scss";
 
 export const BottomNav = () => {

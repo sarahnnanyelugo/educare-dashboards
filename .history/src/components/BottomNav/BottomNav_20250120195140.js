@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import DashboardActive from "../../assets/images/dashboard.svg";
 import DashboardDefault from "../../assets/images/d-voting.svg";
@@ -13,25 +13,13 @@ import ProfileActive from "../../assets/images/profile.svg";
 import "./bottom-nav.scss";
 
 export const BottomNav = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
   return (
-    <div
-      className="bottom-nav col-12"
-      style={{
-        width: isCollapsed ? "60px" : "100%", // Adjust width when collapsed
-        transition: "width 0.3s ease",
-      }}
-    >
+    <div className="bottom-nav col-12">
       <ul className="list-inline list-unstyled">
         <li className="list-inline-item">
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? "active" : "")}
-            style={{
-              pointerEvents: isCollapsed ? "none" : "auto",
-              opacity: isCollapsed ? 0.5 : 1,
-            }}
           >
             {({ isActive }) => (
               <>
@@ -40,7 +28,7 @@ export const BottomNav = () => {
                   alt="Dashboard"
                 />
                 <br />
-                {!isCollapsed && "Dashboard"}
+                {!isActive && "Dashboard"}
               </>
             )}
           </NavLink>
@@ -50,10 +38,6 @@ export const BottomNav = () => {
           <NavLink
             to="/my-children"
             className={({ isActive }) => (isActive ? "active" : "")}
-            style={{
-              pointerEvents: isCollapsed ? "none" : "auto",
-              opacity: isCollapsed ? 0.5 : 1,
-            }}
           >
             {({ isActive }) => (
               <>
@@ -62,7 +46,7 @@ export const BottomNav = () => {
                   alt="My Children"
                 />
                 <br />
-                {!isCollapsed && "My Children"}
+                {!isActive && "My Children"}
               </>
             )}
           </NavLink>
@@ -72,10 +56,6 @@ export const BottomNav = () => {
           <NavLink
             to="/result"
             className={({ isActive }) => (isActive ? "active" : "")}
-            style={{
-              pointerEvents: isCollapsed ? "none" : "auto",
-              opacity: isCollapsed ? 0.5 : 1,
-            }}
           >
             {({ isActive }) => (
               <>
@@ -84,7 +64,7 @@ export const BottomNav = () => {
                   alt="Results"
                 />
                 <br />
-                {!isCollapsed && "Results"}
+                {!isActive && "Results"}
               </>
             )}
           </NavLink>
@@ -94,10 +74,6 @@ export const BottomNav = () => {
           <NavLink
             to="/pastoral-report"
             className={({ isActive }) => (isActive ? "active" : "")}
-            style={{
-              pointerEvents: isCollapsed ? "none" : "auto",
-              opacity: isCollapsed ? 0.5 : 1,
-            }}
           >
             {({ isActive }) => (
               <>
@@ -106,7 +82,7 @@ export const BottomNav = () => {
                   alt="Reports"
                 />
                 <br />
-                {!isCollapsed && "Reports"}
+                {!isActive && "Reports"}
               </>
             )}
           </NavLink>
@@ -116,10 +92,6 @@ export const BottomNav = () => {
           <NavLink
             to="/profile-page"
             className={({ isActive }) => (isActive ? "active" : "")}
-            style={{
-              pointerEvents: isCollapsed ? "none" : "auto",
-              opacity: isCollapsed ? 0.5 : 1,
-            }}
           >
             {({ isActive }) => (
               <>
@@ -128,7 +100,7 @@ export const BottomNav = () => {
                   alt="Profile"
                 />
                 <br />
-                {!isCollapsed && "Profile"}
+                {!isActive && "Profile"}
               </>
             )}
           </NavLink>

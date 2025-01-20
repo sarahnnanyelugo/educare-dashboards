@@ -33,16 +33,16 @@ export const BottomNav = () => {
               opacity: isCollapsed ? 0.5 : 1,
             }}
           >
-            {({ isActive }) => (
-              <>
-                <img
-                  src={isActive ? DashboardActive : DashboardDefault}
-                  alt="Dashboard"
-                />
-                <br />
-                {!isCollapsed && "Dashboard"}
-              </>
-            )}
+            <img
+              src={
+                window.location.pathname === "/"
+                  ? DashboardActive
+                  : DashboardDefault
+              }
+              alt="Dashboard"
+            />
+            <br />
+            {!isCollapsed && "Dashboard"}
           </NavLink>
         </li>
 
@@ -55,16 +55,16 @@ export const BottomNav = () => {
               opacity: isCollapsed ? 0.5 : 1,
             }}
           >
-            {({ isActive }) => (
-              <>
-                <img
-                  src={isActive ? ChildrenActive : ChildrenDefault}
-                  alt="My Children"
-                />
-                <br />
-                {!isCollapsed && "My Children"}
-              </>
-            )}
+            <img
+              src={
+                window.location.pathname === "/my-children"
+                  ? ChildrenActive
+                  : ChildrenDefault
+              }
+              alt="My Children"
+            />
+            <br />
+            {!isCollapsed && "My Children"}
           </NavLink>
         </li>
 
@@ -77,16 +77,16 @@ export const BottomNav = () => {
               opacity: isCollapsed ? 0.5 : 1,
             }}
           >
-            {({ isActive }) => (
-              <>
-                <img
-                  src={isActive ? ResultActive : ResultDefault}
-                  alt="Results"
-                />
-                <br />
-                {!isCollapsed && "Results"}
-              </>
-            )}
+            <img
+              src={
+                window.location.pathname === "/result"
+                  ? ResultActive
+                  : ResultDefault
+              }
+              alt="Results"
+            />
+            <br />
+            {!isCollapsed && "Results"}
           </NavLink>
         </li>
 
@@ -99,16 +99,16 @@ export const BottomNav = () => {
               opacity: isCollapsed ? 0.5 : 1,
             }}
           >
-            {({ isActive }) => (
-              <>
-                <img
-                  src={isActive ? ReportActive : ReportDefault}
-                  alt="Reports"
-                />
-                <br />
-                {!isCollapsed && "Reports"}
-              </>
-            )}
+            <img
+              src={
+                window.location.pathname === "/pastoral-report"
+                  ? ReportActive
+                  : ReportDefault
+              }
+              alt="Reports"
+            />
+            <br />
+            {!isCollapsed && "Reports"}
           </NavLink>
         </li>
 
@@ -121,16 +121,16 @@ export const BottomNav = () => {
               opacity: isCollapsed ? 0.5 : 1,
             }}
           >
-            {({ isActive }) => (
-              <>
-                <img
-                  src={isActive ? ProfileActive : ProfileDefault}
-                  alt="Profile"
-                />
-                <br />
-                {!isCollapsed && "Profile"}
-              </>
-            )}
+            <img
+              src={
+                window.location.pathname === "/profile-page"
+                  ? ProfileActive
+                  : ProfileDefault
+              }
+              alt="Profile"
+            />
+            <br />
+            {!isCollapsed && "Profile"}
           </NavLink>
         </li>
       </ul>

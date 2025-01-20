@@ -16,13 +16,7 @@ export const BottomNav = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div
-      className="bottom-nav col-12"
-      style={{
-        width: isCollapsed ? "60px" : "100%", // Adjust width when collapsed
-        transition: "width 0.3s ease",
-      }}
-    >
+    <div className="bottom-nav col-12">
       <ul className="list-inline list-unstyled">
         <li className="list-inline-item">
           <NavLink

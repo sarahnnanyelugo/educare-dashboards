@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import DashboardActive from "../../assets/images/dashboard.svg";
 import DashboardDefault from "../../assets/images/d-voting.svg";
 import ChildrenDefault from "../../assets/images/d-children.svg";
-import ChildrenActive from "../../assets/images/d-children.svg";
+import ChildrenActive from "../../assets/images/children.svg";
 import ResultDefault from "../../assets/images/d-result.svg";
 import ResultActive from "../../assets/images/results.svg";
 import ReportDefault from "../../assets/images/d-report.svg";
