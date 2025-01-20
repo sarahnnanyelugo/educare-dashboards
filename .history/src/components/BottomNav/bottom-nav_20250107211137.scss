@@ -1,0 +1,23 @@
+.bottom-nav {
+  padding: 0px 10px 0px 10px;
+  border-top: 1px solid #e7e7e7;
+  bottom: 0;
+  position: fixed;
+  background: #fff;
+  text-align: center;
+  height: 50px;
+  a {
+    color: #7f8384;
+    font-size: 12px;
+    text-decoration: none;
+    span {
+      font-size: 18px;
+    }
+  }
+  li {
+    margin: 10px;
+  }
+  .active {
+    color: #0098da;
+  }
+}

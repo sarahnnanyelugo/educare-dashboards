@@ -1,0 +1,13 @@
+.select-container {
+  padding: 5px;
+  img {
+    border: none;
+  }
+  select {
+    width: 100% !important;
+    border: none !important;
+  }
+  @media screen and (max-width: 820px) {
+    width: 100% !important;
+  }
+}

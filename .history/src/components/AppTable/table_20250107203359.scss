@@ -1,0 +1,60 @@
+.app-table {
+  tr {
+    cursor: pointer;
+    th {
+      font-family: rebondG-Medium;
+    }
+    td {
+      font-family: rebondBook !important;
+      @media screen and (max-width: 820px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  --bs-table-striped-bg: #f9fafb;
+  .status-label {
+    border-radius: 11px;
+    font-size: 12px;
+    padding: 0 5px;
+    &.status-conducted {
+      background: #ecfef3;
+      color: #027a48; // Green
+    }
+    &.status-submitted {
+      background: #ecfef3;
+      color: #027a48; // Green
+    }
+    &.status-paid {
+      background: #ecfef3;
+      color: #027a48; // Green
+    }
+    &.status-cancelled {
+      background: #fef3f2;
+      color: #f04438; // Green
+    }
+    &.status-not-submitted {
+      background: #fef3f2;
+      color: #f04438; // Green
+    }
+    &.status-severe {
+      background: #fef3f2;
+      color: #f04438; // Green
+    }
+
+    &.status-pending {
+      color: #344054;
+      background-color: #f9fafb;
+    }
+    &.status-published {
+      background: #f0f9fd;
+      color: #0098da; // Blue
+    }
+
+    &.status-default {
+      color: #344054;
+      color: rgb(37, 36, 36);
+      background-color: #f9fafb; // Black
+    }
+  }
+}
