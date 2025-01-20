@@ -156,8 +156,6 @@ export const MobileSidebarData = [
   },
   {
     name: "Store",
-    iconDefault: StoreDefault,
-    iconActive: StoreActive,
     icon: "IoStorefrontOutline",
     url: "/store",
   },

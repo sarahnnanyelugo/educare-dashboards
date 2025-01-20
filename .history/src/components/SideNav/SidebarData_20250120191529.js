@@ -156,8 +156,6 @@ export const MobileSidebarData = [
   },
   {
     name: "Store",
-    iconDefault: StoreDefault,
-    iconActive: StoreActive,
     icon: "IoStorefrontOutline",
     url: "/store",
   },
@@ -165,8 +163,6 @@ export const MobileSidebarData = [
   {
     name: "Transport System",
     icon: "MdOutlineEmojiTransportation",
-    iconDefault: TransportDefault,
-    iconActive: TransportActive,
     accordion: true,
     accordionContent: [
       { name: "Bus", url: "/transport-system" },
@@ -176,8 +172,6 @@ export const MobileSidebarData = [
 
   {
     name: "Voting System",
-    iconDefault: VotingDefault,
-    iconActive: VotingActive,
     icon: "MdOutlineHowToVote",
     url: "/voting-system",
   },
